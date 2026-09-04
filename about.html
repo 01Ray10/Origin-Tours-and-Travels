@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Origin — About Us</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+        /* ========================================================
+   ABOUT HERO
+======================================================== */
+
+.about-hero {
+  position: relative;
+
+  min-height: 75vh;
+
+  display: grid;
+
+  grid-template-columns: 45% 55%;
+
+  align-items: center;
+
+  padding: 150px 8% 90px;
+
+  background-color: #070707;
+
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+.about-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 800px;
+}
+
+.about-label {
+  margin-bottom: 18px;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: #999999;
+}
+
+.about-hero h1 {
+  max-width: 800px;
+
+  font-size: clamp(3.5rem, 8vw, 7rem);
+
+  line-height: 0.9;
+
+  font-weight: 700;
+
+  letter-spacing: -4px;
+}
+
+.about-hero h1 span {
+  display: block;
+
+  color: #8f8f8f;
+}
+
+.about-intro {
+  max-width: 620px;
+
+  margin-top: 35px;
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+
+  color: #cfcfcf;
+}
+
+
+/* ========================================================
+   ABOUT HERO IMAGE
+======================================================== */
+
+.about-hero-visual {
+  position: relative;
+
+  height: 560px;
+
+  margin-left: 30px;
+
+  overflow: hidden;
+
+  align-self: center;
+}
+
+.about-hero-visual img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  opacity: 0.9;
+}
+
+.about-hero-visual::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to right,
+      #070707 0%,
+      rgba(7, 7, 7, 0.75) 12%,
+      rgba(7, 7, 7, 0.15) 38%,
+      transparent 60%
+    );
+
+  pointer-events: none;
+}
+
+.about-hero-visual::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(7, 7, 7, 0.35),
+      transparent 20%,
+      transparent 80%,
+      rgba(7, 7, 7, 0.7)
+    );
+
+  pointer-events: none;
+}
+
+
+/* ========================================================
+   ABOUT HERO CAPTION
+======================================================== */
+
+.about-hero-visual .hero-image-caption {
+  position: absolute;
+
+  z-index: 2;
+
+  bottom: 25px;
+
+  left: 25px;
+
+  right: 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  color: #ffffff;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+/* ========================================================
+   ABOUT STORY
+======================================================== */
+
+.about-story {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  padding: 110px 8%;
+
+  background-color: #ffffff;
+
+  color: #070707;
+
+  align-items: center;
+}
+
+.about-story-heading {
+  max-width: 650px;
+}
+
+.about-story-heading h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+.about-story-text {
+  max-width: 550px;
+
+  color: #555555;
+
+  line-height: 1.8;
+
+  font-size: 1.05rem;
+}
+
+.about-story-text p + p {
+  margin-top: 25px;
+}
+
+
+/* ========================================================
+   ABOUT VALUES
+======================================================== */
+
+.about-values {
+  padding: 110px 8%;
+
+  background-color: #070707;
+
+  color: #ffffff;
+}
+
+.about-values-heading {
+  max-width: 700px;
+
+  margin-bottom: 70px;
+}
+
+.about-values-heading h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+.about-values-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1px;
+
+  background-color: #333333;
+
+  border: 1px solid #333333;
+}
+
+.about-value {
+  min-height: 320px;
+
+  padding: 35px;
+
+  background-color: #070707;
+}
+
+.about-value-number {
+  display: block;
+
+  margin-bottom: 60px;
+
+  color: #777777;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 2px;
+}
+
+.about-value h3 {
+  margin-bottom: 15px;
+
+  font-size: 2rem;
+
+  line-height: 1;
+}
+
+.about-value p {
+  color: #bdbdbd;
+
+  line-height: 1.7;
+}
+
+
+/* ========================================================
+   ABOUT EXPERIENCE
+======================================================== */
+
+.about-experience {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  min-height: 600px;
+
+  background-color: #ffffff;
+
+  color: #070707;
+}
+
+.about-experience-image {
+  min-height: 600px;
+}
+
+.about-experience-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.about-experience-content {
+  padding: 80px 10%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: flex-start;
+}
+
+.about-experience-content h2 {
+  margin-bottom: 30px;
+
+  font-size: clamp(4rem, 8vw, 8rem);
+
+  line-height: 0.8;
+
+  letter-spacing: -4px;
+}
+
+.about-experience-content p:not(.section-label) {
+  max-width: 500px;
+
+  margin-bottom: 35px;
+
+  color: #555555;
+
+  line-height: 1.8;
+}
+
+
+/* ========================================================
+   ABOUT BUTTON
+======================================================== */
+
+.about-btn {
+  display: inline-block;
+
+  padding: 14px 30px;
+
+  background-color: #070707;
+
+  color: #ffffff;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-size: 0.85rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.about-btn:hover {
+  transform: translateY(-3px);
+}
+
+
+/* ========================================================
+   ABOUT SERVICES
+======================================================== */
+
+.about-services {
+  padding: 110px 8%;
+
+  background-color: #ffffff;
+
+  color: #070707;
+}
+
+.about-services-heading {
+  max-width: 700px;
+
+  margin-bottom: 60px;
+}
+
+.about-services-heading h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+.about-services-list {
+  border-top: 1px solid #cccccc;
+}
+
+.about-service-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 25px 0;
+
+  border-bottom: 1px solid #cccccc;
+
+  color: #070707;
+
+  text-decoration: none;
+
+  font-size: 1.4rem;
+
+  transition:
+    padding-left 0.2s ease;
+}
+
+.about-service-item:hover {
+  padding-left: 10px;
+}
+
+
+/* ========================================================
+   ABOUT CTA
+======================================================== */
+
+.about-cta {
+  min-height: 500px;
+
+  padding: 100px 8%;
+
+  background-color: #070707;
+
+  color: #ffffff;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.about-cta h2 {
+  max-width: 900px;
+
+  margin-bottom: 35px;
+
+  font-size: clamp(3rem, 7vw, 6rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -3px;
+}
+
+
+/* ========================================================
+   ABOUT RESPONSIVE
+======================================================== */
+
+@media (max-width: 1000px) {
+
+  .about-hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-hero-visual {
+    height: 500px;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .about-story {
+    grid-template-columns: 1fr;
+  }
+
+  .about-experience {
+    grid-template-columns: 1fr;
+  }
+
+  .about-experience-image {
+    min-height: 450px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .about-hero {
+    min-height: 75vh;
+
+    grid-template-columns: 1fr;
+
+    padding: 140px 6% 70px;
+  }
+
+  .about-hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .about-intro {
+    font-size: 0.95rem;
+  }
+
+  .about-hero-visual {
+    height: 400px;
+
+    margin-left: 0;
+
+    margin-top: 50px;
+  }
+
+  .about-story {
+    padding: 80px 6%;
+  }
+
+  .about-values {
+    padding: 80px 6%;
+  }
+
+  .about-value {
+    min-height: 280px;
+
+    padding: 28px;
+  }
+
+  .about-experience-image {
+    min-height: 350px;
+  }
+
+  .about-experience-content {
+    padding: 70px 6%;
+  }
+
+  .about-services {
+    padding: 80px 6%;
+  }
+
+  .about-service-item {
+    font-size: 1.1rem;
+  }
+
+  .about-cta {
+    min-height: 400px;
+
+    padding: 80px 6%;
+  }
+
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================================================
+         NAVBAR
+    ========================================================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Origin
+        </div>
+
+        <nav class="nav-links">
+
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+            </div>
+
+            <div class="nav-item">
+                <a href="destinations.html" class="nav-link">
+                    Destination
+                </a>
+            </div>
+
+            <div class="nav-item has-dropdown">
+
+                <a href="tours.html" class="nav-link">
+                    Tours
+                </a>
+
+                <div class="dropdown">
+                    <a href="Internationaltours.html">
+                        International Tours
+                    </a>
+
+                    <a href="Domestictours.html">
+                        Domestic Tours
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="nav-item has-dropdown">
+
+                <a href="Umrah.html" class="nav-link">
+                    Umrah
+                </a>
+
+                <div class="dropdown">
+                    <a href="Umrah.html">
+                        Economy Umrah
+                    </a>
+
+                    <a href="Umrah.html">
+                        VIP Umrah
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="nav-item">
+
+                <a href="services.html" class="nav-link">
+                    Services
+                </a>
+
+            </div>
+
+            <div class="nav-item has-dropdown">
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+                <div class="dropdown">
+
+                    <a href="contact.html">
+                        Contact Page
+                    </a>
+
+                    <a href="mailto:Originsoftware@gmail.com">
+                        Email
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/originsoftwares"
+                        target="_blank"
+                    >
+                        Instagram
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="nav-item">
+
+                <a href="about.html" class="nav-link">
+                    About Us
+                </a>
+
+            </div>
+
+        </nav>
+
+        <button class="nav-btn">
+            Register Now
+        </button>
+
+    </header>
+
+
+    <!-- ========================================================
+         MAIN
+    ========================================================= -->
+
+    <main>
+
+
+        <!-- ====================================================
+             ABOUT HERO
+        ===================================================== -->
+
+        <section class="about-hero">
+
+            <div class="about-hero-content">
+
+                <p class="about-label">
+                    WHO WE ARE
+                </p>
+
+                <h1>
+                    About Origin Tours
+                    <span>&amp; Travels</span>
+                </h1>
+
+                <p class="about-intro">
+                    Hyderabad's trusted travel agency since 2010 —
+                    experts in Umrah, Hajj, holiday packages,
+                    air ticketing and personalised travel services.
+                </p>
+
+            </div>
+
+
+            <!-- HERO IMAGE -->
+
+            <div class="about-hero-visual">
+
+                <img
+                    src="New folder/about-hero.jpg"
+                    alt="Origin Tours and Travels"
+                >
+
+                <div class="hero-image-caption">
+
+                    <span>
+                        01
+                    </span>
+
+                    <span>
+                        SERVING HYDERABAD SINCE 2010
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================================
+             INTRO / STORY
+        ===================================================== -->
+
+        <section class="about-story">
+
+            <div class="about-story-heading">
+
+                <p class="section-label">
+                    OUR STORY
+                </p>
+
+                <h2>
+                    More Than
+                    Just Travel.
+                </h2>
+
+            </div>
+
+            <div class="about-story-text">
+
+                <p>
+                    Origin Tours &amp; Travels was built around a simple
+                    idea: travel should feel organized, personal and
+                    dependable from the moment you begin planning.
+                </p>
+
+                <p>
+                    Serving travellers from Hyderabad and beyond,
+                    we bring together holiday planning, pilgrimage
+                    travel, ticketing and travel assistance under one roof.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================================
+             WHAT WE STAND FOR
+        ===================================================== -->
+
+        <section class="about-values">
+
+            <div class="about-values-heading">
+
+                <p class="section-label">
+                    WHAT WE STAND FOR
+                </p>
+
+                <h2>
+                    Built Around
+                    Our Clients.
+                </h2>
+
+            </div>
+
+
+            <div class="about-values-grid">
+
+
+                <!-- VALUE 01 -->
+
+                <article class="about-value">
+
+                    <span class="about-value-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Experience
+                    </h3>
+
+                    <p>
+                        More than a decade of experience helping
+                        travellers plan holidays, pilgrimage journeys
+                        and international travel.
+                    </p>
+
+                </article>
+
+
+                <!-- VALUE 02 -->
+
+                <article class="about-value">
+
+                    <span class="about-value-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Personal Service
+                    </h3>
+
+                    <p>
+                        Every traveller has different needs.
+                        We focus on understanding those requirements
+                        before recommending a package or service.
+                    </p>
+
+                </article>
+
+
+                <!-- VALUE 03 -->
+
+                <article class="about-value">
+
+                    <span class="about-value-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Reliability
+                    </h3>
+
+                    <p>
+                        Clear communication and practical travel
+                        support designed to keep your journey
+                        organized from planning to departure.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================================
+             EXPERIENCE SECTION
+        ===================================================== -->
+
+        <section class="about-experience">
+
+            <div class="about-experience-image">
+
+                <img
+                    src="New folder/about-team.jpg"
+                    alt="Origin Tours and Travels"
+                >
+
+            </div>
+
+            <div class="about-experience-content">
+
+                <p class="section-label">
+                    OUR EXPERIENCE
+                </p>
+
+                <h2>
+                    10+
+                    Years.
+                </h2>
+
+                <p>
+                    From local travellers taking their first
+                    international holiday to families preparing
+                    for Umrah, our goal has remained the same:
+                    make travel easier to understand and easier
+                    to arrange.
+                </p>
+
+                <a
+                    href="services.html"
+                    class="about-btn"
+                >
+                    Explore Our Services
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================================
+             SERVICES / CAPABILITIES
+        ===================================================== -->
+
+        <section class="about-services">
+
+            <div class="about-services-heading">
+
+                <p class="section-label">
+                    WHAT WE DO
+                </p>
+
+                <h2>
+                    One Place.
+                    Many Journeys.
+                </h2>
+
+            </div>
+
+
+            <div class="about-services-list">
+
+                <a
+                    href="Internationaltours.html"
+                    class="about-service-item"
+                >
+                    <span>International Tours</span>
+                    <span>&rarr;</span>
+                </a>
+
+                <a
+                    href="Domestictours.html"
+                    class="about-service-item"
+                >
+                    <span>Domestic Tours</span>
+                    <span>&rarr;</span>
+                </a>
+
+                <a
+                    href="Umrah.html"
+                    class="about-service-item"
+                >
+                    <span>Umrah Packages</span>
+                    <span>&rarr;</span>
+                </a>
+
+                <a
+                    href="services.html"
+                    class="about-service-item"
+                >
+                    <span>Travel Services</span>
+                    <span>&rarr;</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================================
+             CTA
+        ===================================================== -->
+
+        <section class="about-cta">
+
+            <p class="section-label">
+                LET'S START
+            </p>
+
+            <h2>
+                Your Journey
+                Starts With Us.
+            </h2>
+
+            <a
+                href="contact.html"
+                class="about-btn"
+            >
+                Contact Origin
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer class="hero-footer">
+
+        <p>
+            &copy; 2026 Origin Tours &amp; Travels
+            &mdash;
+            Explore more, discover more.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

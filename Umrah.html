@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Origin — Umrah</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+        /* ========================================================
+   UMRAH HERO
+======================================================== */
+
+.umrah-hero {
+  position: relative;
+
+  min-height: 75vh;
+
+  display: grid;
+
+  grid-template-columns: 45% 55%;
+
+  align-items: center;
+
+  padding: 150px 8% 90px;
+
+  background-color: #070707;
+
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* ========================================================
+   UMRAH HERO CONTENT
+======================================================== */
+
+.umrah-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 800px;
+}
+
+.umrah-label {
+  margin-bottom: 18px;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: #999999;
+}
+
+.umrah-hero h1 {
+  max-width: 800px;
+
+  font-size: clamp(3.5rem, 8vw, 7rem);
+
+  line-height: 0.9;
+
+  font-weight: 700;
+
+  letter-spacing: -4px;
+}
+
+.umrah-hero h1 span {
+  display: block;
+
+  color: #8f8f8f;
+}
+
+.umrah-intro {
+  max-width: 620px;
+
+  margin-top: 35px;
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+
+  color: #cfcfcf;
+}
+
+
+/* ========================================================
+   UMRAH HERO IMAGE
+======================================================== */
+
+.umrah-hero-visual {
+  position: relative;
+
+  height: 560px;
+
+  margin-left: 30px;
+
+  overflow: hidden;
+
+  align-self: center;
+}
+
+.umrah-hero-visual img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  opacity: 0.9;
+}
+
+
+/* LEFT FADE */
+
+.umrah-hero-visual::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to right,
+      #070707 0%,
+      rgba(7, 7, 7, 0.75) 12%,
+      rgba(7, 7, 7, 0.15) 38%,
+      transparent 60%
+    );
+
+  pointer-events: none;
+}
+
+
+/* TOP / BOTTOM FADE */
+
+.umrah-hero-visual::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(7, 7, 7, 0.35),
+      transparent 20%,
+      transparent 80%,
+      rgba(7, 7, 7, 0.7)
+    );
+
+  pointer-events: none;
+}
+
+
+/* ========================================================
+   IMAGE CAPTION
+======================================================== */
+
+.umrah-hero-visual .hero-image-caption {
+  position: absolute;
+
+  z-index: 2;
+
+  bottom: 25px;
+
+  left: 25px;
+
+  right: 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  color: #ffffff;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+/* ========================================================
+   UMRAH INTRO SECTION
+======================================================== */
+
+.umrah-intro-section {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  padding: 110px 8%;
+
+  background-color: #ffffff;
+
+  color: #070707;
+
+  align-items: center;
+}
+
+.umrah-intro-heading {
+  max-width: 650px;
+}
+
+.umrah-intro-heading h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+.umrah-intro-text {
+  max-width: 550px;
+
+  color: #555555;
+
+  line-height: 1.8;
+
+  font-size: 1.05rem;
+}
+
+
+/* ========================================================
+   UMRAH PACKAGES
+======================================================== */
+
+.umrah-packages-section {
+  padding: 110px 8%;
+
+  background-color: #070707;
+
+  color: #ffffff;
+}
+
+.umrah-packages-heading {
+  max-width: 700px;
+
+  margin-bottom: 70px;
+}
+
+.umrah-packages-heading h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+
+/* ========================================================
+   PACKAGE GRID
+======================================================== */
+
+.umrah-packages-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+
+/* ========================================================
+   PACKAGE CARD
+======================================================== */
+
+.umrah-card {
+  min-height: 470px;
+
+  padding: 30px;
+
+  background-color: #111111;
+
+  border: 1px solid #242424;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.umrah-card:hover {
+  transform: translateY(-8px);
+
+  background-color: #181818;
+
+  border-color: #444444;
+}
+
+
+/* ========================================================
+   FEATURED PACKAGE
+======================================================== */
+
+.featured-umrah {
+  border-color: #777777;
+}
+
+.package-badge {
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  padding: 6px 10px;
+
+  border: 1px solid #666666;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: #cccccc;
+}
+
+
+/* ========================================================
+   PACKAGE TOP
+======================================================== */
+
+.umrah-card-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+.umrah-number,
+.umrah-duration {
+  font-size: 0.7rem;
+
+  letter-spacing: 2px;
+
+  color: #888888;
+}
+
+
+/* ========================================================
+   PACKAGE CONTENT
+======================================================== */
+
+.umrah-card-content h3 {
+  margin-bottom: 18px;
+
+  font-size: 2.2rem;
+
+  line-height: 1;
+
+  letter-spacing: -1px;
+}
+
+.umrah-card-content p {
+  margin-bottom: 25px;
+
+  color: #bdbdbd;
+
+  line-height: 1.7;
+}
+
+
+/* ========================================================
+   PACKAGE LIST
+======================================================== */
+
+.umrah-card-content ul {
+  margin: 0 0 30px;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.umrah-card-content li {
+  padding: 10px 0;
+
+  border-bottom: 1px solid #292929;
+
+  color: #d0d0d0;
+
+  font-size: 0.85rem;
+}
+
+.umrah-card-content li:first-child {
+  border-top: 1px solid #292929;
+}
+
+
+/* ========================================================
+   PACKAGE LINK
+======================================================== */
+
+.umrah-card-content a {
+  display: inline-block;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.umrah-card-content a:hover {
+  text-decoration: underline;
+}
+
+
+/* ========================================================
+   UMRAH FEATURE
+======================================================== */
+
+.umrah-feature {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  min-height: 600px;
+
+  background-color: #ffffff;
+
+  color: #070707;
+}
+
+.umrah-feature-image {
+  min-height: 600px;
+}
+
+.umrah-feature-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.umrah-feature-content {
+  padding: 80px 10%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: flex-start;
+}
+
+.umrah-feature-content .section-label {
+  color: #777777;
+}
+
+.umrah-feature-content h2 {
+  max-width: 600px;
+
+  margin-bottom: 30px;
+
+  font-size: clamp(3rem, 6vw, 6rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -3px;
+}
+
+.umrah-feature-content p:not(.section-label) {
+  max-width: 500px;
+
+  margin-bottom: 35px;
+
+  color: #555555;
+
+  line-height: 1.8;
+}
+
+
+/* ========================================================
+   UMRAH BUTTON
+======================================================== */
+
+.umrah-btn {
+  display: inline-block;
+
+  padding: 14px 30px;
+
+  background-color: #070707;
+
+  color: #ffffff;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-size: 0.85rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.umrah-btn:hover {
+  transform: translateY(-3px);
+}
+
+
+/* ========================================================
+   UMRAH CTA
+======================================================== */
+
+.umrah-cta {
+  min-height: 500px;
+
+  padding: 100px 8%;
+
+  background-color: #070707;
+
+  color: #ffffff;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.umrah-cta h2 {
+  max-width: 900px;
+
+  margin-bottom: 35px;
+
+  font-size: clamp(3rem, 7vw, 6rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -3px;
+}
+
+
+/* ========================================================
+   UMRAH RESPONSIVE
+======================================================== */
+
+@media (max-width: 1000px) {
+
+  .umrah-packages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .umrah-hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .umrah-hero-visual {
+    height: 500px;
+  }
+
+  .umrah-intro-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .umrah-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .umrah-feature-image {
+    min-height: 450px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .umrah-hero {
+    min-height: 75vh;
+
+    grid-template-columns: 1fr;
+
+    padding: 140px 6% 70px;
+  }
+
+  .umrah-hero-content {
+    z-index: 3;
+  }
+
+  .umrah-hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .umrah-intro {
+    font-size: 0.95rem;
+  }
+
+  .umrah-hero-visual {
+    height: 400px;
+
+    margin-left: 0;
+
+    margin-top: 50px;
+  }
+
+  .umrah-intro-section {
+    padding: 80px 6%;
+  }
+
+  .umrah-packages-section {
+    padding: 80px 6%;
+  }
+
+  .umrah-packages-heading {
+    margin-bottom: 45px;
+  }
+
+  .umrah-packages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .umrah-card {
+    min-height: 400px;
+  }
+
+  .umrah-feature-image {
+    min-height: 350px;
+  }
+
+  .umrah-feature-content {
+    padding: 70px 6%;
+  }
+
+  .umrah-cta {
+    min-height: 400px;
+
+    padding: 80px 6%;
+  }
+
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================================================
+         NAVBAR
+    ========================================================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Origin
+        </div>
+
+        <nav class="nav-links">
+
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+            </div>
+
+            <div class="nav-item">
+                <a href="Destination.html" class="nav-link">
+                    Destination
+                </a>
+            </div>
+
+            <div class="nav-item has-dropdown">
+
+                <a href="tours.html" class="nav-link">
+                    Tours
+                </a>
+
+                <div class="dropdown">
+
+                    <a href="Internationaltours.html">
+                        International Tours
+                    </a>
+
+                    <a href="Domestictours.html">
+                        Domestic Tours
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="nav-item has-dropdown">
+
+                <a href="Umrah.html" class="nav-link">
+                    Umrah
+                </a>
+
+                <div class="dropdown">
+
+                    <a href="Umrah.html">
+                        Economy Umrah
+                    </a>
+
+                    <a href="Umrah.html">
+                        VIP Umrah
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="nav-item">
+
+                <a href="services.html" class="nav-link">
+                    Services
+                </a>
+
+            </div>
+
+            <div class="nav-item has-dropdown">
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+                <div class="dropdown">
+
+                    <a href="contact.html">
+                        Contact Page
+                    </a>
+
+                    <a href="mailto:Originsoftware@gmail.com">
+                        Email
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/originsoftwares"
+                        target="_blank"
+                    >
+                        Instagram
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="nav-item">
+
+                <a href="about.html" class="nav-link">
+                    About Us
+                </a>
+
+            </div>
+
+        </nav>
+
+        <button class="nav-btn">
+            Register Now
+        </button>
+
+    </header>
+
+
+    <!-- ========================================================
+         MAIN
+    ========================================================= -->
+
+    <main>
+
+
+        <!-- ====================================================
+             UMRAH HERO
+        ===================================================== -->
+
+        <section class="umrah-hero">
+
+            <div class="umrah-hero-content">
+
+                <p class="umrah-label">
+                    UMRAH PACKAGES
+                </p>
+
+                <h1>
+                    Your Journey
+                    <span>Begins Here.</span>
+                </h1>
+
+                <p class="umrah-intro">
+                    Thoughtfully arranged Umrah packages designed
+                    to make your journey more comfortable,
+                    organized and focused on what matters most.
+                </p>
+
+            </div>
+
+
+            <!-- HERO IMAGE -->
+
+            <div class="umrah-hero-visual">
+
+                <img
+                    src="New folder/download.png"
+                    alt="Umrah journey"
+                >
+
+                <div class="hero-image-caption">
+
+                    <span>01</span>
+
+                    <span>
+                        MAKKAH <!-- &amp; MADINAH -->
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================================
+             INTRO
+        ===================================================== -->
+
+        <section class="umrah-intro-section">
+
+            <div class="umrah-intro-heading">
+
+                <p class="section-label">
+                    TRAVEL WITH ORIGIN
+                </p>
+
+                <h2>
+                    Packages Designed
+                    Around Your Journey.
+                </h2>
+
+            </div>
+
+            <div class="umrah-intro-text">
+
+                <p>
+                    Choose from a range of Umrah packages based on
+                    duration, accommodation and level of comfort.
+                    Final package details, availability and pricing
+                    can be customized according to your travel dates.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================================
+             UMRAH PACKAGES
+        ===================================================== -->
+
+        <section class="umrah-packages-section">
+
+            <div class="umrah-packages-heading">
+
+                <p class="section-label">
+                    PACKAGES
+                </p>
+
+                <h2>
+                    Find the Right
+                    Package for You.
+                </h2>
+
+            </div>
+
+
+            <div class="umrah-packages-grid">
+
+
+                <!-- PACKAGE 01 -->
+
+                <article class="umrah-card">
+
+                    <div class="umrah-card-top">
+
+                        <span class="umrah-number">
+                            01
+                        </span>
+
+                        <span class="umrah-duration">
+                            8 DAYS
+                        </span>
+
+                    </div>
+
+                    <div class="umrah-card-content">
+
+                        <h3>
+                            Economy
+                        </h3>
+
+                        <p>
+                            A practical package designed for
+                            pilgrims looking for a comfortable
+                            and well-organized Umrah journey.
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                Accommodation
+                            </li>
+
+                            <li>
+                                Airport transfers
+                            </li>
+
+                            <li>
+                                Guided assistance
+                            </li>
+
+                        </ul>
+
+                        <a href="contact.html">
+                            Enquire Now &rarr;
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PACKAGE 02 -->
+
+                <article class="umrah-card featured-umrah">
+
+                    <div class="umrah-card-top">
+
+                        <span class="umrah-number">
+                            02
+                        </span>
+
+                        <span class="umrah-duration">
+                            8 DAYS
+                        </span>
+
+                    </div>
+
+                    <div class="umrah-card-content">
+
+                        <span class="package-badge">
+                            POPULAR
+                        </span>
+
+                        <h3>
+                            VIP Deluxe
+                        </h3>
+
+                        <p>
+                            A premium Umrah experience with
+                            upgraded accommodation and enhanced
+                            travel convenience.
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                Premium accommodation
+                            </li>
+
+                            <li>
+                                Private transfers
+                            </li>
+
+                            <li>
+                                Dedicated assistance
+                            </li>
+
+                        </ul>
+
+                        <a href="contact.html">
+                            Enquire Now &rarr;
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PACKAGE 03 -->
+
+                <article class="umrah-card">
+
+                    <div class="umrah-card-top">
+
+                        <span class="umrah-number">
+                            03
+                        </span>
+
+                        <span class="umrah-duration">
+                            10 DAYS
+                        </span>
+
+                    </div>
+
+                    <div class="umrah-card-content">
+
+                        <h3>
+                            Comfort
+                        </h3>
+
+                        <p>
+                            More time for your pilgrimage with
+                            a balanced package focused on comfort,
+                            convenience and flexibility.
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                Hotel accommodation
+                            </li>
+
+                            <li>
+                                Transfers
+                            </li>
+
+                            <li>
+                                Travel assistance
+                            </li>
+
+                        </ul>
+
+                        <a href="contact.html">
+                            Enquire Now &rarr;
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PACKAGE 04 -->
+
+                <article class="umrah-card">
+
+                    <div class="umrah-card-top">
+
+                        <span class="umrah-number">
+                            04
+                        </span>
+
+                        <span class="umrah-duration">
+                            14 DAYS
+                        </span>
+
+                    </div>
+
+                    <div class="umrah-card-content">
+
+                        <h3>
+                            Extended Umrah
+                        </h3>
+
+                        <p>
+                            An extended itinerary for pilgrims
+                            who prefer a slower pace and additional
+                            time in Makkah and Madinah.
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                Extended stay
+                            </li>
+
+                            <li>
+                                Accommodation
+                            </li>
+
+                            <li>
+                                Transfers
+                            </li>
+
+                        </ul>
+
+                        <a href="contact.html">
+                            Enquire Now &rarr;
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PACKAGE 05 -->
+
+                <article class="umrah-card">
+
+                    <div class="umrah-card-top">
+
+                        <span class="umrah-number">
+                            05
+                        </span>
+
+                        <span class="umrah-duration">
+                            10 DAYS
+                        </span>
+
+                    </div>
+
+                    <div class="umrah-card-content">
+
+                        <h3>
+                            Family Package
+                        </h3>
+
+                        <p>
+                            A flexible option designed for families
+                            travelling together, with convenience
+                            prioritized throughout the journey.
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                Family accommodation
+                            </li>
+
+                            <li>
+                                Transfers
+                            </li>
+
+                            <li>
+                                Coordinated assistance
+                            </li>
+
+                        </ul>
+
+                        <a href="contact.html">
+                            Enquire Now &rarr;
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PACKAGE 06 -->
+
+                <article class="umrah-card">
+
+                    <div class="umrah-card-top">
+
+                        <span class="umrah-number">
+                            06
+                        </span>
+
+                        <span class="umrah-duration">
+                            CUSTOM
+                        </span>
+
+                    </div>
+
+                    <div class="umrah-card-content">
+
+                        <h3>
+                            Custom Package
+                        </h3>
+
+                        <p>
+                            Tell us your preferred dates, duration,
+                            accommodation and travel requirements,
+                            and we can help create a package around them.
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                Flexible duration
+                            </li>
+
+                            <li>
+                                Accommodation options
+                            </li>
+
+                            <li>
+                                Personalized planning
+                            </li>
+
+                        </ul>
+
+                        <a href="contact.html">
+                            Build My Package &rarr;
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================================
+             MAKKAH / MADINAH SECTION
+        ===================================================== -->
+
+        <section class="umrah-feature">
+
+            <div class="umrah-feature-image">
+
+                <img
+                    src="New folder//makkahandmadina.jpg"
+                    alt="Makkah"
+                >
+
+            </div>
+
+            <div class="umrah-feature-content">
+
+                <p class="section-label">
+                    THE HOLY CITIES
+                </p>
+
+                <h2>
+                    Makkah.
+                    Madinah.
+                </h2>
+
+                <p>
+                    From accommodation and transfers to package
+                    planning, Origin is here to help make the
+                    logistics of your journey clear and organized.
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="umrah-btn"
+                >
+                    Plan Your Umrah
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================================
+             CTA
+        ===================================================== -->
+
+        <section class="umrah-cta">
+
+            <p class="section-label">
+                BEGIN YOUR JOURNEY
+            </p>
+
+            <h2>
+                Your Umrah.
+                Your Journey.
+            </h2>
+
+            <a
+                href="contact.html"
+                class="umrah-btn"
+            >
+                Enquire Now
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer class="hero-footer">
+
+        <p>
+            &copy; 2026 Origin Tours &amp; Travels
+            &mdash;
+            Explore more, discover more.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

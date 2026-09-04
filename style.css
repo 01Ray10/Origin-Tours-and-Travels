@@ -1,0 +1,1252 @@
+    /* ========================================================
+    1. BASE TYPOGRAPHY & ELEMENTS
+    ======================================================== */
+    /*
+    h1, h2, h3, h4, h5 {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 28px;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    h6 {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 22px;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        margin-top: 15px;
+        margin-bottom: 0px;
+    }
+
+    pre {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 16px;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        width: 60%;
+        max-width: 800px;
+        margin: 0 auto;
+        font-weight: 500;
+    }
+
+    .smooch-sans {
+        font-family: "Smooch Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .smooch-sans--light { font-weight: 300; }
+    .smooch-sans--bold  { font-weight: 700; }
+    */
+
+
+    /* ========================================================
+    2. HERO & BUTTONS SYSTEM
+    ======================================================== */
+    /*
+    .hero {
+        padding: 4rem 2rem 3rem;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+
+    .hero-badge {
+        display: inline-block;
+        background: #e6f1fb;
+        color: #185fa5;
+        font-size: 12px;
+        padding: 4px 14px;
+        border-radius: 20px;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+        font-weight: 500;
+        margin: 0 0 1rem;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1.05rem;
+        color: #666;
+        max-width: 520px;
+        margin: 0 auto 2rem;
+        line-height: 1.7;
+    }
+
+    .hero-btns {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn-primary {
+        background: #111;
+        color: #fff;
+        border: none;
+        padding: 10px 24px;
+        border-radius: 8px;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: #111;
+        border: 1px solid #ccc;
+        padding: 10px 24px;
+        border-radius: 8px;
+        font-size: 14px;
+        text-decoration: none;
+    }
+    */
+
+
+    /* ========================================================
+    3. STATS SECTION
+    ======================================================== */
+    /*
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-bottom: 1px solid #eee;
+    }
+
+    .stat {
+        padding: 2rem;
+        text-align: center;
+        border-right: 1px solid #eee;
+    }
+
+    .stat:last-child {
+        border-right: none;
+    }
+
+    .stat-num {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .stat-label {
+        font-size: 13px;
+        color: #888;
+        margin-top: 4px;
+    }
+    */
+
+
+    /* ========================================================
+    4. CARD LAYOUT GRID (LIGHT MODE DEFAULT)
+    ======================================================== */
+    /*
+    .cards-section {
+        padding: 4rem 2rem;
+        background: #fff;
+    }
+
+    .big-card-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 16px;
+        padding: 2.5rem;
+        box-sizing: border-box;
+    }
+
+    .quick-access-title {
+        font-size: 22px !important;
+        font-weight: 500;
+        margin-top: 0 !important;
+        margin-bottom: 2rem !important;
+        color: #111;
+    }
+
+    .inner-cards-grid {
+        display: grid;
+        grid-template-columns: 1fr; 
+        gap: 16px;
+    }
+
+    .individual-card, .cardsa {
+        background: #fff; 
+        border: 1px solid #eaeaea; 
+        border-radius: 12px; 
+        padding: 1.5rem; 
+        text-decoration: none;      
+        display: block; 
+        box-sizing: border-box;
+        cursor: pointer; 
+    } 
+
+    .individual-card h3, .cardsa h3 { 
+        font-size: 16px !important; 
+        font-weight: 600; 
+        margin-top: 0 !important;
+        margin-bottom: 8px !important; 
+        color: #111 !important; 
+    } 
+
+    .individual-card p, .cardsa p { 
+        font-size: 13px !important; 
+        color: #666 !important; 
+        margin: 0 !important; 
+        line-height: 1.6 !important; 
+    }
+    */
+
+
+    /* ========================================================
+    5. LIGHT MODE HOVER EFFECTS
+    ======================================================== */
+    /*
+    .individual-card:hover, .cardsa:hover { 
+        background: #000000 !important; 
+        border-color: #000000 !important; 
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important; 
+        transform: translateY(-2px) !important;
+    } 
+
+    .individual-card:hover h3, .cardsa:hover h3,
+    .individual-card:hover p, .cardsa:hover p { 
+        color: #ffffff !important; 
+    }
+    */
+
+
+    /* ========================================================
+    6. GLOBAL DARK MODE OVERRIDES
+    ======================================================== */
+    /*
+    body.dark-mode {
+        background-color: #121212 !important;
+        color: #ffffff !important;
+    }
+
+    body.dark-mode .cards-section {
+        background: #121212 !important;
+    }
+
+    body.dark-mode .big-card-container {
+        background: #141414 !important;
+        border-color: #222222 !important;
+    }
+
+    body.dark-mode .individual-card, body.dark-mode .cardsa {
+        background: #121212 !important;
+        border-color: #2a2a2a !important;
+    }
+
+    body.dark-mode .quick-access-title,
+    body.dark-mode .individual-card h3, body.dark-mode .cardsa h3 {
+        color: #ffffff !important;
+    }
+
+    body.dark-mode .individual-card p, body.dark-mode .cardsa p {
+        color: #aaaaaa !important; 
+    }
+
+    body.dark-mode .hero p,
+    body.dark-mode .stat-label {
+        color: #b0b0b0 !important;
+    }
+
+    body.dark-mode .hero,
+    body.dark-mode .stats,
+    body.dark-mode .stat {
+        border-color: #2a2a2a !important;
+    }
+    */
+
+    /* HERO BUTTON FIXES FOR DARK MODE */
+
+    /*
+    body.dark-mode .btn-primary {
+        background: #ffffff !important;   */ /* Turns button background white */
+    /*  color: #121212 !important;      */ /* Turns text dark inside the button */
+    /* } */
+
+    /*
+    body.dark-mode .btn-outline {
+        color: #ffffff !important;
+        border-color: #666666 !important;
+    }
+
+    body.dark-mode .hero-badge {
+        background: #22303f !important;
+        color: #64b5f6 !important;
+    }
+    */
+
+    /* Dark Mode Hover Behavior Override */
+
+    /*
+    body.dark-mode .individual-card:hover, body.dark-mode .cardsa:hover {
+        background: #ffffff !important;         
+        border-color: #ffffff !important;    
+        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15) !important; 
+        transform: translateY(-4px) !important; 
+    }
+
+    body.dark-mode .individual-card:hover h3, body.dark-mode .cardsa:hover h3 {
+        color: #000000 !important;
+    }
+
+    body.dark-mode .individual-card:hover p, body.dark-mode .cardsa:hover p {
+        color: #222222 !important;   
+    }
+    */
+
+
+    /* ========================================================
+    7. GLOBAL TRANSITIONS UTILITY
+    ======================================================== */
+    /*
+    body, 
+    .cards-section, 
+    .big-card-container, 
+    .individual-card, 
+    .cardsa,
+    .individual-card h3, 
+    .cardsa h3,
+    .individual-card p, 
+    .cardsa p,
+    .hero, 
+    .stats, 
+    .stat, 
+    .btn-outline, 
+    .btn-primary,
+    .hero-badge {
+        transition: background 0.25s ease, 
+                    background-color 0.25s ease, 
+                    border-color 0.25s ease, 
+                    color 0.25s ease, 
+                    transform 0.25s ease, 
+                    box-shadow 0.25s ease;
+    }
+    */
+    /* Reset margins to prevent weird gaps around the screen edge */
+    /* Reset margins to prevent weird gaps around the screen edge */
+    /* Reset margins to prevent weird gaps around the screen edge */
+
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* ========================================================
+   HERO / VIDEO CONTAINER
+   ======================================================== */
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 8%;
+}
+/* ========================================================
+   HOME HERO ADDITIONS
+======================================================== */
+
+.home-label {
+  margin-bottom: 5px;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: #dddddd;
+}
+
+.hero-content h1 span {
+  display: block;
+
+  color: #cfcfcf;
+}
+
+.hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 5px;
+}
+
+.hero-btn {
+  display: inline-block;
+
+  background-color: #ffffff;
+  color: #060606d6;
+
+  border: 1px solid #ffffff;
+
+  padding: 12px 32px;
+
+  border-radius: 30px;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-btn:hover {
+  background-color: transparent;
+  color: #ffffff;
+
+  border-color: rgba(255, 255, 255, 0.8);
+
+  transform: none;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.hero-secondary-btn {
+  display: inline-block;
+
+  padding: 12px 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 30px;
+
+  background-color: transparent;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-secondary-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  transform: none;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================================================
+   HOME INTRO
+======================================================== */
+
+.home-intro {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  padding: 110px 8%;
+
+  background-color: #ffffff;
+
+  color: #070707;
+
+  align-items: center;
+}
+
+.home-intro-heading {
+  max-width: 650px;
+}
+
+.home-intro-heading h2 {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+
+  line-height: 0.95;
+
+  letter-spacing: -3px;
+}
+
+.home-intro-content {
+  max-width: 550px;
+}
+
+.home-intro-content p {
+  margin-bottom: 30px;
+
+  color: #555555;
+
+  line-height: 1.8;
+
+  font-size: 1.05rem;
+}
+
+.home-text-link {
+  display: inline-block;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.home-text-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ========================================================
+   HOME DESTINATIONS
+======================================================== */
+
+.home-destinations {
+  padding: 110px 8%;
+
+  background-color: #070707;
+
+  color: #ffffff;
+}
+
+.home-section-heading {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  gap: 40px;
+
+  margin-bottom: 60px;
+}
+
+.home-section-heading h2 {
+  max-width: 700px;
+
+  font-size: clamp(2.8rem, 5vw, 5rem);
+
+  line-height: 0.95;
+
+  letter-spacing: -3px;
+}
+
+.home-section-heading .home-text-link {
+  color: #ffffff;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================================
+   HOME DESTINATION GRID
+======================================================== */
+
+.home-destination-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.home-destination-card {
+  background-color: #111111;
+
+  overflow: hidden;
+
+  border-radius: 4px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.home-destination-card:hover {
+  transform: translateY(-8px);
+}
+
+.home-destination-image {
+  width: 100%;
+
+  height: 300px;
+
+  overflow: hidden;
+}
+
+.home-destination-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.home-destination-card:hover
+.home-destination-image img {
+  transform: scale(1.06);
+}
+
+.home-destination-content {
+  padding: 22px;
+
+  display: grid;
+
+  grid-template-columns: auto 1fr auto;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.home-destination-content span {
+  color: #777777;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 2px;
+}
+
+.home-destination-content h3 {
+  font-size: 1.3rem;
+
+  line-height: 1;
+}
+
+.home-destination-content a {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+}
+
+.home-destination-content a:hover {
+  text-decoration: underline;
+}
+
+
+/* ========================================================
+   HOME SERVICES
+======================================================== */
+
+.home-services {
+  padding: 110px 8%;
+
+  background-color: #ffffff;
+
+  color: #070707;
+}
+
+.home-services-heading {
+  max-width: 750px;
+
+  margin-bottom: 60px;
+}
+
+.home-services-heading h2 {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+
+  line-height: 0.95;
+
+  letter-spacing: -3px;
+}
+
+.home-services-list {
+  border-top: 1px solid #cccccc;
+}
+
+.home-service-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 27px 0;
+
+  border-bottom: 1px solid #cccccc;
+
+  color: #070707;
+
+  text-decoration: none;
+
+  font-size: 1.4rem;
+
+  transition:
+    padding-left 0.2s ease;
+}
+
+.home-service-item:hover {
+  padding-left: 10px;
+}
+
+
+/* ========================================================
+   HOME UMRAH
+======================================================== */
+
+.home-umrah {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  min-height: 620px;
+
+  background-color: #070707;
+
+  color: #ffffff;
+}
+
+.home-umrah-image {
+  min-height: 620px;
+}
+
+.home-umrah-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.home-umrah-content {
+  padding: 90px 10%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: flex-start;
+}
+
+.home-umrah-content h2 {
+  max-width: 600px;
+
+  margin-bottom: 30px;
+
+  font-size: clamp(3rem, 6vw, 6rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -3px;
+}
+
+.home-umrah-content p:not(.section-label) {
+  max-width: 500px;
+
+  margin-bottom: 35px;
+
+  color: #c0c0c0;
+
+  line-height: 1.8;
+}
+
+
+/* ========================================================
+   HOME BUTTON
+======================================================== */
+
+.home-btn {
+  display: inline-block;
+
+  padding: 14px 30px;
+
+  background-color: #ffffff;
+
+  color: #000000;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-size: 0.85rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.home-btn:hover {
+  transform: translateY(-3px);
+}
+
+
+/* ========================================================
+   HOME CTA
+======================================================== */
+
+.home-cta {
+  min-height: 550px;
+
+  padding: 100px 8%;
+
+  background-color: #ffffff;
+
+  color: #070707;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.home-cta h2 {
+  max-width: 900px;
+
+  margin-bottom: 35px;
+
+  font-size: clamp(4rem, 8vw, 8rem);
+
+  line-height: 0.85;
+
+  letter-spacing: -4px;
+}
+
+
+/* ========================================================
+   HOME RESPONSIVE
+======================================================== */
+
+@media (max-width: 1100px) {
+
+  .home-destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .home-intro {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .home-umrah {
+    grid-template-columns: 1fr;
+  }
+
+  .home-umrah-image {
+    min-height: 450px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+
+  .home-intro {
+    padding: 80px 6%;
+  }
+
+  .home-destinations {
+    padding: 80px 6%;
+  }
+
+  .home-section-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    margin-bottom: 45px;
+  }
+
+  .home-destination-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-destination-image {
+    height: 260px;
+  }
+
+  .home-services {
+    padding: 80px 6%;
+  }
+
+  .home-service-item {
+    font-size: 1.1rem;
+  }
+
+  .home-umrah-image {
+    min-height: 350px;
+  }
+
+  .home-umrah-content {
+    padding: 70px 6%;
+  }
+
+  .home-cta {
+    min-height: 400px;
+
+    padding: 80px 6%;
+  }
+
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  color: #ffffff;
+  text-align: left;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  user-select: none;
+}
+
+#Getstarted {
+  margin-top: 0.8px;
+}
+
+
+/* ========================================================
+   NAVBAR & LINKS
+   ======================================================== */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  z-index: 10;
+  flex-wrap: nowrap;
+  background: #070707;
+  border-top: 0px solid rgba(255, 255, 255, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+    position: relative;
+    margin: 0 18px;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.85;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-link:hover {
+  opacity: 2;
+}
+
+
+/* ========================================================
+   DROPDOWN ARROW
+   ======================================================== */
+
+/* Arrow ONLY for items that actually have a dropdown */
+
+.has-dropdown .nav-link::after {
+  content: "▾";
+  font-size: 0.85rem;
+  margin-left: 5px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.has-dropdown:hover .nav-link::after {
+  transform: rotate(360deg);
+}
+
+
+/* ========================================================
+   HOVER DROPDOWN MENU
+   ======================================================== */
+
+.dropdown {
+  position: absolute;
+  margin-top: 3px;
+  top: 100%;
+  left: 0;
+  min-width: 170px;
+  padding: 15px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+
+  background: rgba(0, 0, 0, 0.9);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+
+  z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+  display: flex;
+}
+
+.dropdown a {
+  margin: 0px;
+  padding: 8px 10px;
+  text-transform: none;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.dropdown a:hover {
+  opacity: 1;
+}
+
+
+/* ========================================================
+   NAV BUTTON
+   ======================================================== */
+
+.nav-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* ========================================================
+   FULL-WIDTH BREAKOUT IMAGE SECTION
+   ======================================================== */
+
+.image-section {
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: 500px;
+  background-color: #070707;
+}
+
+.image-section img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+
+/* ========================================================
+   ABOUT SECTION
+   ======================================================== */
+
+.about-section {
+  background-color: #070707;
+  color: #ffffff;
+  padding: 60px 8%;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+
+/* ========================================================
+   EXPLORE SECTION
+   ======================================================== */
+
+.hero {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 100px 8%;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroh2 {
+  background-color: #070707;
+  color: #ffffff;
+  padding: 60px 8%;
+  text-align: center;
+  font-size: 2.05rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.heroh3 {
+  background-color: #070707;
+  color: #ffffff;
+  padding: 60px 8%;
+  text-align: center;
+  font-size: 1.50rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.hero-footer {
+  background-color: #070707;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+
+/* ========================================================
+   ACCESSIBILITY & TYPOGRAPHY
+   ======================================================== */
+
+a:focus-visible,
+button:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+  user-select: none;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: italic;
+}
+
+
+/* ========================================================
+   RESPONSIVE — MOBILE
+   ======================================================== */
+
+@media (max-width: 700px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .video-container {
+    padding-left: 6%;
+  }
+
+  .hero-content {
+    max-width: 90%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .image-section {
+    height: 350px;
+  }
+}

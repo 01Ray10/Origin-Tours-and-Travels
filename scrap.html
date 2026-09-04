@@ -1,0 +1,355 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORIGIN — Tours & Travel</title>
+  
+  <!-- Tabler Icons Webfont -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --font-voice: 'Playfair Display', Georgia, serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #131313;
+      color: #f5f5f5;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Keyframe Animation */
+    @keyframes scrollpulse {
+      0%, 100% {
+        opacity: .35;
+        transform: translateY(0);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(4px);
+      }
+    }
+
+    .hero-container {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: #131313;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 26px;
+      background: #6a6a6a;
+      animation: scrollpulse 1.8s ease-in-out infinite;
+    }
+
+    /* Layout Adjustments */
+    .navbar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 32px 8%;
+      z-index: 1;
+    }
+
+    .hero-main {
+      position: relative;
+      padding: 0 8%;
+      max-width: 580px;
+      z-index: 1;
+      /* Takes up remaining vertical space and centers content */
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-bottom: 8vh; /* Slight optical adjustment so it doesn't crowd the scroll indicator */
+    }
+
+    .hero-stats {
+      position: absolute;
+      right: 8%;
+      bottom: 50px;
+      text-align: right;
+      z-index: 1;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      .navbar { padding: 24px 6%; }
+      .hero-main { 
+        padding: 0 6%; 
+        justify-content: center;
+      }
+      .hero-stats {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        padding: 40px 6% 40px;
+        text-align: left;
+      }
+      .hero-stats .divider {
+        margin: 0 0 8px 0 !important;
+      }
+      .scroll-indicator {
+        position: relative;
+        bottom: auto;
+        padding-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero-container">
+    
+    <!-- SVG Vector Background -->
+    <svg viewBox="0 0 800 460" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0;width:100%;height:100%;" aria-hidden="true">
+      <rect width="800" height="460" fill="#131313"></rect>
+      <polygon points="0,460 0,220 160,120 320,240 480,90 650,210 800,140 800,460" fill="#1c1c1c"></polygon>
+      <polygon points="0,460 0,300 220,190 400,300 600,180 800,280 800,460" fill="#0c0c0c"></polygon>
+    </svg>
+
+    <!-- Navigation Header -->
+    <nav class="navbar">
+      <span style="color:#f2f2f2;font-size:13px;font-weight:600;letter-spacing:.14em;">ORIGIN</span>
+      <div style="display:flex;gap:28px;">
+        <a href="#home" style="color:#c7c7c7;font-size:13px;text-decoration:none;transition:color 0.2s;">Home</a>
+        <a href="#packages" style="color:#c7c7c7;font-size:13px;text-decoration:none;transition:color 0.2s;">Packages</a>
+        <a href="#about" style="color:#c7c7c7;font-size:13px;text-decoration:none;transition:color 0.2s;">About</a>
+        <a href="#contact" style="color:#c7c7c7;font-size:13px;text-decoration:none;transition:color 0.2s;">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="hero-main">
+      <h1 style="font-family:var(--font-voice);font-weight:500;font-size:42px;line-height:1.15;color:#f5f5f5;margin:0 0 20px;">Origin tours and travels</h1>
+      <p style="font-size:15px;color:#d0d0d0;margin:0 0 8px;">Discover your next adventure</p>
+      <p style="font-size:15px;color:#9c9c9c;margin:0 0 32px;line-height:1.5;">Over 100+ curated trip packages<br>available worldwide</p>
+      
+      <div style="display:flex;align-items:center;gap:24px;">
+        <a href="#get-started" style="background:#f5f5f5;color:#131313;font-size:14px;font-weight:600;padding:12px 28px;border-radius:999px;text-decoration:none;display:inline-block;transition:opacity 0.2s;">Get started</a>
+        <a href="#packages" style="color:#e5e5e5;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:opacity 0.2s;">
+          View packages
+          <i class="ti ti-arrow-right" style="font-size:16px;" aria-hidden="true"></i>
+        </a>
+      </div>
+    </main>
+
+    <!-- Bottom Stat Indicator -->
+    <aside class="hero-stats">
+      <div class="divider" style="width:32px;height:1px;background:#5a5a5a;margin:0 0 10px auto;"></div>
+      <div style="font-size:22px;font-weight:600;color:#f0f0f0;">500+</div>
+      <div style="font-size:11px;letter-spacing:.12em;color:#8c8c8c;font-weight:500;margin-top:4px;">TRIPS BOOKED</div>
+    </aside>
+
+    <!-- Animated Scroll Down Line -->
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <i class="ti ti-chevron-down" style="font-size:14px;color:#8c8c8c;" aria-hidden="true"></i>
+    </div>
+
+  </header>
+
+</body>
+</html>
+
+
+
+                   PREVIOUS INDEX 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Origin Tours and Travels</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <div class="video-container">
+
+        <header class="navbar">
+
+            <div class="logo">
+                Origin
+            </div>
+
+            <nav class="nav-links">
+
+                <!-- HOME -->
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </div>
+
+                <!-- DESTINATION -->
+                <div class="nav-item">
+                    <a href="Destination.html" class="nav-link">Destination</a>
+                </div>
+
+                <!-- TOURS -->
+                <div class="nav-item has-dropdown">
+                    <a href="tours.html" class="nav-link">Tours</a>
+
+                    <div class="dropdown">
+                        <a href="Internationaltours.html">International Tours</a>
+                        <a href="Domestictours.html">Domestic Tours</a>
+                    </div>
+                </div>
+
+                <!-- UMRAH -->
+                <div class="nav-item has-dropdown">
+                    <a href="Umrah.html" class="nav-link">Umrah</a>
+
+                    <div class="dropdown">
+                        <a href="Umrah.html">Economy Umrah</a>
+                        <a href="Umrah.html">VIP Umrah</a>
+                    </div>
+                </div>
+
+                <!-- SERVICES -->
+                <div class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </div>  
+
+                <!-- CONTACT -->
+                <div class="nav-item has-dropdown">
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    <div class="dropdown">
+                        <a href="contact.html">Contact Page</a>
+                        <a href="mailto:Originsoftware@gmail.com">Email</a>
+                        <a href="https://www.instagram.com/originsoftwares" target="_blank">Instagram</a>
+                    </div>
+                </div>
+
+                <!-- ABOUT -->
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </div>
+
+            </nav>
+
+            <button class="nav-btn">
+                Register Now
+            </button>
+
+        </header>
+
+
+        <!-- BACKGROUND VIDEO -->
+        <video autoplay loop muted playsinline class="bg-video">
+            <source src="New folder/15650-265858375_medium.mp4" type="video/mp4">
+        </video>
+
+        <!-- VIDEO OVERLAY -->
+        <div class="overlay"></div>
+
+        <!-- HERO CONTENT -->
+        <div class="hero-content">
+
+            <h1>
+                Origin Tours and Travels
+            </h1>
+
+            <p>
+                Discover your next adventure
+            </p>
+
+            <div>
+                <p>
+                    Over 1000+ curated trip packages available worldwide
+                </p>
+            </div>
+
+            <a href="contact.html" class="hero-btn" id="Getstarted" >
+                Get Started
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section">
+
+        <p>
+            Redefining Modern Travel &amp; Logistics
+            We combine decade-long industry experience with modern technology
+            to provide seamless travel and attestation services across 50+ countries.
+        </p>
+
+    </section>
+
+
+    <!-- IMAGE / CONTENT SECTION -->
+    <section class="image">
+
+        <div class="image-section">
+
+            <img
+                src="New folder/04-Cities-Looking-to-Harness-Smart-Technologies-Should-Start-Small_960px-x-540px-1200x675.avif"
+                alt="Travel destination"
+            >
+
+        </div>
+
+        <h3 class="heroh3">
+            Origin Tours &amp; Travels — Umrah, Hajj &amp; Holiday Packages from Hyderabad<br>
+            Your Journey to the Holy Cities Begins Here.<br><br>
+            The World is Waiting. Where Will You Go Next?
+        </h3>
+
+        <h2 class="heroh2">
+            Explore the World with us!
+        </h2>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="hero-footer">
+        <p>© 2026 Your Website — Explore more, discover more.</p>
+    </footer>
+
+</body>
+</html>
