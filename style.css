@@ -431,7 +431,7 @@ body {
 
   border-color: rgba(255, 255, 255, 0.8);
 
-  transform: none;
+  transform: translateY(-2px);
 
   box-shadow:
     0 8px 20px rgba(0, 0, 0, 0.25);
@@ -465,7 +465,7 @@ body {
   background-color: #ffffff;
   color: #000000;
   border-color: #ffffff;
-  transform: none;
+  transform: translateY(-2px);
   box-shadow:
     0 8px 20px rgba(0, 0, 0, 0.25);
 }
