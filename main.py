@@ -1,7 +1,6 @@
 import fastapi
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi import HTTPException
 
 app = fastapi.FastAPI()
 
@@ -49,7 +48,6 @@ def get_contacts():
 def home():
     return {"message": "ORIGIN backend is running"}
 
-
 @app.get("/api")
 def api_home():
     return {"message": "ORIGIN API is running"}
@@ -67,23 +65,6 @@ def get_tours():
     }
 
 
-@app.get("/api/tours/{tour_id}")
-def get_tour(tour_id: int):
-    tours = [
-        {"id": 1, "name": "Kashmir Escape", "duration": "5 days", "price": 850},
-        {"id": 2, "name": "Dubai Discovery", "duration": "4 days", "price": 1200},
-        {"id": 3, "name": "Umrah Package", "duration": "10 days", "price": 1800},
-    ]
-
-    for tour in tours:
-        if tour["id"] == tour_id:
-            return tour
-
-    raise HTTPException(status_code=404, detail="Tour not found")
-
-
-@app.get("/api/destinations")
-@app.get("/api/destination")
 @app.get("/destinations")
 def get_destinations():
     return {
@@ -93,21 +74,6 @@ def get_destinations():
             {"id": 3, "name": "Makkah", "country": "Saudi Arabia"},
         ]
     }
-
-
-@app.get("/api/destinations/{destination_id}")
-def get_destination(destination_id: int):
-    destinations = [
-        {"id": 1, "name": "Kashmir", "country": "India"},
-        {"id": 2, "name": "Dubai", "country": "United Arab Emirates"},
-        {"id": 3, "name": "Makkah", "country": "Saudi Arabia"},
-    ]
-
-    for destination in destinations:
-        if destination["id"] == destination_id:
-            return destination
-
-    raise HTTPException(status_code=404, detail="Destination not found")
 
 
 @app.get("/services")
