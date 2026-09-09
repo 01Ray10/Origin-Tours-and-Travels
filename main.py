@@ -94,17 +94,22 @@ class ContactMessage(BaseModel):
     message: str
 
 
+@app.get("/contact")
+def get_contact_messages():
+    return {"contacts": contacts}
+
+
 @app.post("/contact")
 def submit_contact_message(contact: ContactMessage):
     return {
         "message": "Your message has been received",
         "contact": contact,
     }
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MY Testing ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 User = ["Dave","John","Doe"]
 print("Joe" in User)
 print(User[1], User[-2])  
-print(User [0:] )   # Shift alt down to copy multi-lines
+print(User [0:] )            # Shift alt down to copy multi-lines
 
 print(len(User))
 
