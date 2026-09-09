@@ -17,6 +17,7 @@ app.add_middleware(
     allow_headers=["Content-Type"],
 )
 
+
 class ContactForm(BaseModel):
     name: str
     email: str
@@ -27,8 +28,7 @@ contacts = []
 
 
 @app.post("/api/contact")
-def receive_contact(data: ContactForm):
-    # --- ADD THE PRINT STATEMENTS HERE ---
+def submit_contact_message(data: ContactForm):
     print("=== NEW FORM SUBMISSION ===")
     print("Name:", data.name)
     print("Email:", data.email)
@@ -37,16 +37,21 @@ def receive_contact(data: ContactForm):
 
     contacts.append(data)
 
-    return {"message": "Your message has been received"}
+    return {
+        "message": "Your message has been received",
+        "contact": data,
+    }
 
 
 @app.get("/api/contact")
-def get_contacts():
+def get_contact_messages():
     return {"contacts": contacts}
+
 
 @app.get("/")
 def home():
     return {"message": "ORIGIN backend is running"}
+
 
 @app.get("/api")
 def api_home():
@@ -54,18 +59,32 @@ def api_home():
 
 
 @app.get("/api/tours")
-@app.get("/tours")
 def get_tours():
     return {
         "tours": [
-            {"id": 1, "name": "Kashmir Escape", "duration": "5 days", "price": 850},
-            {"id": 2, "name": "Dubai Discovery", "duration": "4 days", "price": 1200},
-            {"id": 3, "name": "Umrah Package", "duration": "10 days", "price": 1800},
+            {
+                "id": 1,
+                "name": "Kashmir Escape",
+                "duration": "5 days",
+                "price": 850,
+            },
+            {
+                "id": 2,
+                "name": "Dubai Discovery",
+                "duration": "4 days",
+                "price": 1200,
+            },
+            {
+                "id": 3,
+                "name": "Umrah Package",
+                "duration": "10 days",
+                "price": 1800,
+            },
         ]
     }
 
 
-@app.get("/destinations")
+@app.get("/api/destinations")
 def get_destinations():
     return {
         "destinations": [
@@ -76,7 +95,7 @@ def get_destinations():
     }
 
 
-@app.get("/services")
+@app.get("/api/services")
 def get_services():
     return {
         "services": [
@@ -86,26 +105,7 @@ def get_services():
             "Tour planning",
         ]
     }
-
-
-class ContactMessage(BaseModel):
-    name: str
-    email: str
-    message: str
-
-
-@app.get("/contact")
-def get_contact_messages():
-    return {"contacts": contacts}
-
-
-@app.post("/contact")
-def submit_contact_message(contact: ContactMessage):
-    return {
-        "message": "Your message has been received",
-        "contact": contact,
-    }
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MY Testing ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MY Testing ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 User = ["Dave","John","Doe"]
 print("Joe" in User)
 print(User[1], User[-2])  
