@@ -2,38 +2,589 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origin — Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+
+        .contact-hero {
+            min-height: 62vh;
+            padding: 150px 8% 90px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: end;
+            gap: 60px;
+            background: #070707;
+            color: #fff;
+        }
+
+        .contact-label,
+        .contact-section-label {
+            margin-bottom: 18px;
+            color: #999;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .contact-hero h1 {
+            max-width: 760px;
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            line-height: .9;
+            letter-spacing: -4px;
+        }
+
+        .contact-hero h1 span {
+            display: block;
+            color: #8f8f8f;
+        }
+
+        .contact-hero-copy {
+            max-width: 500px;
+            padding-bottom: 8px;
+            color: #cfcfcf;
+            line-height: 1.8;
+        }
+
+        .contact-benefits {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: #fff;
+            color: #070707;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-benefit {
+            padding: 28px 8%;
+            border-right: 1px solid #eee;
+        }
+
+        .contact-benefit:last-child {
+            border-right: 0;
+        }
+
+        .contact-benefit strong {
+            display: block;
+            margin-bottom: 7px;
+            font-size: .85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-benefit span {
+            color: #666;
+            font-size: .78rem;
+        }
+
+        .contact-methods {
+            padding: 90px 8% 55px;
+            background: #fff;
+        }
+
+        .contact-methods-heading {
+            max-width: 650px;
+            margin-bottom: 38px;
+        }
+
+        .contact-methods-heading h2,
+        .contact-office h2 {
+            font-size: clamp(2.4rem, 5vw, 4.5rem);
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .contact-methods-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .contact-method {
+            min-height: 175px;
+            padding: 26px;
+            background: #070707;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .contact-method small {
+            display: block;
+            margin-bottom: 22px;
+            color: #999;
+            font-size: .7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .contact-method h3 {
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
+
+        .contact-method a,
+        .contact-method p {
+            color: #cfcfcf;
+            font-size: .88rem;
+            line-height: 1.6;
+            text-decoration: none;
+        }
+
+        .contact-workspace {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 28px;
+            padding: 55px 8% 110px;
+            background: #fff;
+        }
+
+        .contact-form-panel {
+            padding: 38px;
+            background: #f5f5f3;
+            border-radius: 4px;
+        }
+
+        .contact-form-panel h2 {
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .contact-form-panel > p {
+            margin-bottom: 28px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .contact-form textarea,
+        .contact-form input {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #fff;
+            color: #111;
+            font: inherit;
+        }
+
+        .contact-form textarea {
+            min-height: 145px;
+            grid-column: 1 / -1;
+            resize: vertical;
+        }
+
+        .contact-form button,
+        .contact-help a {
+            width: fit-content;
+            padding: 13px 25px;
+            border: 0;
+            border-radius: 30px;
+            background: #070707;
+            color: #fff;
+            font: inherit;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .contact-form button:hover,
+        .contact-help a:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact-side {
+            display: grid;
+            gap: 18px;
+        }
+
+        .contact-map {
+            min-height: 235px;
+            overflow: hidden;
+            border-radius: 4px;
+            background: #eee;
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 235px;
+            border: 0;
+            filter: grayscale(1);
+        }
+
+        .contact-hours {
+            padding: 26px;
+            background: #070707;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .contact-hours h3 {
+            margin-bottom: 18px;
+            font-size: 1.2rem;
+        }
+
+        .contact-hours p {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,.15);
+            color: #cfcfcf;
+            font-size: .85rem;
+        }
+
+        .contact-hours p:last-child {
+            border-bottom: 0;
+        }
+
+        .contact-help {
+            padding: 30px;
+            background: #fff;
+            color: #070707;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .contact-help h3 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .contact-help p {
+            margin-bottom: 20px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-office {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            padding: 100px 8%;
+            background: #f5f5f3;
+        }
+
+        .contact-office-copy {
+            max-width: 560px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .contact-office-copy p {
+            margin-bottom: 24px;
+        }
+
+        .contact-office-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .contact-office-item {
+            padding-bottom: 18px;
+            border-bottom: 1px solid #d8d8d8;
+        }
+
+        .contact-office-item strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #070707;
+            font-size: .8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .contact-office-item span {
+            color: #666;
+            line-height: 1.6;
+        }
+        @media (max-width: 900px) {
+            .contact-hero,
+            .contact-workspace,
+            .contact-office {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-hero-copy {
+                padding-bottom: 0;
+            }
+
+            .contact-methods-grid,
+            .contact-benefits {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-benefit:nth-child(2) {
+                border-right: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .contact-hero,
+            .contact-methods,
+            .contact-workspace,
+            .contact-office {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .contact-hero {
+                padding-top: 130px;
+            }
+
+            .contact-methods-grid,
+            .contact-benefits,
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-benefit,
+            .contact-benefit:nth-child(2) {
+                border-right: 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .contact-benefit:last-child {
+                border-bottom: 0;
+            }
+
+            .contact-form-panel {
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header class="navbar">
+        <div class="logo">
+            Origin
+        </div>
 
-    <!-- PLACE FORM INSIDE BODY -->
-    <form id="contact-form">
-        <input type="text" id="name" placeholder="Name" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <textarea id="message" placeholder="Message" required></textarea>
-        <button type="submit">Send</button>
-    </form>
+        <nav class="nav-links">
+            <div class="nav-item">
+                <a href="Index.html" class="nav-link">Home</a>
+            </div>
 
-    <!-- PLACE SCRIPT BEFORE CLOSING BODY TAG -->
+            <div class="nav-item">
+                <a href="Destination.html" class="nav-link">Destination</a>
+            </div>
+
+            <div class="nav-item has-dropdown">
+                <a href="tours.html" class="nav-link">Tours</a>
+                <div class="dropdown">
+                    <a href="Internationaltours.html">International Tours</a>
+                    <a href="Domestictours.html">Domestic Tours</a>
+                </div>
+            </div>
+
+            <div class="nav-item has-dropdown">
+                <a href="Umrah.html" class="nav-link">Umrah</a>
+                <div class="dropdown">
+                    <a href="Umrah.html">Economy Umrah</a>
+                    <a href="Umrah.html">VIP Umrah</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="services.html" class="nav-link">Services</a>
+            </div>
+
+            <div class="nav-item has-dropdown">
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="dropdown">
+                    <a href="contact.html">Contact Page</a>
+                    <a href="mailto:Originsoftware@gmail.com">Email</a>
+                    <a href="https://www.instagram.com/originsoftwares" target="_blank">Instagram</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="about.html" class="nav-link">About Us</a>
+            </div>
+        </nav>
+
+        <a href="contact.html" class="hero-btn">Register Now</a>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div>
+                <p class="contact-label">Reach Out</p>
+                <h1>
+                    Let's plan your
+                    <span>next journey.</span>
+                </h1>
+            </div>
+
+            <p class="contact-hero-copy">
+                Tell us where you want to go, what you want to experience,
+                and when you want to travel. Our team will help shape the
+                details into a trip that feels like yours.
+            </p>
+        </section>
+        <section class="contact-benefits" aria-label="Contact benefits">
+            <div class="contact-benefit">
+                <strong>Quick replies</strong>
+                <span>We respond within one business day.</span>
+            </div>
+
+            <div class="contact-benefit">
+                <strong>Travel guidance</strong>
+                <span>Practical help from experienced planners.</span>
+            </div>
+
+            <div class="contact-benefit">
+                <strong>Flexible planning</strong>
+                <span>Trips shaped around your priorities.</span>
+            </div>
+
+            <div class="contact-benefit">
+                <strong>Personal support</strong>
+                <span>One team from first idea to departure.</span>
+            </div>
+        </section>
+        <section class="contact-methods">
+            <div class="contact-methods-heading">
+                <p class="contact-section-label">Get in touch</p>
+                <h2>Choose the easiest way to reach us.</h2>
+            </div>
+
+            <div class="contact-methods-grid">
+                <article class="contact-method">
+                    <small>Call</small>
+                    <h3>Speak with us</h3>
+                    <a href="tel:+919876543210">+91 98765 43210</a>
+                </article>
+
+                <article class="contact-method">
+                    <small>WhatsApp</small>
+                    <h3>Message the team</h3>
+                    <a href="https://wa.me/919876543210">Start a chat</a>
+                </article>
+
+                <article class="contact-method">
+                    <small>Email</small>
+                    <h3>Send an enquiry</h3>
+                    <a href="mailto:Originsoftware@gmail.com">Originsoftware@gmail.com</a>
+                </article>
+
+                <article class="contact-method">
+                    <small>Visit</small>
+                    <h3>Meet at our office</h3>
+                    <p>New Delhi, India</p>
+                </article>
+            </div>
+        </section>
+        <section class="contact-workspace">
+            <div class="contact-form-panel">
+                <p class="contact-section-label">Start a conversation</p>
+                <h2>Tell us about your trip.</h2>
+                <p>Share a few details and we will get back to you with useful next steps.</p>
+
+                <form id="contact-form" class="contact-form">
+                    <input type="text" id="name" placeholder="Full name *" required>
+                    <input type="email" id="email" placeholder="Email address *" required>
+                    <input type="tel" id="phone" placeholder="Phone number">
+                    <input type="text" id="subject" placeholder="Subject">
+                    <textarea id="message" placeholder="Tell us what you have in mind *" required></textarea>
+                    <button type="submit">Send message</button>
+                </form>
+            </div>
+
+            <div class="contact-side">
+                <div class="contact-map">
+                    <iframe
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=77.17%2C28.59%2C77.25%2C28.66&amp;layer=mapnik&amp;marker=28.6139%2C77.2090"
+                        title="Map showing Origin office area"
+                    ></iframe>
+                </div>
+
+                <div class="contact-hours">
+                    <h3>Opening hours</h3>
+                    <p><span>Monday - Friday</span><span>9:00 - 18:00</span></p>
+                    <p><span>Saturday</span><span>10:00 - 16:00</span></p>
+                    <p><span>Sunday</span><span>Closed</span></p>
+                </div>
+
+                <div class="contact-help">
+                    <h3>Need help right now?</h3>
+                    <p>Message us on WhatsApp for a quick answer about destinations, packages, or availability.</p>
+                    <a href="https://wa.me/919876543210">Chat on WhatsApp</a>
+                </div>
+            </div>
+        </section>
+        <section class="contact-office">
+            <div class="contact-office-copy">
+                <p class="contact-section-label">Our office</p>
+                <h2>Visit Origin.</h2>
+                <p>Our team is here to help turn a rough idea into a thoughtful, well-planned journey. Come by for a conversation or reach us from wherever you are.</p>
+                <a href="mailto:Originsoftware@gmail.com" class="destination-btn">Email the team</a>
+            </div>
+
+            <div class="contact-office-list">
+                <div class="contact-office-item">
+                    <strong>Address</strong>
+                    <span>Origin Tours &amp; Travels<br>New Delhi, India</span>
+                </div>
+
+                <div class="contact-office-item">
+                    <strong>General enquiries</strong>
+                    <span>Originsoftware@gmail.com</span>
+                </div>
+
+                <div class="contact-office-item">
+                    <strong>Phone</strong>
+                    <span>+91 98765 43210</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="hero-footer">
+        <p>
+            &copy; 2026 Origin Tours &amp; Travels
+            &mdash;
+            Explore more, discover more.
+        </p>
+    </footer>
     <script>
-    document.getElementById('contact-form').addEventListener('submit', async (e) => {
-        e.preventDefault();
+        document.getElementById('contact-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const form = event.currentTarget;
+            const submitButton = form.querySelector('button');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
 
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value
-        };
-
-        const response = await fetch('http://127.0.0.1:8000/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                const result = await response.json();
+                alert(result.message || 'Your message has been sent.');
+                form.reset();
+            } catch (error) {
+                alert('Unable to send your message right now. Please call or email us.');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send message';
+            }
         });
-
-        const result = await response.json();
-        alert(result.message);
-    });
     </script>
 </body>
 </html>
