@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Origin — Domestic Tours</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+
+        /* =========================
+           DOMESTIC TOURS HERO
+        ========================= */
+
+        .domestic-hero {
+            position: relative;
+            min-height: 75vh;
+
+            display: grid;
+            grid-template-columns: 50% 50%;
+            align-items: center;
+
+            padding: 150px 8% 90px;
+
+            background: #070707;
+            color: #fff;
+
+            overflow: hidden;
+        }
+
+        .domestic-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .domestic-label {
+            margin-bottom: 18px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #999999;
+        }
+
+        .domestic-hero h1 {
+            max-width: 850px;
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-weight: 700;
+            line-height: 0.9;
+            letter-spacing: -4px;
+        }
+
+        .domestic-hero h1 span {
+            display: block;
+            color: #8f8f8f;
+        }
+
+        .domestic-hero p {
+            max-width: 540px;
+            margin-top: 35px;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #cfcfcf;
+        }
+
+        /* HERO IMAGE */
+
+        .domestic-hero-visual {
+            position: relative;
+            height: 560px;
+            margin-left: 30px;
+            overflow: hidden;
+        }
+
+        .domestic-hero-visual img {
+            width: 100%;
+            height: 100%;
+            display: block;
+
+            object-fit: cover;
+            object-position: center;
+
+            opacity: 0.9;
+        }
+
+        .domestic-hero-visual::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to right,
+                    #070707 0%,
+                    rgba(7, 7, 7, 0.75) 12%,
+                    rgba(7, 7, 7, 0.15) 38%,
+                    transparent 60%
+                );
+        }
+
+        .domestic-hero-visual::before {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(7, 7, 7, 0.35),
+                    transparent 20%,
+                    transparent 80%,
+                    rgba(7, 7, 7, 0.7)
+                );
+
+            z-index: 1;
+        }
+
+        .domestic-image-caption {
+            position: absolute;
+            z-index: 2;
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            color: #ffffff;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .domestic-intro {
+            background: #fff;
+            color: #111;
+
+            padding: 110px 8%;
+            text-align: center;
+        }
+
+        .domestic-intro-label {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.5;
+
+            margin-bottom: 18px;
+        }
+
+        .domestic-intro h2 {
+            font-size: clamp(2.5rem, 4vw, 4.5rem);
+            font-weight: 700;
+
+            max-width: 850px;
+            margin: 0 auto 25px;
+        }
+
+        .domestic-intro p {
+            max-width: 700px;
+            margin: 0 auto;
+
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* =========================
+           DESTINATION GRID
+        ========================= */
+
+        .domestic-packages {
+            background: #ffffff;
+            color: #070707;
+            padding: 110px 8%;
+        }
+
+        .domestic-section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+
+            margin-bottom: 70px;
+        }
+
+        .domestic-section-heading h2 {
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-weight: 700;
+        }
+
+        .domestic-section-heading p {
+            max-width: 350px;
+            color: #666;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .domestic-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .domestic-card {
+            background: #070707;
+            color: #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .domestic-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .domestic-card-image {
+            height: 260px;
+            overflow: hidden;
+        }
+
+        .domestic-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.5s ease;
+        }
+
+        .domestic-card:hover .domestic-card-image img {
+            transform: scale(1.05);
+        }
+
+        .domestic-card-content {
+            padding: 28px;
+        }
+
+        .domestic-card-number {
+            display: block;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #999999;
+            margin-bottom: 25px;
+        }
+
+        .domestic-card-content h3 {
+            font-size: 2rem;
+            line-height: 1;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+        }
+
+        .domestic-card-content p {
+            color: #bdbdbd;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .domestic-card-link {
+            color: #ffffff;
+            text-decoration: none;
+
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .domestic-card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================
+           FEATURE SECTION
+        ========================= */
+
+        .domestic-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+
+            background: #070707;
+            color: #fff;
+        }
+
+        .domestic-feature-image {
+            min-height: 600px;
+        }
+
+        .domestic-feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .domestic-feature-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 80px 10%;
+            align-items: flex-start;
+        }
+
+        .domestic-feature-content span {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            opacity: 0.55;
+            margin-bottom: 20px;
+        }
+
+        .domestic-feature-content h2 {
+            max-width: 500px;
+            margin-bottom: 30px;
+            font-size: clamp(3rem, 6vw, 6rem);
+            line-height: 0.9;
+            letter-spacing: -3px;
+        }
+
+        .domestic-feature-content p {
+            max-width: 500px;
+            margin-bottom: 35px;
+            color: #c0c0c0;
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+        .domestic-feature-btn {
+            display: inline-block;
+            width: fit-content;
+
+            padding: 14px 30px;
+
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            transition: all 0.3s ease;
+        }
+
+        .domestic-feature-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .domestic-cta {
+            background: #fff;
+            color: #111;
+
+            text-align: center;
+
+            padding: 120px 8%;
+        }
+
+        .domestic-cta span {
+            display: block;
+
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            opacity: 0.5;
+            margin-bottom: 20px;
+        }
+
+        .domestic-cta h2 {
+            font-size: clamp(3rem, 6vw, 6rem);
+            font-weight: 700;
+
+            margin-bottom: 35px;
+        }
+
+        .domestic-cta-btn {
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            transition: all 0.3s ease;
+        }
+
+        .domestic-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .domestic-hero {
+                grid-template-columns: 1fr;
+                padding-top: 130px;
+            }
+
+            .domestic-hero-content {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+
+            .domestic-hero-visual {
+                margin-left: 0;
+                height: 450px;
+            }
+
+            .domestic-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .domestic-feature {
+                grid-template-columns: 1fr;
+            }
+
+            .domestic-feature-content {
+                padding: 70px 8%;
+            }
+
+            .domestic-section-heading {
+                display: block;
+            }
+
+            .domestic-section-heading p {
+                margin-top: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .domestic-hero {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .domestic-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .domestic-packages {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .domestic-intro {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .domestic-feature-content {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .domestic-cta {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Origin
+        </div>
+
+        <nav class="nav-links">
+
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="Destination.html" class="nav-link">Destination</a>
+            </div>
+
+            <div class="nav-item has-dropdown">
+                <a href="tours.html" class="nav-link">Tours</a>
+
+                <div class="dropdown">
+                    <a href="Internationaltours.html">International Tours</a>
+                    <a href="Domestictours.html">Domestic Tours</a>
+                </div>
+            </div>
+
+            <div class="nav-item has-dropdown">
+                <a href="Umrah.html" class="nav-link">Umrah</a>
+
+                <div class="dropdown">
+                    <a href="Umrah.html">Economy Umrah</a>
+                    <a href="Umrah.html">VIP Umrah</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="services.html" class="nav-link">Services</a>
+            </div>
+
+            <div class="nav-item has-dropdown">
+                <a href="contact.html" class="nav-link">Contact</a>
+
+                <div class="dropdown">
+                    <a href="contact.html">Contact Page</a>
+                    <a href="mailto:Originsoftware@gmail.com">Email</a>
+                    <a href="https://www.instagram.com/originsoftwares" target="_blank">Instagram</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="about.html" class="nav-link">About Us</a>
+            </div>
+
+        </nav>
+
+        <a href="contact.html" class="hero-btn">Register Now</a>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================= -->
+
+        <section class="domestic-hero">
+
+            <div class="domestic-hero-content">
+
+                <div class="domestic-label">
+                    DOMESTIC TOURS
+                </div>
+
+                <h1>
+                    Discover <span>India.</span>
+                </h1>
+
+                <p>
+                    Explore India's diverse landscapes, vibrant cities,
+                    peaceful escapes and unforgettable experiences through
+                    carefully curated domestic holiday packages.
+                </p>
+
+            </div>
+
+            <div class="domestic-hero-visual">
+
+                <img
+                    src="New folder/domestic-tours-hero.jpg"
+                    alt="Beautiful Indian travel destination"
+                >
+
+                <div class="domestic-image-caption">
+                    01 / EXPLORE INDIA
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INTRO
+        ========================= -->
+
+        <section class="domestic-intro">
+
+            <div class="domestic-intro-label">
+                JOURNEYS WITHIN
+            </div>
+
+            <h2>
+                From the mountains to the coast,
+                India has a journey waiting for you.
+            </h2>
+
+            <p>
+                Whether you're looking for a peaceful getaway,
+                an adventure with friends, a family holiday or a
+                romantic escape, discover destinations across India
+                designed around the way you want to travel.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             PACKAGES
+        ========================= -->
+
+        <section class="domestic-packages">
+
+            <div class="domestic-section-heading">
+
+                <h2>
+                    Popular <em>Destinations.</em>
+                </h2>
+
+                <p>
+                    Explore some of India's most sought-after
+                    destinations and start planning your next journey.
+                </p>
+
+            </div>
+
+
+            <div class="domestic-grid">
+
+                <article class="domestic-card">
+
+                    <div class="domestic-card-image">
+                        <img
+                            src="New folder/Kashmir.jpg"
+                            alt="Kashmir"
+                        >
+                    </div>
+
+                    <div class="domestic-card-content">
+
+                        <div class="domestic-card-number">
+                            01 / NORTH
+                        </div>
+
+                        <h3>Kashmir</h3>
+
+                        <p>
+                            Lakes, mountains, valleys and unforgettable
+                            Himalayan landscapes.
+                        </p>
+
+                        <a href="contact.html" class="domestic-card-link">
+                            Explore Package
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="domestic-card">
+
+                    <div class="domestic-card-image">
+                        <img
+                            src="New folder/Goa.png"
+                            alt="Goa"
+                        >
+                    </div>
+
+                    <div class="domestic-card-content">
+
+                        <div class="domestic-card-number">
+                            02 / WEST
+                        </div>
+
+                        <h3>Goa</h3>
+
+                        <p>
+                            Beaches, laid-back escapes and vibrant
+                            coastal experiences.
+                        </p>
+
+                        <a href="contact.html" class="domestic-card-link">
+                            Explore Package
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="domestic-card">
+
+                    <div class="domestic-card-image">
+                        <img
+                            src="New folder/Kerala.jpg"
+                            alt="Kerala"
+                        >
+                    </div>
+
+                    <div class="domestic-card-content">
+
+                        <div class="domestic-card-number">
+                            03 / SOUTH
+                        </div>
+
+                        <h3>Kerala</h3>
+
+                        <p>
+                            Backwaters, lush landscapes and peaceful
+                            coastal retreats.
+                        </p>
+
+                        <a href="contact.html" class="domestic-card-link">
+                            Explore Package
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="domestic-card">
+
+                    <div class="domestic-card-image">
+                        <img
+                            src="New folder/Rajasthan.jpg"
+                            alt="Rajasthan"
+                        >
+                    </div>
+
+                    <div class="domestic-card-content">
+
+                        <div class="domestic-card-number">
+                            04 / NORTH WEST
+                        </div>
+
+                        <h3>Rajasthan</h3>
+
+                        <p>
+                            Historic forts, royal cities and rich
+                            cultural experiences.
+                        </p>
+
+                        <a href="contact.html" class="domestic-card-link">
+                            Explore Package
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="domestic-card">
+
+                    <div class="domestic-card-image">
+                        <img
+                            src="New folder/Manali.jpg"
+                            alt="Manali"
+                        >
+                    </div>
+
+                    <div class="domestic-card-content">
+
+                        <div class="domestic-card-number">
+                            05 / HIMALAYAS
+                        </div>
+
+                        <h3>Manali</h3>
+
+                        <p>
+                            Mountain scenery, adventure and refreshing
+                            Himalayan escapes.
+                        </p>
+
+                        <a href="contact.html" class="domestic-card-link">
+                            Explore Package
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="domestic-card">
+
+                    <div class="domestic-card-image">
+                        <img
+                            src="New folder/Andaman.jpg"
+                            alt="Andaman Islands"
+                        >
+                    </div>
+
+                    <div class="domestic-card-content">
+
+                        <div class="domestic-card-number">
+                            06 / ISLANDS
+                        </div>
+
+                        <h3>Andaman</h3>
+
+                        <p>
+                            Crystal-clear waters, tropical beaches and
+                            peaceful island escapes.
+                        </p>
+
+                        <a href="contact.html" class="domestic-card-link">
+                            Explore Package
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FEATURE
+        ========================= -->
+
+        <section class="domestic-feature">
+
+            <div class="domestic-feature-image">
+
+                <img
+                    src="New folder/Northernlights.jpg"
+                    alt="Scenic Indian landscape"
+                >
+
+            </div>
+
+            <div class="domestic-feature-content">
+
+                <span>
+                    PLAN YOUR ESCAPE
+                </span>
+
+                <h2>
+                    Your India.
+                    <br>
+                    Your way.
+                </h2>
+
+                <p>
+                    From short weekend breaks to longer holidays,
+                    build a domestic journey around the places,
+                    experiences and pace you prefer.
+                </p>
+
+                <a href="contact.html" class="domestic-feature-btn">
+                    Plan Your Trip
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CTA
+        ========================= -->
+
+        <section class="domestic-cta">
+
+            <span>
+                START EXPLORING
+            </span>
+
+            <h2>
+                India is waiting.
+            </h2>
+
+            <a href="contact.html" class="domestic-cta-btn">
+                Get Started
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="hero-footer">
+
+        <p>
+            &copy; 2026 Origin Tours &amp; Travels
+            &mdash;
+            Explore more, discover more.
+        </p>
+
+    </footer>
+
+</body>
+</html>

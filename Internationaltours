@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Origin — International Tours</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================
+           INTERNATIONAL TOURS HERO
+        ========================= */
+
+        .international-hero {
+            position: relative;
+            min-height: 75vh;
+
+            display: grid;
+            grid-template-columns: 45% 55%;
+            align-items: center;
+
+            padding: 150px 8% 90px;
+
+            background: #070707;
+            color: #fff;
+
+            overflow: hidden;
+        }
+
+        .international-hero-content {
+            max-width: 620px;
+            padding-right: 50px;
+        }
+
+        .international-label {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.6;
+            margin-bottom: 22px;
+        }
+
+        .international-hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(3rem, 5vw, 5.5rem);
+            font-weight: 400;
+            line-height: 0.95;
+            margin-bottom: 28px;
+        }
+
+        .international-hero h1 span {
+            font-style: italic;
+        }
+
+        .international-hero p {
+            max-width: 540px;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        /* HERO IMAGE */
+
+        .international-hero-visual {
+            position: relative;
+            height: 560px;
+            margin-left: 30px;
+            overflow: hidden;
+        }
+
+        .international-hero-visual img {
+            width: 100%;
+            height: 100%;
+            display: block;
+
+            object-fit: cover;
+            object-position: center;
+
+            opacity: 0.9;
+        }
+
+        .international-hero-visual::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to right,
+                    #070707 0%,
+                    rgba(7, 7, 7, 0.65) 12%,
+                    transparent 35%
+                );
+        }
+
+        .international-hero-visual::before {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(7, 7, 7, 0.25),
+                    transparent 20%,
+                    transparent 80%,
+                    rgba(7, 7, 7, 0.45)
+                );
+
+            z-index: 1;
+        }
+
+        .international-image-caption {
+            position: absolute;
+            bottom: 22px;
+            right: 24px;
+
+            z-index: 2;
+
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .international-intro {
+            background: #fff;
+            color: #111;
+
+            padding: 110px 8%;
+            text-align: center;
+        }
+
+        .international-intro-label {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.5;
+            margin-bottom: 18px;
+        }
+
+        .international-intro h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.5rem, 4vw, 4.5rem);
+            font-weight: 400;
+
+            max-width: 850px;
+            margin: 0 auto 25px;
+        }
+
+        .international-intro p {
+            max-width: 700px;
+            margin: 0 auto;
+
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* =========================
+           DESTINATION GRID
+        ========================= */
+
+        .international-packages {
+            background: #ffffff;
+            color: #070707;
+            padding: 110px 8%;
+        }
+
+        .international-section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+
+            margin-bottom: 50px;
+        }
+
+        .international-section-heading h2 {
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-weight: 700;
+        }
+
+        .international-section-heading p {
+            max-width: 350px;
+            color: #666;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .international-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .international-card {
+            background: #070707;
+            color: #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .international-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .international-card-image {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .international-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.5s ease;
+        }
+
+        .international-card:hover .international-card-image img {
+            transform: scale(1.05);
+        }
+
+        .international-card-content {
+            padding: 30px;
+        }
+
+        .international-card-number {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #999999;
+            margin-bottom: 15px;
+        }
+
+        .international-card-content h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .international-card-content p {
+            color: #cfcfcf;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        .international-card-link {
+            color: #ffffff;
+            text-decoration: none;
+
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            border-bottom: 1px solid #ffffff;
+            padding-bottom: 4px;
+        }
+
+        /* =========================
+           FEATURE
+        ========================= */
+
+        .international-feature {
+            display: grid;
+            grid-template-columns: 55% 45%;
+            min-height: 650px;
+
+            background: #070707;
+            color: #fff;
+        }
+
+        .international-feature-image {
+            min-height: 550px;
+        }
+
+        .international-feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .international-feature-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 80px;
+        }
+
+        .international-feature-content span {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            opacity: 0.55;
+            margin-bottom: 20px;
+        }
+
+        .international-feature-content h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.5rem, 4vw, 4.5rem);
+            font-weight: 400;
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+        .international-feature-content p {
+            max-width: 500px;
+
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+        .international-feature-btn {
+            display: inline-block;
+            width: fit-content;
+
+            padding: 14px 25px;
+
+            border: 1px solid #fff;
+            color: #fff;
+
+            text-decoration: none;
+
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            transition: all 0.3s ease;
+        }
+
+        .international-feature-btn:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .international-cta {
+            background: #fff;
+            color: #111;
+
+            text-align: center;
+
+            padding: 120px 8%;
+        }
+
+        .international-cta span {
+            display: block;
+
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            opacity: 0.5;
+            margin-bottom: 20px;
+        }
+
+        .international-cta h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(3rem, 6vw, 6rem);
+            font-weight: 400;
+
+            margin-bottom: 35px;
+        }
+
+        .international-cta-btn {
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            background: #111;
+            color: #fff;
+
+            text-decoration: none;
+
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            transition: all 0.3s ease;
+        }
+
+        .international-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .international-hero {
+                grid-template-columns: 1fr;
+                padding-top: 130px;
+            }
+
+            .international-hero-content {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+
+            .international-hero-visual {
+                margin-left: 0;
+                height: 450px;
+            }
+
+            .international-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .international-feature {
+                grid-template-columns: 1fr;
+            }
+
+            .international-feature-content {
+                padding: 70px 8%;
+            }
+
+            .international-section-heading {
+                display: block;
+            }
+
+            .international-section-heading p {
+                margin-top: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .international-hero {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .international-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .international-packages {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .international-intro {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .international-feature-content {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .international-cta {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html">ORIGIN</a>
+        </div>
+
+        <nav class="nav-links">
+
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="Destination.html" class="nav-link">Destination</a>
+            </div>
+
+            <div class="nav-item has-dropdown">
+                <a href="tours.html" class="nav-link">Tours</a>
+
+                <div class="dropdown">
+                    <a href="Internationaltours.html">International Tours</a>
+                    <a href="Domestictours.html">Domestic Tours</a>
+                </div>
+            </div>
+
+            <div class="nav-item has-dropdown">
+                <a href="Umrah.html" class="nav-link">Umrah</a>
+
+                <div class="dropdown">
+                    <a href="Umrah.html">Economy Umrah</a>
+                    <a href="Umrah.html">VIP Umrah</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="services.html" class="nav-link">Services</a>
+            </div>
+
+            <div class="nav-item has-dropdown">
+                <a href="contact.html" class="nav-link">Contact</a>
+
+                <div class="dropdown">
+                    <a href="contact.html">Contact Page</a>
+                    <a href="mailto:Originsoftware@gmail.com">Email</a>
+                    <a
+                        href="https://www.instagram.com/originsoftwares"
+                        target="_blank"
+                    >
+                        Instagram
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="about.html" class="nav-link">About Us</a>
+            </div>
+
+        </nav>
+
+        <a href="contact.html" class="hero-btn">Register Now</a>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================= -->
+
+        <section class="international-hero">
+
+            <div class="international-hero-content">
+
+                <div class="international-label">
+                    INTERNATIONAL TOURS
+                </div>
+
+                <h1>
+                    See the <span>World.</span>
+                </h1>
+
+                <p>
+                    Discover unforgettable international holidays,
+                    from iconic cities and tropical escapes to
+                    breathtaking landscapes and rich cultural
+                    experiences around the world.
+                </p>
+
+            </div>
+
+            <div class="international-hero-visual">
+
+                <img
+                    src="New folder/international-tours-hero.jpg"
+                    alt="International travel destination"
+                >
+
+                <div class="international-image-caption">
+                    01 / THE WORLD AWAITS
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INTRO
+        ========================= -->
+
+        <section class="international-intro">
+
+            <div class="international-intro-label">
+                BEYOND BORDERS
+            </div>
+
+            <h2>
+                Go further.
+                Experience somewhere new.
+            </h2>
+
+            <p>
+                From short city escapes to unforgettable
+                long-haul holidays, explore destinations selected
+                for different travel styles, seasons and experiences.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             DESTINATIONS
+        ========================= -->
+
+        <section class="international-packages">
+
+            <div class="international-section-heading">
+
+                <h2>
+                    Popular <em>Destinations.</em>
+                </h2>
+
+                <p>
+                    Explore some of the world's most sought-after
+                    destinations and begin planning your next journey.
+                </p>
+
+            </div>
+
+
+            <div class="international-grid">
+
+                <article class="international-card">
+
+                    <div class="international-card-image">
+                        <img
+                            src="New folder/Dubai.jpg"
+                            alt="Dubai"
+                        >
+                    </div>
+
+                    <div class="international-card-content">
+
+                        <div class="international-card-number">
+                            01 / UAE
+                        </div>
+
+                        <h3>Dubai</h3>
+
+                        <p>
+                            Modern architecture, luxury experiences,
+                            desert adventures and vibrant city life.
+                        </p>
+
+                        <a
+                            href="contact.html"
+                            class="international-card-link"
+                        >
+                            Explore Package
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="international-card">
+
+                    <div class="international-card-image">
+                        <img
+                            src="New folder/attractions-in-istanbul.png"
+                            alt="Istanbul"
+                        >
+                    </div>
+
+                    <div class="international-card-content">
+
+                        <div class="international-card-number">
+                            02 / TURKEY
+                        </div>
+
+                        <h3>Istanbul</h3>
+
+                        <p>
+                            Historic landmarks, vibrant markets and
+                            unforgettable experiences across two continents.
+                        </p>
+
+                        <a
+                            href="contact.html"
+                            class="international-card-link"
+                        >
+                            Explore Package
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="international-card">
+
+                    <div class="international-card-image">
+                        <img
+                            src="New folder/banner_themaldives_01.jpg"
+                            alt="Maldives"
+                        >
+                    </div>
+
+                    <div class="international-card-content">
+
+                        <div class="international-card-number">
+                            03 / MALDIVES
+                        </div>
+
+                        <h3>Maldives</h3>
+
+                        <p>
+                            Clear waters, tropical islands and relaxing
+                            luxury escapes surrounded by the Indian Ocean.
+                        </p>
+
+                        <a
+                            href="contact.html"
+                            class="international-card-link"
+                        >
+                            Explore Package
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="international-card">
+
+                    <div class="international-card-image">
+                        <img
+                            src="New folder/shutterstock2227020365.png"
+                            alt="Switzerland"
+                        >
+                    </div>
+
+                    <div class="international-card-content">
+
+                        <div class="international-card-number">
+                            04 / EUROPE
+                        </div>
+
+                        <h3>Switzerland</h3>
+
+                        <p>
+                            Alpine landscapes, charming towns and
+                            unforgettable European scenery.
+                        </p>
+
+                        <a
+                            href="contact.html"
+                            class="international-card-link"
+                        >
+                            Explore Package
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="international-card">
+
+                    <div class="international-card-image">
+                        <img
+                            src="New folder/Paris.jpg"
+                            alt="Paris"
+                        >
+                    </div>
+
+                    <div class="international-card-content">
+
+                        <div class="international-card-number">
+                            05 / FRANCE
+                        </div>
+
+                        <h3>Paris</h3>
+
+                        <p>
+                            Iconic architecture, art, food and timeless
+                            European city experiences.
+                        </p>
+
+                        <a
+                            href="contact.html"
+                            class="international-card-link"
+                        >
+                            Explore Package
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="international-card">
+
+                    <div class="international-card-image">
+                        <img
+                            src="New folder/Bali.jpg"
+                            alt="Bali"
+                        >
+                    </div>
+
+                    <div class="international-card-content">
+
+                        <div class="international-card-number">
+                            06 / INDONESIA
+                        </div>
+
+                        <h3>Bali</h3>
+
+                        <p>
+                            Tropical scenery, cultural experiences and
+                            peaceful island escapes.
+                        </p>
+
+                        <a
+                            href="contact.html"
+                            class="international-card-link"
+                        >
+                            Explore Package
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FEATURE
+        ========================= -->
+
+        <section class="international-feature">
+
+            <div class="international-feature-image">
+
+                <img
+                    src="New folder/Northernlights.jpg"
+                    alt="International scenic destination"
+                >
+
+            </div>
+
+            <div class="international-feature-content">
+
+                <span>
+                    YOUR NEXT ADVENTURE
+                </span>
+
+                <h2>
+                    The world.
+                    <br>
+                    Your way.
+                </h2>
+
+                <p>
+                    Whether you're looking for a relaxing escape,
+                    a cultural adventure, a family holiday or a
+                    romantic getaway, create an international journey
+                    around the way you want to travel.
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="international-feature-btn"
+                >
+                    Plan Your Trip
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CTA
+        ========================= -->
+
+        <section class="international-cta">
+
+            <span>
+                START EXPLORING
+            </span>
+
+            <h2>
+                The world is waiting.
+            </h2>
+
+            <a
+                href="contact.html"
+                class="international-cta-btn"
+            >
+                Get Started
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+        <p>© 2026 Origin Tours & Travels. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

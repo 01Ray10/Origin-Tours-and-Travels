@@ -1026,6 +1026,16 @@ body {
     margin: 0 18px;
 }
 
+.has-dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 16px;
+  z-index: 999;
+}
+
 .nav-link {
   color: #ffffff;
   text-decoration: none;
@@ -1088,6 +1098,10 @@ body {
 }
 
 .nav-item:hover .dropdown {
+  display: flex;
+}
+
+.nav-item:focus-within .dropdown {
   display: flex;
 }
 

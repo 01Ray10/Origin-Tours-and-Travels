@@ -130,12 +130,22 @@ destinations = [
     },
     {
         "name": "Maldives",
-        "country": "Maldives",
+        "country": "India",
         "duration": "5 Days",
         "price": 65000,
         "image": "New folder/banner_themaldives_01.jpg",
         "description": "Relax among turquoise waters, beaches, and island resorts.",
         "link": "Internationaltours.html",
+
+    },
+    {
+        "name": "Hyderabad",
+        "country": "India",
+        "duration": "11 Days",
+        "price" : 55000,
+        "image" : "New folder\Hyd.jpg",
+        "description": "Enjoy Hyderabad's culture and its culinary",
+        "link": "Domestictours.html",
     },
 ]
 
