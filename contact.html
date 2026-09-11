@@ -9,14 +9,21 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
 
         .contact-hero {
-            min-height: 62vh;
+            position: relative;
+            min-height: 75vh;
             padding: 150px 8% 90px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: end;
-            gap: 60px;
+            grid-template-columns: 45% 55%;
+            align-items: center;
             background: #070707;
             color: #fff;
+            overflow: hidden;
+        }
+
+        .contact-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
         }
 
         .contact-label,
@@ -42,27 +49,124 @@
         }
 
         .contact-hero-copy {
-            max-width: 500px;
-            padding-bottom: 8px;
+            max-width: 620px;
+            margin-top: 35px;
             color: #cfcfcf;
+            font-size: 1.05rem;
             line-height: 1.8;
         }
 
+        .contact-hero-visual {
+            position: relative;
+            height: 560px;
+            margin-left: 30px;
+            overflow: hidden;
+            align-self: center;
+        }
+
+        .contact-hero-visual img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0.9;
+        }
+
+        .contact-hero-visual::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to right,
+                #070707 0%,
+                rgba(7, 7, 7, 0.75) 12%,
+                rgba(7, 7, 7, 0.15) 38%,
+                transparent 60%
+            );
+        }
+
+        .contact-hero-visual::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(
+                to bottom,
+                rgba(7, 7, 7, 0.35),
+                transparent 20%,
+                transparent 80%,
+                rgba(7, 7, 7, 0.7)
+            );
+        }
+
+        .contact-image-caption {
+            position: absolute;
+            z-index: 2;
+            right: 25px;
+            bottom: 25px;
+            left: 25px;
+            color: #ffffff;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
         .contact-benefits {
+            position: relative;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             background: #fff;
             color: #070707;
-            border-bottom: 1px solid #eee;
+        }
+
+        .contact-benefits::before,
+        .contact-benefits::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .contact-benefits::before {
+            top: 12%;
+            bottom: 12%;
+            left: 50%;
+            width: 1px;
+            background: linear-gradient(
+                to bottom,
+                transparent,
+                rgba(7, 7, 7, 0.25) 20%,
+                #070707 48%,
+                #070707 52%,
+                rgba(7, 7, 7, 0.25) 80%,
+                transparent
+            );
+        }
+
+        .contact-benefits::after {
+            top: 50%;
+            right: 6%;
+            left: 6%;
+            height: 1px;
+            background: linear-gradient(
+                to right,
+                transparent,
+                rgba(7, 7, 7, 0.25) 20%,
+                #070707 48%,
+                #070707 52%,
+                rgba(7, 7, 7, 0.25) 80%,
+                transparent
+            );
         }
 
         .contact-benefit {
+            position: relative;
+            min-height: 160px;
             padding: 28px 8%;
-            border-right: 1px solid #eee;
-        }
-
-        .contact-benefit:last-child {
-            border-right: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .contact-benefit strong {
@@ -79,16 +183,22 @@
         }
 
         .contact-methods {
-            padding: 90px 8% 55px;
-            background: #fff;
+            padding: 110px 8%;
+            background: #070707;
+            color: #ffffff;
         }
 
         .contact-methods-heading {
-            max-width: 650px;
-            margin-bottom: 38px;
+            max-width: 700px;
+            margin-bottom: 70px;
         }
 
-        .contact-methods-heading h2,
+        .contact-methods-heading h2 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
         .contact-office h2 {
             font-size: clamp(2.4rem, 5vw, 4.5rem);
             line-height: 1;
@@ -98,29 +208,52 @@
         .contact-methods-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
+            gap: 20px;
         }
 
         .contact-method {
-            min-height: 175px;
-            padding: 26px;
-            background: #070707;
-            color: #fff;
-            border-radius: 4px;
+            min-height: 340px;
+            padding: 30px;
+            background-color: #111111;
+            border: 1px solid #242424;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition:
+                transform 0.3s ease,
+                background-color 0.3s ease,
+                border-color 0.3s ease;
         }
 
-        .contact-method small {
-            display: block;
-            margin-bottom: 22px;
-            color: #999;
-            font-size: .7rem;
+        .contact-method-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-method-number,
+        .contact-method-type {
+            font-size: 0.7rem;
             letter-spacing: 2px;
-            text-transform: uppercase;
+            color: #888888;
+        }
+
+        .contact-method-content {
+            flex: 1;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-8px);
+            background-color: #181818;
+            border-color: #444444;
         }
 
         .contact-method h3 {
-            margin-bottom: 10px;
-            font-size: 1.15rem;
+            margin-bottom: 18px;
+            font-size: 2.2rem;
+            line-height: 1;
+            letter-spacing: -1px;
         }
 
         .contact-method a,
@@ -129,6 +262,20 @@
             font-size: .88rem;
             line-height: 1.6;
             text-decoration: none;
+        }
+
+        .contact-method a {
+            display: inline-block;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .contact-method a:hover {
+            text-decoration: underline;
         }
 
         .contact-workspace {
@@ -218,7 +365,6 @@
             height: 100%;
             min-height: 235px;
             border: 0;
-            filter: grayscale(1);
         }
 
         .contact-hours {
@@ -315,7 +461,16 @@
             }
 
             .contact-hero-copy {
-                padding-bottom: 0;
+                margin-top: 35px;
+            }
+
+            .contact-hero-content {
+                margin-bottom: 50px;
+            }
+
+            .contact-hero-visual {
+                height: 450px;
+                margin-left: 0;
             }
 
             .contact-methods-grid,
@@ -349,12 +504,35 @@
 
             .contact-benefit,
             .contact-benefit:nth-child(2) {
-                border-right: 0;
-                border-bottom: 1px solid #eee;
+                border: 0;
             }
 
-            .contact-benefit:last-child {
-                border-bottom: 0;
+            .contact-benefits::before,
+            .contact-benefits::after {
+                display: none;
+            }
+
+            .contact-benefit::after {
+                content: "";
+                position: absolute;
+                right: 8%;
+                left: 8%;
+                bottom: 0;
+                display: block;
+                height: 1px;
+                background: linear-gradient(
+                    to right,
+                    transparent,
+                    rgba(7, 7, 7, 0.2) 20%,
+                    #070707 48%,
+                    #070707 52%,
+                    rgba(7, 7, 7, 0.2) 80%,
+                    transparent
+                );
+            }
+
+            .contact-benefit:last-child::after {
+                display: none;
             }
 
             .contact-form-panel {
@@ -417,19 +595,29 @@
 
     <main>
         <section class="contact-hero">
-            <div>
+            <div class="contact-hero-content">
                 <p class="contact-label">Reach Out</p>
                 <h1>
                     Let's plan your
                     <span>next journey.</span>
                 </h1>
+                <p class="contact-hero-copy">
+                    Tell us where you want to go, what you want to experience,
+                    and when you want to travel. Our team will help shape the
+                    details into a trip that feels like yours.
+                </p>
             </div>
 
-            <p class="contact-hero-copy">
-                Tell us where you want to go, what you want to experience,
-                and when you want to travel. Our team will help shape the
-                details into a trip that feels like yours.
-            </p>
+            <div class="contact-hero-visual">
+                <img
+                    src="New folder/Desert2.avif"
+                    alt="Desert travel landscape"
+                >
+
+                <div class="contact-image-caption">
+                    01 / START YOUR JOURNEY
+                </div>
+            </div>
         </section>
         <section class="contact-benefits" aria-label="Contact benefits">
             <div class="contact-benefit">
@@ -460,27 +648,47 @@
 
             <div class="contact-methods-grid">
                 <article class="contact-method">
-                    <small>Call</small>
-                    <h3>Speak with us</h3>
-                    <a href="tel:+919876543210">+91 98765 43210</a>
+                    <div class="contact-method-top">
+                        <span class="contact-method-number">01</span>
+                        <span class="contact-method-type">CALL</span>
+                    </div>
+                    <div class="contact-method-content">
+                        <h3>Speak with us</h3>
+                        <a href="tel:+919876543210">+91 98765 43210</a>
+                    </div>
                 </article>
 
                 <article class="contact-method">
-                    <small>WhatsApp</small>
-                    <h3>Message the team</h3>
-                    <a href="https://wa.me/919876543210">Start a chat</a>
+                    <div class="contact-method-top">
+                        <span class="contact-method-number">02</span>
+                        <span class="contact-method-type">WHATSAPP</span>
+                    </div>
+                    <div class="contact-method-content">
+                        <h3>Message the team</h3>
+                        <a href="https://wa.me/919876543210">Start a chat</a>
+                    </div>
                 </article>
 
                 <article class="contact-method">
-                    <small>Email</small>
-                    <h3>Send an enquiry</h3>
-                    <a href="mailto:Originsoftware@gmail.com">Originsoftware@gmail.com</a>
+                    <div class="contact-method-top">
+                        <span class="contact-method-number">03</span>
+                        <span class="contact-method-type">EMAIL</span>
+                    </div>
+                    <div class="contact-method-content">
+                        <h3>Send an enquiry</h3>
+                        <a href="mailto:Originsoftware@gmail.com">Originsoftware@gmail.com</a>
+                    </div>
                 </article>
 
                 <article class="contact-method">
-                    <small>Visit</small>
-                    <h3>Meet at our office</h3>
-                    <p>New Delhi, India</p>
+                    <div class="contact-method-top">
+                        <span class="contact-method-number">04</span>
+                        <span class="contact-method-type">VISIT</span>
+                    </div>
+                    <div class="contact-method-content">
+                        <h3>Meet at our office</h3>
+                        <p>New Delhi, India</p>
+                    </div>
                 </article>
             </div>
         </section>
@@ -503,7 +711,13 @@
             <div class="contact-side">
                 <div class="contact-map">
                     <iframe
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=77.17%2C28.59%2C77.25%2C28.66&amp;layer=mapnik&amp;marker=28.6139%2C77.2090"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d951.8175685762417!2d78.4466372!3d17.3988124!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb977d15dafc6b%3A0x94ba7b774d9ffdb9!2sOrigin%20Tours%20and%20Travels%20-%20Umrah%20Packages!5e0!3m2!1sen!2sin!4v1789130022790!5m2!1sen!2sin&amp;maptype=satellite"
+                        width="600"
+                        height="450"
+                        style="border: 0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
                         title="Map showing Origin office area"
                     ></iframe>
                 </div>
