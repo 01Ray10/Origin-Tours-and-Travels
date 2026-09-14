@@ -172,6 +172,22 @@
       <div style="font-size:22px;font-weight:600;color:#f0f0f0;">500+</div>
       <div style="font-size:11px;letter-spacing:.12em;color:#8c8c8c;font-weight:500;margin-top:4px;">TRIPS BOOKED</div>
     </aside>
+    <div class="hero-div"></div>
+    <style>
+      .hero-div{
+        position: relative;
+      }
+       .hero-div::after {
+            content: "";
+            position: absolute;
+            right: 8%;
+            bottom: 34px;
+            width: 110px;
+            height: 1px;
+            background: var(--contact-sand);
+            opacity: .8;
+        }
+    </style>
 
     <!-- Animated Scroll Down Line -->
     <div class="scroll-indicator">
