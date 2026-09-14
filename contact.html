@@ -8,6 +8,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
 
+        :root {
+            --contact-sand: #c5a47e;
+            --contact-line: rgba(7, 7, 7, 0.12);
+        }
+
         .contact-hero {
             position: relative;
             min-height: 75vh;
@@ -18,6 +23,17 @@
             background: #070707;
             color: #fff;
             overflow: hidden;
+        }
+
+        .contact-hero::after {
+            content: "";
+            position: absolute;
+            right: 8%;
+            bottom: 34px;
+            width: 110px;
+            height: 1px;
+            background: var(--contact-sand);
+            opacity: .8;
         }
 
         .contact-hero-content {
@@ -45,7 +61,7 @@
 
         .contact-hero h1 span {
             display: block;
-            color: #8f8f8f;
+            color: var(--contact-sand);
         }
 
         .contact-hero-copy {
@@ -62,6 +78,8 @@
             margin-left: 30px;
             overflow: hidden;
             align-self: center;
+            border: 1px solid rgba(255, 255, 255, .2);
+            box-shadow: 18px 18px 0 rgba(197, 164, 126, .18);
         }
 
         .contact-hero-visual img {
@@ -106,7 +124,7 @@
             right: 25px;
             bottom: 25px;
             left: 25px;
-            color: #ffffff;
+            color: var(--contact-sand);
             font-size: 0.7rem;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -115,77 +133,73 @@
         .contact-benefits {
             position: relative;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            background: #fff;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            background: #f5f5f3;
             color: #070707;
-        }
-
-        .contact-benefits::before,
-        .contact-benefits::after {
-            content: "";
-            position: absolute;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .contact-benefits::before {
-            top: 12%;
-            bottom: 12%;
-            left: 50%;
-            width: 1px;
-            background: linear-gradient(
-                to bottom,
-                transparent,
-                rgba(7, 7, 7, 0.25) 20%,
-                #070707 48%,
-                #070707 52%,
-                rgba(7, 7, 7, 0.25) 80%,
-                transparent
-            );
-        }
-
-        .contact-benefits::after {
-            top: 50%;
-            right: 6%;
-            left: 6%;
-            height: 1px;
-            background: linear-gradient(
-                to right,
-                transparent,
-                rgba(7, 7, 7, 0.25) 20%,
-                #070707 48%,
-                #070707 52%,
-                rgba(7, 7, 7, 0.25) 80%,
-                transparent
-            );
+            border-top: 1px solid var(--contact-line);
+            border-bottom: 1px solid var(--contact-line);
         }
 
         .contact-benefit {
             position: relative;
-            min-height: 160px;
-            padding: 28px 8%;
+            min-height: 150px;
+            padding: 30px 7% 26px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            background: #ffffff;
+            border-right: 1px solid var(--contact-line);
+            transition: background-color .25s ease, transform .25s ease;
+        }
+
+        .contact-benefit:hover {
+            background: #faf8f4;
+            transform: translateY(-4px);
+        }
+
+        .contact-benefit:last-child {
+            border-right: none;
         }
 
         .contact-benefit strong {
             display: block;
-            margin-bottom: 7px;
-            font-size: .85rem;
+            margin-bottom: 8px;
+            font-size: .72rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            color: #070707;
+        }
+
+        .contact-benefit strong::before {
+            content: "//";
+            margin-right: 8px;
+            color: var(--contact-sand);
+            font-weight: 400;
         }
 
         .contact-benefit span {
             color: #666;
-            font-size: .78rem;
+            font-size: .8rem;
+            line-height: 1.6;
         }
 
         .contact-methods {
             padding: 110px 8%;
             background: #070707;
             color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-methods::before {
+            content: "CONTACT / ORIGIN";
+            position: absolute;
+            top: 46px;
+            right: 8%;
+            color: #555;
+            font-size: .65rem;
+            letter-spacing: 2px;
         }
 
         .contact-methods-heading {
@@ -223,6 +237,7 @@
                 transform 0.3s ease,
                 background-color 0.3s ease,
                 border-color 0.3s ease;
+            box-shadow: inset 0 3px 0 transparent;
         }
 
         .contact-method-top {
@@ -239,6 +254,10 @@
             color: #888888;
         }
 
+        .contact-method-number {
+            color: var(--contact-sand);
+        }
+
         .contact-method-content {
             flex: 1;
         }
@@ -247,6 +266,7 @@
             transform: translateY(-8px);
             background-color: #181818;
             border-color: #444444;
+            box-shadow: inset 0 3px 0 var(--contact-sand);
         }
 
         .contact-method h3 {
@@ -290,6 +310,8 @@
             padding: 38px;
             background: #f5f5f3;
             border-radius: 4px;
+            border: 1px solid var(--contact-line);
+            box-shadow: 12px 12px 0 #ebe8e1;
         }
 
         .contact-form-panel h2 {
@@ -318,6 +340,14 @@
             background: #fff;
             color: #111;
             font: inherit;
+            transition: border-color .2s ease, box-shadow .2s ease;
+        }
+
+        .contact-form textarea:focus,
+        .contact-form input:focus {
+            outline: none;
+            border-color: var(--contact-sand);
+            box-shadow: 0 0 0 3px rgba(197, 164, 126, .18);
         }
 
         .contact-form textarea {
@@ -341,11 +371,14 @@
             text-transform: uppercase;
             cursor: pointer;
             text-decoration: none;
+            transition: background-color .2s ease, color .2s ease, transform .2s ease;
         }
 
         .contact-form button:hover,
         .contact-help a:hover {
             transform: translateY(-2px);
+            background: var(--contact-sand);
+            color: #070707;
         }
 
         .contact-side {
@@ -372,6 +405,7 @@
             background: #070707;
             color: #fff;
             border-radius: 4px;
+            border-left: 4px solid var(--contact-sand);
         }
 
         .contact-hours h3 {
@@ -399,6 +433,7 @@
             color: #070707;
             border: 1px solid #ddd;
             border-radius: 4px;
+            box-shadow: 0 8px 24px rgba(7, 7, 7, .05);
         }
 
         .contact-help h3 {
@@ -473,13 +508,16 @@
                 margin-left: 0;
             }
 
-            .contact-methods-grid,
-            .contact-benefits {
+            .contact-methods-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .contact-benefit:nth-child(2) {
-                border-right: 0;
+            .contact-benefits {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .contact-benefit:nth-child(2n) {
+                border-right: none;
             }
         }
 
@@ -503,36 +541,13 @@
             }
 
             .contact-benefit,
-            .contact-benefit:nth-child(2) {
-                border: 0;
+            .contact-benefit:nth-child(2n) {
+                border-right: none;
+                border-bottom: 1px solid rgba(7, 7, 7, 0.08);
             }
 
-            .contact-benefits::before,
-            .contact-benefits::after {
-                display: none;
-            }
-
-            .contact-benefit::after {
-                content: "";
-                position: absolute;
-                right: 8%;
-                left: 8%;
-                bottom: 0;
-                display: block;
-                height: 1px;
-                background: linear-gradient(
-                    to right,
-                    transparent,
-                    rgba(7, 7, 7, 0.2) 20%,
-                    #070707 48%,
-                    #070707 52%,
-                    rgba(7, 7, 7, 0.2) 80%,
-                    transparent
-                );
-            }
-
-            .contact-benefit:last-child::after {
-                display: none;
+            .contact-benefit:last-child {
+                border-bottom: none;
             }
 
             .contact-form-panel {

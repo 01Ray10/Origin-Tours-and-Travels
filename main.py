@@ -219,17 +219,17 @@ def get_services():
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MY Testing ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-User = ["Dave", "John", "Doe"]
+# User = ["Dave", "John", "Doe"]
 
-print("Joe" in User)
-print(User[1], User[-2])
-print(User[0:])
+# print("Joe" in User)
+# print(User[1], User[-2])
+# print(User[0:])
 
-print(len(User))
+# print(len(User))
 
-User.append("Ray")
-print(User)
+# User.append("Ray")
+# print(User)
 
-User += ["Jason"]  # to add merge multiple lists into one
-User.extend(["Robert", "Jimmy"])  # same as above
-print(User)
+# User += ["Jason"]  # to add merge multiple lists into one
+# User.extend(["Robert", "Jimmy"])  # same as above
+# print(User)
