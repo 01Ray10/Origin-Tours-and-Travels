@@ -11,6 +11,486 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+
+        /* ========================================================
+           HOMEPAGE — HERO
+        ======================================================== */
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 8%;
+        }
+
+        .bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            color: #ffffff;
+            text-align: left;
+            max-width: 550px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+            user-select: none;
+        }
+
+        .home-label {
+            margin-bottom: 5px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #dddddd;
+        }
+
+        .hero-content h1 span {
+            display: block;
+            color: #cfcfcf;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #060606d6;
+            border: 1px solid #ffffff;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            user-select: none;
+            transition:
+                background-color 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .hero-btn:hover {
+            background-color: transparent;
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-secondary-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 30px;
+            background-color: transparent;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition:
+                background-color 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .hero-secondary-btn:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        #Getstarted {
+            margin-top: 0.8px;
+        }
+
+
+        /* ========================================================
+           HOMEPAGE — INTRO
+        ======================================================== */
+
+        .home-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            padding: 110px 8%;
+            background-color: #ffffff;
+            color: #070707;
+            align-items: center;
+        }
+
+        .home-intro-heading {
+            max-width: 650px;
+        }
+
+        .home-intro-heading h2 {
+            font-size: clamp(2.8rem, 5vw, 5rem);
+            line-height: 0.95;
+            letter-spacing: -3px;
+        }
+
+        .home-intro-content {
+            max-width: 550px;
+        }
+
+        .home-intro-content p {
+            margin-bottom: 30px;
+            color: #555555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .home-text-link {
+            display: inline-block;
+            color: inherit;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .home-text-link:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ========================================================
+           HOMEPAGE — DESTINATIONS
+        ======================================================== */
+
+        .home-destinations {
+            padding: 110px 8%;
+            background-color: #070707;
+            color: #ffffff;
+        }
+
+        .home-section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .home-section-heading h2 {
+            max-width: 700px;
+            font-size: clamp(2.8rem, 5vw, 5rem);
+            line-height: 0.95;
+            letter-spacing: -3px;
+        }
+
+        .home-section-heading .home-text-link {
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        .home-destination-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .home-destination-card {
+            background-color: #111111;
+            overflow: hidden;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .home-destination-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .home-destination-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .home-destination-image img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .home-destination-card:hover .home-destination-image img {
+            transform: scale(1.06);
+        }
+
+        .home-destination-content {
+            padding: 22px;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .home-destination-content span {
+            color: #777777;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+        }
+
+        .home-destination-content h3 {
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+
+        .home-destination-content a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .home-destination-content a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ========================================================
+           HOMEPAGE — SERVICES
+        ======================================================== */
+
+        .home-services {
+            padding: 110px 8%;
+            background-color: #ffffff;
+            color: #070707;
+        }
+
+        .home-services-heading {
+            max-width: 750px;
+            margin-bottom: 60px;
+        }
+
+        .home-services-heading h2 {
+            font-size: clamp(2.8rem, 5vw, 5rem);
+            line-height: 0.95;
+            letter-spacing: -3px;
+        }
+
+        .home-services-list {
+            border-top: 1px solid #cccccc;
+        }
+
+        .home-service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 27px 0;
+            border-bottom: 1px solid #cccccc;
+            color: #070707;
+            text-decoration: none;
+            font-size: 1.4rem;
+            transition: padding-left 0.2s ease;
+        }
+
+        .home-service-item:hover {
+            padding-left: 10px;
+        }
+
+
+        /* ========================================================
+           HOMEPAGE — UMRAH
+        ======================================================== */
+
+        .home-umrah {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 620px;
+            background-color: #070707;
+            color: #ffffff;
+        }
+
+        .home-umrah-image {
+            min-height: 620px;
+        }
+
+        .home-umrah-image img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .home-umrah-content {
+            padding: 90px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .home-umrah-content h2 {
+            max-width: 600px;
+            margin-bottom: 30px;
+            font-size: clamp(3rem, 6vw, 6rem);
+            line-height: 0.9;
+            letter-spacing: -3px;
+        }
+
+        .home-umrah-content p:not(.section-label) {
+            max-width: 500px;
+            margin-bottom: 35px;
+            color: #c0c0c0;
+            line-height: 1.8;
+        }
+
+
+        /* ========================================================
+           HOMEPAGE — CTA
+        ======================================================== */
+
+        .home-cta {
+            min-height: 550px;
+            padding: 100px 8%;
+            background-color: #ffffff;
+            color: #070707;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .home-cta h2 {
+            max-width: 900px;
+            margin-bottom: 35px;
+            font-size: clamp(4rem, 8vw, 8rem);
+            line-height: 0.85;
+            letter-spacing: -4px;
+        }
+
+
+        /* ========================================================
+           HOMEPAGE — RESPONSIVE
+        ======================================================== */
+
+        @media (max-width: 1100px) {
+
+            .home-destination-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 900px) {
+
+            .home-intro {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .home-umrah {
+                grid-template-columns: 1fr;
+            }
+
+            .home-umrah-image {
+                min-height: 450px;
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .hero-actions {
+                flex-wrap: wrap;
+            }
+
+            .video-container {
+                padding-left: 6%;
+            }
+
+            .hero-content {
+                max-width: 90%;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .home-intro {
+                padding: 80px 6%;
+            }
+
+            .home-destinations {
+                padding: 80px 6%;
+            }
+
+            .home-section-heading {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 45px;
+            }
+
+            .home-destination-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .home-destination-image {
+                height: 260px;
+            }
+
+            .home-services {
+                padding: 80px 6%;
+            }
+
+            .home-service-item {
+                font-size: 1.1rem;
+            }
+
+            .home-umrah-image {
+                min-height: 350px;
+            }
+
+            .home-umrah-content {
+                padding: 70px 6%;
+            }
+
+            .home-cta {
+                min-height: 400px;
+                padding: 80px 6%;
+            }
+
+        }
     </style>
 </head>
 
@@ -30,7 +510,6 @@
                 Origin
             </div>
 
-
             <nav class="nav-links">
 
                 <!-- HOME -->
@@ -41,7 +520,6 @@
                     </a>
                 </div>
 
-
                 <!-- DESTINATION -->
 
                 <div class="nav-item">
@@ -49,7 +527,6 @@
                         Destination
                     </a>
                 </div>
-
 
                 <!-- TOURS -->
 
@@ -73,7 +550,6 @@
 
                 </div>
 
-
                 <!-- UMRAH -->
 
                 <div class="nav-item has-dropdown">
@@ -96,7 +572,6 @@
 
                 </div>
 
-
                 <!-- SERVICES -->
 
                 <div class="nav-item">
@@ -106,7 +581,6 @@
                     </a>
 
                 </div>
-
 
                 <!-- CONTACT -->
 
@@ -137,7 +611,6 @@
 
                 </div>
 
-
                 <!-- ABOUT -->
 
                 <div class="nav-item">
@@ -149,7 +622,6 @@
                 </div>
 
             </nav>
-
 
             <!-- REGISTER -->
 
@@ -241,7 +713,6 @@
 
         </div>
 
-
         <div class="home-intro-content">
 
             <p>
@@ -294,7 +765,6 @@
 
 
         <div class="home-destination-grid">
-
 
             <!-- DUBAI -->
 
@@ -447,14 +917,12 @@
 
         </div>
 
-
         <div class="home-services-list">
 
             <a
                 href="Internationaltours.html"
                 class="home-service-item"
             >
-
                 <span>
                     International Tours
                 </span>
@@ -462,15 +930,12 @@
                 <span>
                     &rarr;
                 </span>
-
             </a>
-
 
             <a
                 href="Domestictours.html"
                 class="home-service-item"
             >
-
                 <span>
                     Domestic Tours
                 </span>
@@ -478,15 +943,12 @@
                 <span>
                     &rarr;
                 </span>
-
             </a>
-
 
             <a
                 href="Umrah.html"
                 class="home-service-item"
             >
-
                 <span>
                     Umrah Packages
                 </span>
@@ -494,15 +956,12 @@
                 <span>
                     &rarr;
                 </span>
-
             </a>
-
 
             <a
                 href="services.html"
                 class="home-service-item"
             >
-
                 <span>
                     Travel Services
                 </span>
@@ -510,7 +969,6 @@
                 <span>
                     &rarr;
                 </span>
-
             </a>
 
         </div>
@@ -532,7 +990,6 @@
             >
 
         </div>
-
 
         <div class="home-umrah-content">
 
