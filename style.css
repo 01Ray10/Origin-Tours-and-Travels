@@ -362,7 +362,10 @@ body {
     background: #ffffff;
     color: #070707;
 }
-
+a {
+    -webkit-user-drag: none;
+    /* user-drag: none; */
+}
 
 /* ========================================================
    2. SHARED VARIABLES
@@ -469,6 +472,7 @@ body {
 ======================================================== */
 
 .hero-btn {
+    -webkit-user-drag: none;
     display: inline-block;
 
     background-color: #ffffff;
@@ -688,8 +692,8 @@ body {
     z-index: 1000;
 }
 
-.nav-item:hover .dropdown,
-.nav-item:focus-within .dropdown {
+.nav-item:hover .dropdown {
+/* .nav-item:focus-within .dropdown { */
     display: flex;
 }
 

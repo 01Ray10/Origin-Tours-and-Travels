@@ -1,3 +1,5 @@
+// ~~~~~~~~~~~~~~   CARDS DISPLAY   ~~~~~~~~~~~~~~~~~~
+
 console.log("JavaScript is running");
 
 async function loadTours() {

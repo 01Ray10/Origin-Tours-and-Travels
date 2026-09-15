@@ -1,10 +1,22 @@
 import fastapi 
 import uuid
+import sqlite3
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 
+connection = sqlite3.connect("origin.db",  check_same_thread=False)
+cursor = connection.cursor()
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS contacts (
+        id TEXT PRIMARY KEY,
+        name TEXT,
+        email TEXT,
+        message TEXT
+    )
+""")
 
+connection.commit()
 app = fastapi.FastAPI()
 
 app.add_middleware(
@@ -29,47 +41,90 @@ class ContactForm(BaseModel):
 contacts = []
 
 
+# @app.post("/api/contact")
+# def submit_contact_message(data: ContactForm):
+
+#     contact = {
+#         "id": str(uuid.uuid4()),
+#         "name": data.name,
+#         "email": data.email,
+#         "message": data.message
+#     }
+
+#     print("=== NEW FORM SUBMISSION ===")
+#     print("ID:", contact["id"])
+#     print("Name:", contact["name"])
+#     print("Email:", contact["email"])
+#     print("Message:", contact["message"])
+#     print("===========================")
+
+#     cursor.execute(
+#     "INSERT INTO contacts (id, name, email, message) VALUES (?, ?, ?, ?)",
+#     (contact["id"], contact["name"], contact["email"], contact["message"])
+#     )
+
+#     connection.commit()
+
+#     return {
+#         "message": "Your message has been received",
+#         "contact": contact,
+#     }
+
 @app.post("/api/contact")
 def submit_contact_message(data: ContactForm):
 
-    contact = {
-        "id": str(uuid.uuid4()),
-        "name": data.name,
-        "email": data.email,
-        "message": data.message
-    }
+    cursor.execute(
+        "INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)",
+        (data.name, data.email, data.message)
+    )
 
-    print("=== NEW FORM SUBMISSION ===")
-    print("ID:", contact["id"])
-    print("Name:", contact["name"])
-    print("Email:", contact["email"])
-    print("Message:", contact["message"])
-    print("===========================")
+    connection.commit()
 
-    contacts.append(contact)
+    contact_id = cursor.lastrowid
 
     return {
         "message": "Your message has been received",
-        "contact": contact,
+        "contact": {
+            "id": contact_id,
+            "name": data.name,
+            "email": data.email,
+            "message": data.message
+        }
     }
 @app.get("/api/contact")
 def get_contact_messages():
+    cursor.execute("SELECT * FROM contacts")
+    contacts = cursor.fetchall()
     return {"contacts": contacts}
 
-@app.delete("/api/contact/{contact_id}")
-def delete_contact_messages(contact_id :str):
-    for contact in contacts:
-        if contact["id"] == contact_id:
-            contacts.remove(contact)
+# @app.delete("/api/contact/{contact_id}")
+# def delete_contact_messages(contact_id :str):
+#     for contact in contacts:
+#         if contact["id"] == contact_id:
+#             contacts.remove(contact)
         
-            return {
-                "message" : "Your message was deleted",
-                "contact" : contact
-            }
+#             return {
+#                 "message" : "Your message was deleted",
+#                 "contact" : contact
+#             }
+
+#     return {
+#                 "message" : "Your message was not found"
+                
+#     }
+
+@app.delete("/api/contact/{contact_id}")
+def delete_contact_messages(contact_id: str):
+
+    cursor.execute(
+        "DELETE FROM contacts WHERE id = ?",
+        (contact_id,)
+    )
+
+    connection.commit()
 
     return {
-                "message" : "Your message was not found"
-                
+        "message": "Your message was deleted"
     }
     
 @app.get("/")
