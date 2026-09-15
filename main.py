@@ -1,7 +1,9 @@
-import fastapi
+import fastapi 
+import uuid
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
+
 
 app = fastapi.FastAPI()
 
@@ -29,23 +31,47 @@ contacts = []
 
 @app.post("/api/contact")
 def submit_contact_message(data: ContactForm):
+
+    contact = {
+        "id": str(uuid.uuid4()),
+        "name": data.name,
+        "email": data.email,
+        "message": data.message
+    }
+
     print("=== NEW FORM SUBMISSION ===")
-    print("Name:", data.name)
-    print("Email:", data.email)
-    print("Message:", data.message)
+    print("ID:", contact["id"])
+    print("Name:", contact["name"])
+    print("Email:", contact["email"])
+    print("Message:", contact["message"])
     print("===========================")
 
-    contacts.append(data)
+    contacts.append(contact)
 
     return {
         "message": "Your message has been received",
-        "contact": data,
+        "contact": contact,
     }
-
 @app.get("/api/contact")
 def get_contact_messages():
     return {"contacts": contacts}
 
+@app.delete("/api/contact/{contact_id}")
+def delete_contact_messages(contact_id :str):
+    for contact in contacts:
+        if contact["id"] == contact_id:
+            contacts.remove(contact)
+        
+            return {
+                "message" : "Your message was deleted",
+                "contact" : contact
+            }
+
+    return {
+                "message" : "Your message was not found"
+                
+    }
+    
 @app.get("/")
 def home():
     return {"message": "ORIGIN backend is running"}
