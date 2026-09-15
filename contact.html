@@ -1,6 +1,5 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background:#070707;">
 
 <head>
     <meta charset="UTF-8">
@@ -13,19 +12,12 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
 
-        /* ========================================================
-           CONTACT PAGE
-        ======================================================== */
-
         :root {
             --contact-sand: #c5a47e;
             --contact-line: rgba(7, 7, 7, 0.12);
         }
 
-
-        /* ========================================================
-           CONTACT HERO
-        ======================================================== */
+        /* HERO */
 
         .contact-hero {
             position: relative;
@@ -45,13 +37,10 @@
         .contact-hero::after {
             content: "";
             position: absolute;
-
             right: 8%;
             bottom: 34px;
-
             width: 110px;
             height: 1px;
-
             background: var(--contact-sand);
             opacity: 0.8;
         }
@@ -62,24 +51,12 @@
             max-width: 800px;
         }
 
-        .contact-label,
-        .contact-section-label {
-            margin-bottom: 18px;
-
-            color: #999999;
-
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
         .contact-hero h1 {
-            max-width: 760px;
-
-            font-size: clamp(3.5rem, 8vw, 7rem);
-            line-height: 0.9;
-            letter-spacing: -4px;
+            max-width: 800px;
+            font-size: clamp(3.2rem, 7vw, 6.5rem);
+            line-height: 0.92;
+            font-weight: 700;
+            letter-spacing: -3px;
         }
 
         .contact-hero h1 span {
@@ -89,26 +66,18 @@
 
         .contact-hero-copy {
             max-width: 620px;
-
             margin-top: 35px;
-
             color: #cfcfcf;
-
             font-size: 1.05rem;
             line-height: 1.8;
         }
 
-
-        /* ========================================================
-           CONTACT HERO IMAGE
-        ======================================================== */
+        /* HERO IMAGE */
 
         .contact-hero-visual {
             position: relative;
-
             height: 560px;
             margin-left: 30px;
-
             overflow: hidden;
             align-self: center;
 
@@ -121,19 +90,15 @@
         .contact-hero-visual img {
             width: 100%;
             height: 100%;
-
             display: block;
-
             object-fit: cover;
             object-position: center;
-
             opacity: 0.9;
         }
 
         .contact-hero-visual::after {
             content: "";
             position: absolute;
-
             inset: 0;
 
             background: linear-gradient(
@@ -148,9 +113,7 @@
         .contact-hero-visual::before {
             content: "";
             position: absolute;
-
             inset: 0;
-
             z-index: 1;
 
             background: linear-gradient(
@@ -164,12 +127,14 @@
 
         .contact-image-caption {
             position: absolute;
-
             z-index: 2;
-
             right: 25px;
             bottom: 25px;
             left: 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
             color: var(--contact-sand);
 
@@ -178,14 +143,10 @@
             text-transform: uppercase;
         }
 
-
-        /* ========================================================
-           CONTACT BENEFITS
-        ======================================================== */
+        /* BENEFITS */
 
         .contact-benefits {
             position: relative;
-
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
 
@@ -198,7 +159,6 @@
 
         .contact-benefit {
             position: relative;
-
             min-height: 150px;
             padding: 30px 7% 26px;
 
@@ -207,7 +167,6 @@
             justify-content: center;
 
             background: #ffffff;
-
             border-right: 1px solid var(--contact-line);
 
             transition:
@@ -226,7 +185,6 @@
 
         .contact-benefit strong {
             display: block;
-
             margin-bottom: 8px;
 
             color: #070707;
@@ -239,29 +197,21 @@
 
         .contact-benefit strong::before {
             content: "//";
-
             margin-right: 8px;
-
             color: var(--contact-sand);
-
             font-weight: 400;
         }
 
         .contact-benefit span {
             color: #666666;
-
             font-size: 0.8rem;
             line-height: 1.6;
         }
 
-
-        /* ========================================================
-           CONTACT METHODS
-        ======================================================== */
+        /* METHODS */
 
         .contact-methods {
             position: relative;
-
             padding: 110px 8%;
 
             background: #070707;
@@ -274,7 +224,6 @@
             content: "CONTACT / ORIGIN";
 
             position: absolute;
-
             top: 46px;
             right: 8%;
 
@@ -291,26 +240,21 @@
 
         .contact-methods-heading h2 {
             font-size: clamp(2.5rem, 5vw, 4.5rem);
-
             line-height: 1;
             letter-spacing: -2px;
         }
 
         .contact-methods-grid {
             display: grid;
-
             grid-template-columns: repeat(4, 1fr);
-
             gap: 20px;
         }
 
         .contact-method {
             min-height: 340px;
-
             padding: 30px;
 
             background-color: #111111;
-
             border: 1px solid #242424;
 
             display: flex;
@@ -330,7 +274,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-
             margin-bottom: 40px;
         }
 
@@ -347,7 +290,6 @@
 
         .contact-method-content {
             flex: 1;
-
             display: flex;
             flex-direction: column;
         }
@@ -358,11 +300,8 @@
 
         #email-method a {
             display: inline-block;
-
             color: #ffffff;
-
             text-decoration: none;
-
             font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 1px;
@@ -375,7 +314,6 @@
 
         .contact-method:hover {
             transform: translateY(-8px);
-
             background-color: #181818;
             border-color: #444444;
 
@@ -385,7 +323,6 @@
 
         .contact-method h3 {
             margin-bottom: 18px;
-
             font-size: 2.2rem;
             line-height: 1;
             letter-spacing: -1px;
@@ -394,18 +331,14 @@
         .contact-method a,
         .contact-method p {
             color: #cfcfcf;
-
             font-size: 0.88rem;
             line-height: 1.6;
-
             text-decoration: none;
         }
 
         .contact-method a {
             display: inline-block;
-
             color: #ffffff;
-
             font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 1px;
@@ -416,25 +349,19 @@
             text-decoration: underline;
         }
 
-
-        /* ========================================================
-           CONTACT WORKSPACE
-        ======================================================== */
+        /* WORKSPACE */
 
         .contact-workspace {
             display: grid;
-
             grid-template-columns: 1.05fr 0.95fr;
             gap: 28px;
 
             padding: 55px 8% 110px;
-
             background: #ffffff;
         }
 
         .contact-form-panel {
             padding: 38px;
-
             background: #f5f5f3;
 
             border-radius: 4px;
@@ -451,15 +378,12 @@
 
         .contact-form-panel > p {
             margin-bottom: 28px;
-
             color: #666666;
-
             line-height: 1.7;
         }
 
         .contact-form {
             display: grid;
-
             grid-template-columns: 1fr 1fr;
             gap: 14px;
         }
@@ -467,7 +391,6 @@
         .contact-form textarea,
         .contact-form input {
             width: 100%;
-
             padding: 14px 15px;
 
             border: 1px solid #cccccc;
@@ -486,7 +409,6 @@
         .contact-form textarea:focus,
         .contact-form input:focus {
             outline: none;
-
             border-color: var(--contact-sand);
 
             box-shadow:
@@ -495,16 +417,13 @@
 
         .contact-form textarea {
             min-height: 145px;
-
             grid-column: 1 / -1;
-
             resize: vertical;
         }
 
         .contact-form button,
         .contact-help a {
             width: fit-content;
-
             padding: 13px 25px;
 
             border: 0;
@@ -531,7 +450,6 @@
         .contact-form button:hover,
         .contact-help a:hover {
             transform: translateY(-2px);
-
             background: var(--contact-sand);
             color: #070707;
         }
@@ -543,11 +461,8 @@
 
         .contact-map {
             min-height: 235px;
-
             overflow: hidden;
-
             border-radius: 4px;
-
             background: #eeeeee;
         }
 
@@ -555,7 +470,6 @@
             width: 100%;
             height: 100%;
             min-height: 235px;
-
             border: 0;
         }
 
@@ -577,7 +491,6 @@
         .contact-hours p {
             display: flex;
             justify-content: space-between;
-
             gap: 20px;
 
             padding: 10px 0;
@@ -585,7 +498,6 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
             color: #cfcfcf;
-
             font-size: 0.85rem;
         }
 
@@ -613,33 +525,24 @@
 
         .contact-help p {
             margin-bottom: 20px;
-
             color: #666666;
-
             line-height: 1.6;
         }
 
-
-        /* ========================================================
-           CONTACT OFFICE
-        ======================================================== */
+        /* OFFICE */
 
         .contact-office {
             display: grid;
-
             grid-template-columns: 1fr 1fr;
             gap: 60px;
 
             padding: 100px 8%;
-
             background: #f5f5f3;
         }
 
         .contact-office-copy {
             max-width: 560px;
-
             color: #666666;
-
             line-height: 1.8;
         }
 
@@ -654,13 +557,11 @@
 
         .contact-office-item {
             padding-bottom: 18px;
-
             border-bottom: 1px solid #d8d8d8;
         }
 
         .contact-office-item strong {
             display: block;
-
             margin-bottom: 6px;
 
             color: #070707;
@@ -675,19 +576,7 @@
             line-height: 1.6;
         }
 
-
-        /* ========================================================
-           CONTACT REGISTER BUTTON
-        ======================================================== */
-
-        #contact-hero-btn:hover {
-            transform: none;
-        }
-
-
-        /* ========================================================
-           CONTACT RESPONSIVE
-        ======================================================== */
+        /* RESPONSIVE */
 
         @media (max-width: 900px) {
 
@@ -721,23 +610,7 @@
             .contact-benefit:nth-child(2n) {
                 border-right: none;
             }
-
-            #contact-hero-btn {
-                background-color: #ffffff;
-
-                padding: 0 32px;
-
-                color: #060606d6;
-
-                border: 1px solid #ffffff;
-
-                font-weight: 700;
-
-                cursor: pointer;
-                user-select: none;
-            }
         }
-
 
         @media (max-width: 600px) {
 
@@ -776,11 +649,7 @@
     </style>
 </head>
 
-<body>
-
-    <!-- ========================================================
-         NAVBAR
-    ========================================================= -->
+<body style="background:#070707;">
 
     <header class="navbar">
 
@@ -791,19 +660,11 @@
         <nav class="nav-links">
 
             <div class="nav-item">
-
-                <a href="index.html" class="nav-link">
-                    Home
-                </a>
-
+                <a href="index.html" class="nav-link">Home</a>
             </div>
 
             <div class="nav-item">
-
-                <a href="Destination.html" class="nav-link">
-                    Destination
-                </a>
-
+                <a href="Destination.html" class="nav-link">Destination</a>
             </div>
 
             <div class="nav-item has-dropdown">
@@ -891,33 +752,20 @@
 
         </nav>
 
-        <a
-            href="contact.html"
-            class="hero-btn"
-            id="contact-hero-btn"
-        >
+        <button class="nav-btn">
             Register Now
-        </a>
+        </button>
 
     </header>
 
-
-    <!-- ========================================================
-         MAIN
-    ========================================================= -->
-
     <main>
-
-        <!-- ====================================================
-             CONTACT HERO
-        ===================================================== -->
 
         <section class="contact-hero">
 
             <div class="contact-hero-content">
 
-                <p class="contact-label">
-                    Reach Out
+                <p class="section-label">
+                    REACH OUT
                 </p>
 
                 <h1>
@@ -932,7 +780,6 @@
                 </p>
 
             </div>
-
 
             <div class="contact-hero-visual">
 
@@ -949,70 +796,32 @@
 
         </section>
 
-
-        <!-- ====================================================
-             CONTACT BENEFITS
-        ===================================================== -->
-
         <section
             class="contact-benefits"
             aria-label="Contact benefits"
         >
 
             <div class="contact-benefit">
-
-                <strong>
-                    Quick replies
-                </strong>
-
-                <span>
-                    We respond within one business day.
-                </span>
-
+                <strong>Quick replies</strong>
+                <span>We respond within one business day.</span>
             </div>
 
             <div class="contact-benefit">
-
-                <strong>
-                    Travel guidance
-                </strong>
-
-                <span>
-                    Practical help from experienced planners.
-                </span>
-
+                <strong>Travel guidance</strong>
+                <span>Practical help from experienced planners.</span>
             </div>
 
             <div class="contact-benefit">
-
-                <strong>
-                    Flexible planning
-                </strong>
-
-                <span>
-                    Trips shaped around your priorities.
-                </span>
-
+                <strong>Flexible planning</strong>
+                <span>Trips shaped around your priorities.</span>
             </div>
 
             <div class="contact-benefit">
-
-                <strong>
-                    Personal support
-                </strong>
-
-                <span>
-                    One team from first idea to departure.
-                </span>
-
+                <strong>Personal support</strong>
+                <span>One team from first idea to departure.</span>
             </div>
 
         </section>
-
-
-        <!-- ====================================================
-             CONTACT METHODS
-        ===================================================== -->
 
         <section class="contact-methods">
 
@@ -1028,10 +837,7 @@
 
             </div>
 
-
             <div class="contact-methods-grid">
-
-                <!-- CALL -->
 
                 <article class="contact-method">
 
@@ -1061,9 +867,6 @@
 
                 </article>
 
-
-                <!-- WHATSAPP -->
-
                 <article class="contact-method">
 
                     <div class="contact-method-top">
@@ -1091,9 +894,6 @@
                     </div>
 
                 </article>
-
-
-                <!-- EMAIL -->
 
                 <article
                     class="contact-method"
@@ -1126,9 +926,6 @@
 
                 </article>
 
-
-                <!-- VISIT -->
-
                 <article class="contact-method">
 
                     <div class="contact-method-top">
@@ -1149,9 +946,7 @@
                             Meet at our office
                         </h3>
 
-                        <a
-                            href="https://maps.app.goo.gl/6pNUpUWs5evcBnrm7"
-                        >
+                        <a href="https://maps.app.goo.gl/6pNUpUWs5evcBnrm7">
                             VISIT US!
                         </a>
 
@@ -1162,11 +957,6 @@
             </div>
 
         </section>
-
-
-        <!-- ====================================================
-             CONTACT WORKSPACE
-        ===================================================== -->
 
         <section class="contact-workspace">
 
@@ -1184,7 +974,6 @@
                     Share a few details and we will get back to you with useful
                     next steps.
                 </p>
-
 
                 <form
                     id="contact-form"
@@ -1231,7 +1020,6 @@
 
             </div>
 
-
             <div class="contact-side">
 
                 <div class="contact-map">
@@ -1249,7 +1037,6 @@
 
                 </div>
 
-
                 <div class="contact-hours">
 
                     <h3>
@@ -1257,37 +1044,21 @@
                     </h3>
 
                     <p>
-                        <span>
-                            Monday - Friday
-                        </span>
-
-                        <span>
-                            9:00 - 18:00
-                        </span>
+                        <span>Monday - Friday</span>
+                        <span>9:00 - 18:00</span>
                     </p>
 
                     <p>
-                        <span>
-                            Saturday
-                        </span>
-
-                        <span>
-                            10:00 - 16:00
-                        </span>
+                        <span>Saturday</span>
+                        <span>10:00 - 16:00</span>
                     </p>
 
                     <p>
-                        <span>
-                            Sunday
-                        </span>
-
-                        <span>
-                            Closed
-                        </span>
+                        <span>Sunday</span>
+                        <span>Closed</span>
                     </p>
 
                 </div>
-
 
                 <div class="contact-help">
 
@@ -1309,11 +1080,6 @@
             </div>
 
         </section>
-
-
-        <!-- ====================================================
-             CONTACT OFFICE
-        ===================================================== -->
 
         <section class="contact-office">
 
@@ -1342,7 +1108,6 @@
 
             </div>
 
-
             <div class="contact-office-list">
 
                 <div class="contact-office-item">
@@ -1358,7 +1123,6 @@
 
                 </div>
 
-
                 <div class="contact-office-item">
 
                     <strong>
@@ -1370,7 +1134,6 @@
                     </span>
 
                 </div>
-
 
                 <div class="contact-office-item">
 
@@ -1390,11 +1153,6 @@
 
     </main>
 
-
-    <!-- ========================================================
-         FOOTER
-    ========================================================= -->
-
     <footer class="hero-footer">
 
         <p>
@@ -1404,11 +1162,6 @@
         </p>
 
     </footer>
-
-
-    <!-- ========================================================
-         CONTACT FORM
-    ========================================================= -->
 
     <script>
         document
