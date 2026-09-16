@@ -15,7 +15,9 @@
         /* ========================================================
            UMRAH PAGE
         ======================================================== */
-
+         * ,p{
+               -webkit-user-drag: none;
+        }
         :root {
             --umrah-sand: #db8c04;
             --umrah-sand-soft: rgba(219, 140, 4, 0.18);
@@ -674,6 +676,15 @@
 
         }
     </style>
+    <script>
+        document.addEventListener("dragstart", function (event) {
+    const selection = window.getSelection();
+
+    if (selection && !selection.isCollapsed) {
+        event.preventDefault();
+    }
+}, true);
+    </script>
 </head>
 
 <body>

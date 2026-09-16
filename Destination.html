@@ -11,6 +11,33 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+    * {
+            -webkit-user-drag: none;
+      }
+         .international-cta-btn {
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .international-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+        }
 
         /* ========================================================
            DESTINATION PAGE
@@ -727,13 +754,13 @@
          FOOTER
     ========================================================= -->
 
-    <footer class="hero-footer">
+    <footer class="hero-footer" draggable="false">
 
-        <p>
-            &copy; 2026 Origin Tours &amp; Travels
-            &mdash;
-            Explore more, discover more.
-        </p>
+       <p draggable="false">
+           &copy; 2026 Origin Tours &amp; Travels
+           &mdash;
+           Explore more, discover more.
+       </p>
 
     </footer>
 

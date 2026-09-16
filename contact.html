@@ -11,7 +11,9 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
-
+        * {
+            -webkit-user-drag: none;
+        }
         :root {
             --contact-sand: #c5a47e;
             --contact-line: rgba(7, 7, 7, 0.12);
@@ -647,6 +649,15 @@
             }
         }
     </style>
+    <script>
+        document.addEventListener("dragstart", function (event) {
+    const selection = window.getSelection();
+
+    if (selection && !selection.isCollapsed) {
+        event.preventDefault();
+    }
+}, true);
+    </script>
 </head>
 
 <body style="background:#070707;">

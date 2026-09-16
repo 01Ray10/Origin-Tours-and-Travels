@@ -15,7 +15,9 @@
         /* ========================================================
            HOMEPAGE — HERO
         ======================================================== */
-
+  * {
+    -webkit-user-drag: none;
+    }
         .video-container {
             position: relative;
             width: 100%;
@@ -493,6 +495,14 @@
         }
     </style>
 </head>
+
+
+<script>
+    document.addEventListener("dragstart", function (event) {
+        event.preventDefault();
+    });
+</script>
+
 
 <body>
 

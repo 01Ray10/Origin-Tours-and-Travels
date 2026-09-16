@@ -349,6 +349,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-user-drag: none;
 }
 
 html,
@@ -880,8 +881,11 @@ a {
     padding: 30px;
 
     text-align: center;
+    -webkit-user-drag: none;
 }
-
+.hero-footer p {
+    user-select: none;
+}
 
 /* ========================================================
    16. TYPOGRAPHY UTILITY
