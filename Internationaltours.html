@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Origin — International Tours</title>
+    <title>Origin- International Tours</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -14,116 +15,115 @@
         /* =========================
            INTERNATIONAL TOURS HERO
         ========================= */
-     * {
-        -webkit-user-drag: none;
-      }
+        * {
+            -webkit-user-drag: none;
+        }
+
         .international-hero {
             position: relative;
             min-height: 75vh;
-
             display: grid;
-            grid-template-columns: 50% 50%;
+            grid-template-columns: 45% 55%;
             align-items: center;
-
             padding: 150px 8% 90px;
-
-            background: #070707;
-            color: #fff;
-
+            background-color: #070707;
+            color: #ffffff;
             overflow: hidden;
+        }
+
+        .international-hero::after {
+            content: "";
+            position: absolute;
+            right: 8%;
+            bottom: 34px;
+            width: 110px;
+            height: 1px;
+            background: var(--international-accent);
+            opacity: 0.8;
         }
 
         .international-hero-content {
             position: relative;
-            z-index: 2;
-            max-width: 850px;
+            z-index: 3;
+            max-width: 800px;
         }
 
-        .international-label {
-            margin-bottom: 18px;
-            font-size: 0.75rem;
+        .tours-hero h1 {
+            max-width: 800px;
+            font-size: clamp(3.2rem, 7vw, 6.5rem);
+            line-height: 0.92;
             font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #999999;
+            letter-spacing: -3px;
+        }
+
+        .tours-hero h1 span {
+            display: block;
+            color: var(--tours-accent);
         }
 
         .international-hero h1 {
-            max-width: 850px;
-            font-size: clamp(3.5rem, 8vw, 7rem);
+            max-width: 800px;
+            display: block;
+            font-size: clamp(3.2rem, 7vw, 6.5rem);
+            line-height: 0.92;
             font-weight: 700;
-            line-height: 0.9;
-            letter-spacing: -4px;
+            letter-spacing: -3px;
         }
 
         .international-hero h1 span {
-            display: block;
-            color: #8f8f8f;
+            color: var(--international-accent);
         }
 
-        .international-hero p {
-            max-width: 540px;
-            margin-top: 35px;
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #cfcfcf;
-        }
-
-        /* HERO IMAGE */
+        /* ========================================================
+           INTERNATIONAL HERO IMAGE
+        ======================================================== */
 
         .international-hero-visual {
             position: relative;
             height: 560px;
             margin-left: 30px;
             overflow: hidden;
+            align-self: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 18px 18px 0 var(--international-accent-soft);
         }
 
         .international-hero-visual img {
             width: 100%;
             height: 100%;
             display: block;
-
             object-fit: cover;
             object-position: center;
-
             opacity: 0.9;
         }
 
         .international-hero-visual::after {
             content: "";
-
             position: absolute;
             inset: 0;
-
-            background:
-                linear-gradient(
-                    to right,
-                    #070707 0%,
-                    rgba(7, 7, 7, 0.75) 12%,
-                    rgba(7, 7, 7, 0.15) 38%,
-                    transparent 60%
-                );
+            background: linear-gradient(
+                to right,
+                #070707 0%,
+                rgba(7, 7, 7, 0.75) 12%,
+                rgba(7, 7, 7, 0.15) 38%,
+                transparent 60%
+            );
         }
 
         .international-hero-visual::before {
             content: "";
-
             position: absolute;
             top: 0;
             left: 0;
-
             width: 100%;
             height: 100%;
-
-            background:
-                linear-gradient(
-                    to bottom,
-                    rgba(7, 7, 7, 0.35),
-                    transparent 20%,
-                    transparent 80%,
-                    rgba(7, 7, 7, 0.7)
-                );
-
+            background: linear-gradient(
+                to bottom,
+                rgba(7, 7, 7, 0.35),
+                transparent 20%,
+                transparent 80%,
+                rgba(7, 7, 7, 0.7)
+            );
             z-index: 1;
         }
 
@@ -133,11 +133,9 @@
             bottom: 25px;
             left: 25px;
             right: 25px;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
-
             color: #ffffff;
             font-size: 0.7rem;
             letter-spacing: 2px;
@@ -145,48 +143,61 @@
         }
 
         /* =========================
-           INTRO
+           INTERNATIONAL INTRO
         ========================= */
-
-        .international-intro {
-            background: #fff;
-            color: #111;
-
+        
+        .international-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
             padding: 110px 8%;
-            text-align: center;
+            background-color: #ffffff;
+            color: #070707;
+            align-items: center;
         }
-
-        .international-intro-label {
-            font-size: 0.7rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            opacity: 0.5;
-            margin-bottom: 18px;
+        
+        .international-intro-heading {
+            max-width: 650px;
         }
-
-        .international-intro h2 {
-            font-size: clamp(2.5rem, 4vw, 4.5rem);
-            font-weight: 700;
-
-            max-width: 850px;
-            margin: 0 auto 25px;
+        
+        .international-intro-heading h2 {
+            font-size: clamp(2.8rem, 5vw, 5rem);
+            line-height: 0.95;
+            letter-spacing: -3px;
         }
-
-        .international-intro p {
-            max-width: 700px;
-            margin: 0 auto;
-
+        
+        .international-intro-content {
+            max-width: 550px;
+        }
+        
+        .international-intro-content p {
+            margin-bottom: 30px;
+            color: #555555;
             line-height: 1.8;
-            color: #666;
+            font-size: 1.05rem;
+        }
+        
+        .international-text-link {
+            display: inline-block;
+            color: inherit;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .international-text-link:hover {
+            text-decoration: underline;
         }
 
         /* =========================
-           DESTINATION GRID
+           DESTINATION GRID (INVERTED COLORS)
         ========================= */
 
         .international-packages {
-            background: #ffffff;
-            color: #070707;
+            background: #070707;
+            color: #ffffff;
             padding: 110px 8%;
         }
 
@@ -194,20 +205,20 @@
             display: flex;
             justify-content: space-between;
             align-items: end;
-
             margin-bottom: 70px;
         }
 
         .international-section-heading h2 {
-            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
+            color: #ffffff;
         }
 
         .international-section-heading p {
-            max-width: 350px;
-            color: #666;
+            max-width: 300px;
+            color: #cccccc;
             line-height: 1.7;
-            font-size: 0.95rem;
+            font-size: 0.90rem;
         }
 
         .international-grid {
@@ -217,19 +228,16 @@
         }
 
         .international-card {
-            background: #070707;
-            color: #ffffff;
+            background: #ffffff;
+            color: #070707;
             border-radius: 4px;
             overflow: hidden;
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .international-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
         .international-card-image {
@@ -241,9 +249,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-
             display: block;
-
             transition: transform 0.5s ease;
         }
 
@@ -259,7 +265,7 @@
             display: block;
             font-size: 0.7rem;
             letter-spacing: 2px;
-            color: #999999;
+            color: #666666;
             margin-bottom: 25px;
         }
 
@@ -268,19 +274,19 @@
             line-height: 1;
             letter-spacing: -0.5px;
             margin-bottom: 15px;
+            color: #070707;
         }
 
         .international-card-content p {
-            color: #bdbdbd;
+            color: #555555;
             font-size: 0.9rem;
             line-height: 1.7;
             margin-bottom: 25px;
         }
 
         .international-card-link {
-            color: #ffffff;
+            color: #070707;
             text-decoration: none;
-
             font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 1px;
@@ -299,8 +305,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             min-height: 600px;
-
-            background: #070707;
+            background: #020202f4;
             color: #fff;
         }
 
@@ -319,7 +324,6 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-
             padding: 80px 10%;
             align-items: flex-start;
         }
@@ -328,7 +332,6 @@
             font-size: 0.7rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-
             opacity: 0.55;
             margin-bottom: 20px;
         }
@@ -343,30 +346,23 @@
 
         .international-feature-content p {
             max-width: 500px;
-            margin-bottom: 35px;
             color: #c0c0c0;
             line-height: 1.8;
-
             margin-bottom: 30px;
         }
 
         .international-feature-btn {
             display: inline-block;
             width: fit-content;
-
             padding: 14px 30px;
-
             background-color: #ffffff;
             color: #000000;
             border-radius: 30px;
-
             text-decoration: none;
-
             font-size: 0.85rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-
             transition: all 0.3s ease;
         }
 
@@ -381,19 +377,15 @@
         .international-cta {
             background: #fff;
             color: #111;
-
             text-align: center;
-
             padding: 120px 8%;
         }
 
         .international-cta span {
             display: block;
-
             font-size: 0.7rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-
             opacity: 0.5;
             margin-bottom: 20px;
         }
@@ -401,26 +393,20 @@
         .international-cta h2 {
             font-size: clamp(3rem, 6vw, 6rem);
             font-weight: 700;
-
             margin-bottom: 35px;
         }
 
         .international-cta-btn {
             display: inline-block;
-
             padding: 15px 30px;
-
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #070707;
+            color: #ffffff;
             border-radius: 30px;
-
             text-decoration: none;
-
             font-size: 0.85rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-
             transition: all 0.3s ease;
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
         }
@@ -463,12 +449,9 @@
                 padding: 70px 8%;
             }
 
-            .international-section-heading {
-                display: block;
-            }
-
-            .international-section-heading p {
-                margin-top: 15px;
+            .international-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
         }
 
@@ -499,6 +482,10 @@
             }
 
             .international-cta {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+            .international-section {
                 padding-left: 6%;
                 padding-right: 6%;
             }
@@ -556,12 +543,7 @@
                 <div class="dropdown">
                     <a href="contact.html">Contact Page</a>
                     <a href="mailto:Originsoftware@gmail.com">Email</a>
-                    <a
-                        href="https://www.instagram.com/originsoftwares"
-                        target="_blank"
-                    >
-                        Instagram
-                    </a>
+                    <a href="https://www.instagram.com/originsoftwares" target="_blank">Instagram</a>
                 </div>
             </div>
 
@@ -586,7 +568,7 @@
 
             <div class="international-hero-content">
 
-                <div class="international-label">
+                <div class="section-label">
                     INTERNATIONAL TOURS
                 </div>
 
@@ -594,7 +576,7 @@
                     See the <span>World.</span>
                 </h1>
 
-                <p>
+                <p class="international-intro">
                     Discover unforgettable international holidays,
                     from iconic cities and tropical escapes to
                     breathtaking landscapes and rich cultural
@@ -606,7 +588,7 @@
             <div class="international-hero-visual">
 
                 <img
-                    src="New folder/international-tours-hero.jpg"
+                    src="New folder/international.jpg"
                     alt="International travel destination"
                 >
 
@@ -623,22 +605,37 @@
              INTRO
         ========================= -->
 
-        <section class="international-intro">
+        <section class="international-section">
 
-            <div class="international-intro-label">
-                BEYOND BORDERS
+            <div class="international-intro-heading">
+
+                <p class="section-label">
+                    BEYOND BORDERS
+                </p>
+
+                <h2>
+                    Go further.
+                    Experience somewhere new.
+                </h2>
+
             </div>
 
-            <h2>
-                Go further.
-                Experience somewhere new.
-            </h2>
+            <div class="international-intro-content">
 
-            <p>
-                From short city escapes to unforgettable
-                long-haul holidays, explore destinations selected
-                for different travel styles, seasons and experiences.
-            </p>
+                <p>
+                    From short city escapes to unforgettable
+                    long-haul holidays, explore destinations selected
+                    for different travel styles, seasons and experiences.
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="international-text-link"
+                >
+                    Explore Our Tours &rarr;
+                </a>
+
+            </div>
 
         </section>
 
@@ -652,7 +649,7 @@
             <div class="international-section-heading">
 
                 <h2>
-                    Popular <em>Destinations.</em>
+                    Popular Destinations.
                 </h2>
 
                 <p>
@@ -871,6 +868,7 @@
             </div>
 
         </section>
+
 
 
         <!-- =========================
