@@ -22,13 +22,18 @@
         .international-hero {
             position: relative;
             min-height: 75vh;
+
             display: grid;
             grid-template-columns: 45% 55%;
             align-items: center;
+
             padding: 150px 8% 90px;
+
             background-color: #070707;
             color: #ffffff;
+
             overflow: hidden;
+            /* line-height: 2.8; */
         }
 
         .international-hero::after {
@@ -44,11 +49,22 @@
 
         .international-hero-content {
             position: relative;
-            z-index: 3;
+            z-index: 2;
             max-width: 800px;
         }
 
-        .tours-hero h1 {
+        .international-hero-p {
+             max-width: 620px;
+
+            margin-top: 35px;
+
+            color: #cfcfcf;
+
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* .tours-hero h1 {
             max-width: 800px;
             font-size: clamp(3.2rem, 7vw, 6.5rem);
             line-height: 0.92;
@@ -59,12 +75,12 @@
         .tours-hero h1 span {
             display: block;
             color: var(--tours-accent);
-        }
+        } */
 
         .international-hero h1 {
             max-width: 800px;
-            display: block;
-            font-size: clamp(3.2rem, 7vw, 6.5rem);
+            /* display: block; */
+            font-size: clamp(3.2rem, 8vw, 6.5rem);
             line-height: 0.92;
             font-weight: 700;
             letter-spacing: -3px;
@@ -127,7 +143,7 @@
             z-index: 1;
         }
 
-        .international-image-caption {
+        /* .international-image-caption {
             position: absolute;
             z-index: 2;
             bottom: 25px;
@@ -140,41 +156,46 @@
             font-size: 0.7rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-        }
+        } */
 
         /* =========================
            INTERNATIONAL INTRO
         ========================= */
         
-        .international-section {
-            display: grid;
+        .international-intro {
+            display: block;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             padding: 110px 8%;
             background-color: #ffffff;
             color: #070707;
             align-items: center;
+            text-align: center;
         }
+
         
-        .international-intro-heading {
+        /* .international-intro-heading {
             max-width: 650px;
-        }
+        } */
         
         .international-intro-heading h2 {
             font-size: clamp(2.8rem, 5vw, 5rem);
             line-height: 0.95;
             letter-spacing: -3px;
+            text-align: center;
         }
         
-        .international-intro-content {
+        /* .international-intro-content {
             max-width: 550px;
-        }
+        } */
         
         .international-intro-content p {
             margin-bottom: 30px;
             color: #555555;
             line-height: 1.8;
             font-size: 1.05rem;
+            padding-top: 25px;
+            
         }
         
         .international-text-link {
@@ -192,13 +213,16 @@
         }
 
         /* =========================
-           DESTINATION GRID (INVERTED COLORS)
+           DESTINATION LIKE GRID (INVERTED COLORS)
         ========================= */
 
         .international-packages {
             background: #070707;
             color: #ffffff;
             padding: 110px 8%;
+            /* background-image: url("New folder/worldmap1.png");
+            background-size: 100% 100%;
+            background-position: center; */
         }
 
         .international-section-heading {
@@ -305,7 +329,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             min-height: 600px;
-            background: #020202f4;
+            background: #020202e6;
             color: #fff;
         }
 
@@ -508,54 +532,108 @@
         <nav class="nav-links">
 
             <div class="nav-item">
-                <a href="Index.html" class="nav-link">Home</a>
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
             </div>
 
             <div class="nav-item">
-                <a href="Destination.html" class="nav-link">Destination</a>
+                <a href="Destination.html" class="nav-link">
+                    Destination
+                </a>
             </div>
 
             <div class="nav-item has-dropdown">
-                <a href="tours.html" class="nav-link">Tours</a>
+
+                <a href="tours.html" class="nav-link">
+                    Tours
+                </a>
 
                 <div class="dropdown">
-                    <a href="Internationaltours.html">International Tours</a>
-                    <a href="Domestictours.html">Domestic Tours</a>
+
+                    <a href="Internationaltours.html">
+                        International Tours
+                    </a>
+
+                    <a href="Domestictours.html">
+                        Domestic Tours
+                    </a>
+
                 </div>
+
             </div>
 
             <div class="nav-item has-dropdown">
-                <a href="Umrah.html" class="nav-link">Umrah</a>
+
+                <a href="Umrah.html" class="nav-link">
+                    Umrah
+                </a>
 
                 <div class="dropdown">
-                    <a href="Umrah.html">Economy Umrah</a>
-                    <a href="Umrah.html">VIP Umrah</a>
+
+                    <a href="Umrah.html">
+                        Economy Umrah
+                    </a>
+
+                    <a href="Umrah.html">
+                        VIP Umrah
+                    </a>
+
                 </div>
+
             </div>
 
             <div class="nav-item">
-                <a href="services.html" class="nav-link">Services</a>
+
+                <a href="services.html" class="nav-link">
+                    Services
+                </a>
+
             </div>
 
             <div class="nav-item has-dropdown">
-                <a href="contact.html" class="nav-link">Contact</a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
 
                 <div class="dropdown">
-                    <a href="contact.html">Contact Page</a>
-                    <a href="mailto:Originsoftware@gmail.com">Email</a>
-                    <a href="https://www.instagram.com/originsoftwares" target="_blank">Instagram</a>
+
+                    <a href="contact.html">
+                        Contact Page
+                    </a>
+
+                    <a href="mailto:Originsoftware@gmail.com">
+                        Email
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/originsoftwares"
+                        target="_blank"
+                    >
+                        Instagram
+                    </a>
+
                 </div>
+
             </div>
 
             <div class="nav-item">
-                <a href="about.html" class="nav-link">About Us</a>
+
+                <a href="about.html" class="nav-link">
+                    About Us
+                </a>
+
             </div>
 
         </nav>
 
-        <a href="contact.html" class="hero-btn">Register Now</a>
+        <button class="nav-btn">
+            Register Now
+        </button>
 
     </header>
+
 
 
     <main>
@@ -576,7 +654,7 @@
                     See the <span>World.</span>
                 </h1>
 
-                <p class="international-intro">
+                <p class="international-hero-p">
                     Discover unforgettable international holidays,
                     from iconic cities and tropical escapes to
                     breathtaking landscapes and rich cultural
@@ -592,7 +670,7 @@
                     alt="International travel destination"
                 >
 
-                <div class="international-image-caption">
+                <div class="hero-image-caption" style="color: #F2FF00;">
                     01 / THE WORLD AWAITS
                 </div>
 
@@ -605,7 +683,7 @@
              INTRO
         ========================= -->
 
-        <section class="international-section">
+        <section class="international-intro">
 
             <div class="international-intro-heading">
 
