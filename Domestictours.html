@@ -14,15 +14,17 @@
         /* =========================
            DOMESTIC TOURS HERO
         ========================= */
-     * {
-    -webkit-user-drag: none;
-     }
+
+        * {
+            -webkit-user-drag: none;
+        }
+
         .domestic-hero {
             position: relative;
             min-height: 75vh;
 
             display: grid;
-            grid-template-columns: 50% 50%;
+            grid-template-columns: 45% 55%;
             align-items: center;
 
             padding: 150px 8% 90px;
@@ -33,38 +35,39 @@
             overflow: hidden;
         }
 
+        .domestic-hero::after {
+            content: "";
+            position: absolute;
+            right: 8%;
+            bottom: 34px;
+            width: 110px;
+            height: 1px;
+            background: var(--domestic-accent);
+            opacity: 0.8;
+        }
+
         .domestic-hero-content {
             position: relative;
             z-index: 2;
-            max-width: 850px;
-        }
-
-        .domestic-label {
-            margin-bottom: 18px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #999999;
+            max-width: 800px;
         }
 
         .domestic-hero h1 {
-            max-width: 850px;
-            font-size: clamp(3.5rem, 8vw, 7rem);
+            max-width: 800px;
+            font-size: clamp(3.2rem, 8vw, 6.5rem);
             font-weight: 700;
-            line-height: 0.9;
-            letter-spacing: -4px;
+            line-height: 0.92;
+            letter-spacing: -3px;
         }
 
         .domestic-hero h1 span {
-            display: block;
-            color: #8f8f8f;
+            color: var(--domestic-accent);
         }
 
         .domestic-hero p {
-            max-width: 540px;
+            max-width: 620px;
             margin-top: 35px;
-            font-size: 1rem;
+            font-size: 1.05rem;
             line-height: 1.8;
             color: #cfcfcf;
         }
@@ -76,71 +79,48 @@
             height: 560px;
             margin-left: 30px;
             overflow: hidden;
+            align-self: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 18px 18px 0 var(--domestic-accent-soft);
         }
 
         .domestic-hero-visual img {
             width: 100%;
             height: 100%;
             display: block;
-
             object-fit: cover;
             object-position: center;
-
             opacity: 0.9;
         }
 
         .domestic-hero-visual::after {
             content: "";
-
             position: absolute;
             inset: 0;
-
-            background:
-                linear-gradient(
-                    to right,
-                    #070707 0%,
-                    rgba(7, 7, 7, 0.75) 12%,
-                    rgba(7, 7, 7, 0.15) 38%,
-                    transparent 60%
-                );
+            background: linear-gradient(
+                to right,
+                #070707 0%,
+                rgba(7, 7, 7, 0.75) 12%,
+                rgba(7, 7, 7, 0.15) 38%,
+                transparent 60%
+            );
         }
 
         .domestic-hero-visual::before {
             content: "";
-
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-
-            background:
-                linear-gradient(
-                    to bottom,
-                    rgba(7, 7, 7, 0.35),
-                    transparent 20%,
-                    transparent 80%,
-                    rgba(7, 7, 7, 0.7)
-                );
-
+            background: linear-gradient(
+                to bottom,
+                rgba(7, 7, 7, 0.35),
+                transparent 20%,
+                transparent 80%,
+                rgba(7, 7, 7, 0.7)
+            );
             z-index: 1;
-        }
-
-        .domestic-image-caption {
-            position: absolute;
-            z-index: 2;
-            bottom: 25px;
-            left: 25px;
-            right: 25px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            color: #ffffff;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
         }
 
         /* =========================
@@ -148,93 +128,99 @@
         ========================= */
 
         .domestic-intro {
-            background: #fff;
-            color: #111;
+            display: block;
             grid-template-columns: 1fr 1fr;
+            gap: 80px;
             padding: 110px 8%;
+            background: linear-gradient(
+                to bottom,
+                #070707,
+                #5a5959
+            );
+            color: #ffffff;
+            align-items: center;
             text-align: center;
-            gap: 80px
-
         }
 
-        .domestic-intro-label {
-            font-size: 0.7rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            opacity: 0.5;
-
-            margin-bottom: 18px;
+        .domestic-intro-heading h2 {
+            font-size: clamp(2.8rem, 5vw, 5rem);
+            line-height: 0.95;
+            letter-spacing: -3px;
+            text-align: center;
         }
 
-        .domestic-intro h2 {
-            font-size: clamp(2.5rem, 4vw, 4.5rem);
-            font-weight: 700;
-
-            max-width: 850px;
-            margin: 0 auto 25px;
-        }
-
-        .domestic-intro p {
-            max-width: 700px;
-            margin: 0 auto;
-
+        .domestic-intro-content p,
+        .domestic-intro-p {
+            margin-bottom: 30px;
+            color: #ffffff;
             line-height: 1.8;
-            color: #666;
+            font-size: 1.05rem;
+            padding-top: 25px;
         }
 
         /* =========================
-           DESTINATION GRID
+           DOMESTIC GRID (ENHANCED)
         ========================= */
 
         .domestic-packages {
             background: #ffffff;
             color: #070707;
-            padding: 110px 8%;
+            padding: 120px 8%;
         }
 
         .domestic-section-heading {
             display: flex;
             justify-content: space-between;
-            align-items: end;
-
-            margin-bottom: 70px;
+            align-items: flex-end;
+            margin-bottom: 60px;
+            gap: 30px;
         }
 
         .domestic-section-heading h2 {
-            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
+            color: #070707;
+            line-height: 1.05;
+            letter-spacing: -1.5px;
         }
 
         .domestic-section-heading p {
-            max-width: 350px;
-            color: #666;
+            max-width: 340px;
+            color: #555555;
             line-height: 1.7;
             font-size: 0.95rem;
         }
 
         .domestic-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .domestic-card {
-            background: #070707;
+            background: #0e0e0e;
             color: #ffffff;
-            border-radius: 4px;
+            border-radius: 8px;
             overflow: hidden;
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.4s ease;
         }
 
         .domestic-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+            transform: translateY(-12px);
+            border-color: var(--domestic-accent);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.35), 
+                0 12px 35px var(--domestic-accent-soft),
+                0 0 18px var(--domestic-accent); 
         }
 
         .domestic-card-image {
+            position: relative;
             height: 260px;
             overflow: hidden;
         }
@@ -243,54 +229,81 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-
             display: block;
-
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .domestic-card:hover .domestic-card-image img {
-            transform: scale(1.05);
+            transform: scale(1.08);
+        }
+
+        .domestic-card-image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(14, 14, 14, 0.7) 0%, transparent 40%);
+            pointer-events: none;
         }
 
         .domestic-card-content {
-            padding: 28px;
+            padding: 32px 28px 28px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .domestic-card-number {
-            display: block;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            color: #999999;
-            margin-bottom: 25px;
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            color: var(--domestic-accent);
+            margin-bottom: 18px;
+            text-transform: uppercase;
         }
 
         .domestic-card-content h3 {
-            font-size: 2rem;
-            line-height: 1;
+            font-size: 1.85rem;
+            font-weight: 700;
+            line-height: 1.1;
             letter-spacing: -0.5px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            color: #ffffff;
         }
 
         .domestic-card-content p {
-            color: #bdbdbd;
-            font-size: 0.9rem;
+            color: #b0b0b0;
+            font-size: 0.92rem;
             line-height: 1.7;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
+            flex-grow: 1;
         }
 
         .domestic-card-link {
             color: #ffffff;
             text-decoration: none;
-
             font-size: 0.8rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
         }
 
-        .domestic-card-link:hover {
-            text-decoration: underline;
+        .domestic-card-link::after {
+            content: "→";
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .domestic-card:hover .domestic-card-link {
+            color: var(--domestic-accent);
+        }
+
+        .domestic-card:hover .domestic-card-link::after {
+            transform: translateX(5px);
         }
 
         /* =========================
@@ -301,8 +314,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             min-height: 600px;
-
-            background: #070707;
+            background: #020202e6;
             color: #fff;
         }
 
@@ -321,7 +333,6 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-
             padding: 80px 10%;
             align-items: flex-start;
         }
@@ -330,7 +341,6 @@
             font-size: 0.7rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-
             opacity: 0.55;
             margin-bottom: 20px;
         }
@@ -345,30 +355,23 @@
 
         .domestic-feature-content p {
             max-width: 500px;
-            margin-bottom: 35px;
             color: #c0c0c0;
             line-height: 1.8;
-
             margin-bottom: 30px;
         }
 
         .domestic-feature-btn {
             display: inline-block;
             width: fit-content;
-
             padding: 14px 30px;
-
             background-color: #ffffff;
             color: #000000;
             border-radius: 30px;
-
             text-decoration: none;
-
             font-size: 0.85rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-
             transition: all 0.3s ease;
         }
 
@@ -383,19 +386,15 @@
         .domestic-cta {
             background: #fff;
             color: #111;
-
             text-align: center;
-
             padding: 120px 8%;
         }
 
         .domestic-cta span {
             display: block;
-
             font-size: 0.7rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-
             opacity: 0.5;
             margin-bottom: 20px;
         }
@@ -403,32 +402,27 @@
         .domestic-cta h2 {
             font-size: clamp(3rem, 6vw, 6rem);
             font-weight: 700;
-
             margin-bottom: 35px;
         }
 
         .domestic-cta-btn {
             display: inline-block;
-
             padding: 15px 30px;
-
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #070707;
+            color: #ffffff;
             border-radius: 30px;
-
             text-decoration: none;
-
             font-size: 0.85rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-
             transition: all 0.3s ease;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
         }
 
         .domestic-cta-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
         }
 
         /* =========================
@@ -465,7 +459,9 @@
             }
 
             .domestic-section-heading {
-                display: block;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
             }
 
             .domestic-section-heading p {
@@ -513,7 +509,7 @@
          NAVBAR
     ========================= -->
 
-      <header class="navbar">
+    <header class="navbar">
 
         <div class="logo">
             Origin
@@ -635,7 +631,7 @@
 
             <div class="domestic-hero-content">
 
-                <div class="domestic-label">
+                <div class="section-label">
                     DOMESTIC TOURS
                 </div>
 
@@ -654,11 +650,11 @@
             <div class="domestic-hero-visual">
 
                 <img
-                    src="New folder//tour2.jpg"
+                    src="New folder/tour3.jpg"
                     alt="Beautiful Indian travel destination"
                 >
 
-                <div class="domestic-image-caption">
+                <div class="hero-image-caption" style="color: var(--domestic-accent);">
                     01 / EXPLORE INDIA
                 </div>
 
@@ -673,22 +669,24 @@
 
         <section class="domestic-intro">
 
-            <div class="domestic-intro-label">
-                JOURNEYS WITHIN
+            <div class="domestic-intro-heading">
+                <p class="section-label">
+                    JOURNEYS WITHIN
+                </p>
+                <h2>
+                    From the mountains to the coast,
+                    India has a journey waiting for you.
+                </h2>
             </div>
 
-            <h2>
-                From the mountains to the coast,
-                India has a journey waiting for you.
-            </h2>
-
-            <p>
-                Whether you're looking for a peaceful getaway,
-                an adventure with friends, a family holiday or a
-                romantic escape, discover destinations across India
-                designed around the way you want to travel.
-            </p>
-
+            <div class="domestic-intro-content">
+                <p class="domestic-intro-p">
+                    Whether you're looking for a peaceful getaway,
+                    an adventure with friends, a family holiday or a
+                    romantic escape, discover destinations across India
+                    designed around the way you want to travel.
+                </p>
+            </div>
         </section>
 
 
@@ -701,7 +699,7 @@
             <div class="domestic-section-heading">
 
                 <h2>
-                    Popular <em>Destinations.</em>
+                    Popular Destinations.
                 </h2>
 
                 <p>

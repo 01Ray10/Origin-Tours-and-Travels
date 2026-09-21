@@ -379,8 +379,15 @@ a {
     --origin-grey: #666666;
     --origin-light-grey: #f5f5f3;
     --origin-line: rgba(7, 7, 7, 0.12);
-    --international-accent: #fd1111;
-    --international-accent-soft: #f2ff00;
+    /* --international-accent: #ff6b6b;
+    --international-accent-soft: rgba(255, 107, 107, 0.25); */
+ /* --domestic-accent: #038EA1;
+    --domestic-accent-soft: #E5D3B3;     */
+    --international-accent: #e74c3c;
+    --international-accent-soft: rgba(231, 76, 60, 0.25);
+    --domestic-accent: #0984e3;
+    --domestic-accent-soft: #0984e340;
+
         
 }
 

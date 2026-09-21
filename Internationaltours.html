@@ -33,7 +33,6 @@
             color: #ffffff;
 
             overflow: hidden;
-            /* line-height: 2.8; */
         }
 
         .international-hero::after {
@@ -54,32 +53,15 @@
         }
 
         .international-hero-p {
-             max-width: 620px;
-
+            max-width: 620px;
             margin-top: 35px;
-
             color: #cfcfcf;
-
             font-size: 1.05rem;
             line-height: 1.8;
         }
 
-        /* .tours-hero h1 {
-            max-width: 800px;
-            font-size: clamp(3.2rem, 7vw, 6.5rem);
-            line-height: 0.92;
-            font-weight: 700;
-            letter-spacing: -3px;
-        }
-
-        .tours-hero h1 span {
-            display: block;
-            color: var(--tours-accent);
-        } */
-
         .international-hero h1 {
             max-width: 800px;
-            /* display: block; */
             font-size: clamp(3.2rem, 8vw, 6.5rem);
             line-height: 0.92;
             font-weight: 700;
@@ -143,21 +125,6 @@
             z-index: 1;
         }
 
-        /* .international-image-caption {
-            position: absolute;
-            z-index: 2;
-            bottom: 25px;
-            left: 25px;
-            right: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #ffffff;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        } */
-
         /* =========================
            INTERNATIONAL INTRO
         ========================= */
@@ -167,17 +134,16 @@
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             padding: 110px 8%;
-            background-color: #ffffff;
-            color: #070707;
+            background: linear-gradient(
+                to bottom,
+                #070707,
+                #5a5959
+            );
+            color: #ffffff;
             align-items: center;
             text-align: center;
         }
 
-        
-        /* .international-intro-heading {
-            max-width: 650px;
-        } */
-        
         .international-intro-heading h2 {
             font-size: clamp(2.8rem, 5vw, 5rem);
             line-height: 0.95;
@@ -185,17 +151,12 @@
             text-align: center;
         }
         
-        /* .international-intro-content {
-            max-width: 550px;
-        } */
-        
         .international-intro-content p {
             margin-bottom: 30px;
-            color: #555555;
+            color: #ffffff;
             line-height: 1.8;
             font-size: 1.05rem;
             padding-top: 25px;
-            
         }
         
         .international-text-link {
@@ -213,58 +174,74 @@
         }
 
         /* =========================
-           DESTINATION LIKE GRID (INVERTED COLORS)
+           DESTINATION GRID (ENHANCED)
         ========================= */
 
         .international-packages {
-            background: #070707;
-            color: #ffffff;
-            padding: 110px 8%;
-            /* background-image: url("New folder/worldmap1.png");
-            background-size: 100% 100%;
-            background-position: center; */
+            background-color: #ffffff;
+            color: #070707;
+            padding: 120px 8%;
         }
+        
+        /* .international-packages h3 {
+            color: var(--international-accent);
+        } */
 
         .international-section-heading {
             display: flex;
             justify-content: space-between;
-            align-items: end;
-            margin-bottom: 70px;
+            align-items: flex-end;
+            margin-bottom: 60px;
+            gap: 30px;
         }
 
         .international-section-heading h2 {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
-            color: #ffffff;
+            color: #070707;
+            line-height: 1.05;
+            letter-spacing: -1.5px;
         }
 
         .international-section-heading p {
-            max-width: 300px;
-            color: #cccccc;
+            max-width: 340px;
+            color: #555555;
             line-height: 1.7;
-            font-size: 0.90rem;
+            font-size: 0.95rem;
+        }
+
+        .international-section-heading h2 span {
+            color: var(--international-accent);
         }
 
         .international-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .international-card {
             background: #ffffff;
             color: #070707;
-            border-radius: 4px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.12);
+        
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
         }
-
+        
         .international-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        
+            box-shadow:
+                0 18px 40px rgba(0, 0, 0, 0.18);
         }
 
         .international-card-image {
+            position: relative;
             height: 260px;
             overflow: hidden;
         }
@@ -274,51 +251,84 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .international-card:hover .international-card-image img {
-            transform: scale(1.05);
+            transform: scale(1.08);
+        }
+
+        .international-card-image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(14, 14, 14, 0.7) 0%, transparent 40%);
+            pointer-events: none;
         }
 
         .international-card-content {
-            padding: 28px;
+            padding: 32px 28px 28px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .international-card-number {
-            display: block;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            color: #666666;
-            margin-bottom: 25px;
-        }
-
-        .international-card-content h3 {
-            font-size: 2rem;
-            line-height: 1;
-            letter-spacing: -0.5px;
-            margin-bottom: 15px;
-            color: #070707;
-        }
-
-        .international-card-content p {
-            color: #555555;
-            font-size: 0.9rem;
-            line-height: 1.7;
-            margin-bottom: 25px;
-        }
-
-        .international-card-link {
-            color: #070707;
-            text-decoration: none;
-            font-size: 0.8rem;
+            display: inline-block;
+            font-size: 0.72rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 2.5px;
+            color: var(--international-accent);
+            margin-bottom: 18px;
             text-transform: uppercase;
         }
 
-        .international-card-link:hover {
-            text-decoration: underline;
+        .international-card-content h3 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            color: var(--international-accent);
+        }
+
+        .international-card-content a {
+            color: var(--international-accent)
+        }
+
+        .international-card-content p {
+            color: #b0b0b0;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 28px;
+            flex-grow: 1;
+        }
+
+        .international-card-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .international-card-link::after {
+            content: "→";
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .international-card:hover .international-card-link {
+            color: var(--international-accent);
+        }
+
+        .international-card:hover .international-card-link::after {
+            transform: translateX(5px);
         }
 
         /* =========================
@@ -418,6 +428,8 @@
             font-size: clamp(3rem, 6vw, 6rem);
             font-weight: 700;
             margin-bottom: 35px;
+            color: var(--international-accent);
+            text-transform: uppercase; 
         }
 
         .international-cta-btn {
@@ -670,7 +682,7 @@
                     alt="International travel destination"
                 >
 
-                <div class="hero-image-caption" style="color: #F2FF00;">
+                <div class="hero-image-caption" style="color:var(--international-accent);">
                     01 / THE WORLD AWAITS
                 </div>
 
@@ -727,7 +739,7 @@
             <div class="international-section-heading">
 
                 <h2>
-                    Popular Destinations.
+                    Popular <span>Destinations.</span>
                 </h2>
 
                 <p>
@@ -846,7 +858,7 @@
 
                     <div class="international-card-image">
                         <img
-                            src="New folder/shutterstock2227020365.png"
+                            src="New folder/switzerland1.png"
                             alt="Switzerland"
                         >
                     </div>
@@ -880,7 +892,7 @@
 
                     <div class="international-card-image">
                         <img
-                            src="New folder/Paris.jpg"
+                            src="New folder/Eiffel-Tower.png"
                             alt="Paris"
                         >
                     </div>
@@ -914,7 +926,7 @@
 
                     <div class="international-card-image">
                         <img
-                            src="New folder/Bali.jpg"
+                            src="New folder/Bali.png"
                             alt="Bali"
                         >
                     </div>
@@ -946,7 +958,6 @@
             </div>
 
         </section>
-
 
 
         <!-- =========================
