@@ -233,11 +233,19 @@
                 box-shadow 0.3s ease;
         }
         
-        .international-card:hover {
+        /* .international-card:hover {
             transform: translateY(-8px);
         
             box-shadow:
-                0 18px 40px rgba(0, 0, 0, 0.18);
+             0 18px 35px rgba(0, 0, 0, 0.12);
+        } */
+
+        .international-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--international-accent);
+            box-shadow: 
+                0 18px 35px rgba(0, 0, 0, 0.12),
+                0 0 15px var(--international-accent-soft);
         }
 
         .international-card-image {
@@ -327,7 +335,7 @@
             color: var(--international-accent);
         }
 
-        .international-card:hover .international-card-link::after {
+        .international-card:hover .international-card-link::after { 
             transform: translateX(5px);
         }
 
