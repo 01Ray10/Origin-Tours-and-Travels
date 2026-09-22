@@ -1,4 +1,4 @@
-// ~~~~~~~~~~~~~~   CARDS DISPLAY   ~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~   CARDS DISPLAY   ~~~~~~~~~~~~~~~~~~ //
 
 console.log("JavaScript is running");
 
@@ -110,12 +110,66 @@ loadDestinations();
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEARCH BAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-const searchInput = document.getElementById("destination-search-input");
-const cards = document.querySelectorAll(".international-card");
+// ========================================================
+// SEARCH
+// ========================================================
 
-searchInput.addEventListener("input", function () {
+// document.addEventListener("DOMContentLoaded", function () {
 
-    const searchTerm = searchInput.value.toLowerCase().trim();
+//     function setupSearch(inputId, containerSelector) {
+
+//         const input = document.getElementById(inputId);
+
+//         if (!input) {
+//             return;
+//         }
+
+//         input.addEventListener("input", function () {
+
+//             const container = document.querySelector(containerSelector);
+
+//             if (!container) {
+//                 return;
+//             }
+
+//             const searchTerm = input.value.toLowerCase().trim();
+
+//             Array.from(container.children).forEach(function (card) {
+
+//                 const cardText = card.textContent.toLowerCase();
+
+//                 if (cardText.includes(searchTerm)) {
+//                     card.style.display = "";
+//                 } else {
+//                     card.style.display = "none";
+//                 }
+
+//             });
+
+//         });
+
+//     }
+
+
+//     // Destination.html
+//     setupSearch(
+//         "destination-search-input",
+//         "#destinations-container"
+//     );
+
+
+//     // Internationaltours.html
+//     setupSearch(
+//         "international-search-input",
+//         ".international-grid"
+//     );
+
+// });
+function filterInternationalCards(searchTerm) {
+
+    const cards = document.querySelectorAll(".international-card");
+
+    searchTerm = searchTerm.toLowerCase().trim();
 
     cards.forEach(function (card) {
 
@@ -128,37 +182,4 @@ searchInput.addEventListener("input", function () {
         }
 
     });
-
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const searchInput = document.getElementById("destination-search-input");
-    const container = document.getElementById("destinations-container");
-
-    if (!searchInput || !container) {
-        console.log("Search elements not found.");
-        return;
-    }
-
-    const cards = container.children;
-
-    searchInput.addEventListener("input", function () {
-
-        const searchTerm = searchInput.value.toLowerCase().trim();
-
-        for (const card of cards) {
-
-            const cardText = card.textContent.toLowerCase();
-
-            if (cardText.includes(searchTerm)) {
-                card.style.display = "";
-            } else {
-                card.style.display = "none";
-            }
-
-        }
-
-    });
-
-});
+}

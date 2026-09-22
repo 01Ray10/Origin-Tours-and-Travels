@@ -8,7 +8,7 @@
     <title>Origin- International Tours</title>
 
     <link rel="stylesheet" href="style.css">
-
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
 
@@ -172,6 +172,53 @@
         .international-text-link:hover {
             text-decoration: underline;
         }
+
+        /* ==================================
+            SEARCH BAR
+        =================================== */
+
+        .destination-search {
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .destination-search label {
+            display: inline-block;
+            margin-bottom: 12px;
+
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .destination-search input {
+             width: 100%;
+            padding: 18px 20px;
+        
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        
+            background: #111;
+            color: #fff;
+        
+            font-size: 1rem;
+            outline: none;
+        
+            transition:
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+       }
+       
+       .destination-search input:focus {
+           border-color: var(--origin-sand);
+       
+           box-shadow:
+               0 0 0 3px rgba(197, 164, 126, 0.12);
+       }
+       
+       .destination-search input::placeholder {
+           color: #777;
+       }
 
         /* =========================
            DESTINATION GRID (ENHANCED)
@@ -535,8 +582,8 @@
             }
         }
     </style>
+    
 </head>
-
 <body>
 
     <!-- =========================
@@ -745,18 +792,27 @@
         <section class="international-packages">
 
             <div class="international-section-heading">
-
-                <h2>
-                    Popular <span>Destinations.</span>
-                </h2>
-
-                <p>
-                    Explore some of the world's most sought-after
-                    destinations and begin planning your next journey.
-                </p>
-
+        <h2>Popular <span>Destinations.</span></h2>
+        <p>
+            Explore some of the world's most sought-after
+            destinations and begin planning your next journey.
+        </p>
             </div>
-
+        
+            <!-- Move search bar outside the flex container -->
+            <div class="destination-search">
+                <label for="international-search-input">
+                    Search your Destination
+                </label>
+        
+                <input
+                    type="search"
+                    id="international-search-input"
+                    placeholder="Search destinations..."
+                    autocomplete="on"
+                    oninput="filterInternationalCards(this.value)"
+                >
+            </div>
 
             <div class="international-grid">
 
@@ -1053,6 +1109,6 @@
         </p>
 
     </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
