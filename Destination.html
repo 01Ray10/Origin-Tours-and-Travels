@@ -8,9 +8,8 @@
     <title>Origin — Destinations</title>
 
     <link rel="stylesheet" href="style.css">
-
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');    
     * {
             -webkit-user-drag: none;
       }
@@ -193,14 +192,15 @@
         }
 
         .destinations-heading {
-            max-width: 700px;
+            max-width: 100%;
             margin-bottom: 70px;
+            font-size: clamp(2.5rem, 4.5vw, 3.8rem);
         }
 
-        .destinations-heading h2 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
+        .destinations-heading h2 , h3 {
+            /* font-size: clamp(2.5rem, 5vw, 4.5rem); */
             line-height: 1;
-            letter-spacing: -2px;
+            letter-spacing: -2.3px;
         }
 
         .destinations-grid {
@@ -210,6 +210,97 @@
         }
 
 
+        /* ========================================================
+            SEARCH BAR
+        ======================================================== */
+
+        /* .destination-search {
+            margin-top: 15px;
+            margin-left: 30px;
+
+        } 
+
+         .destination-search {
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        .destination-search label {
+            display: inline-block;
+            / margin-bottom: px; 
+            margin-left: -15px;
+            margin-bottom: -10px;
+        
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .destination-search input {
+            width: 55%;
+            padding-top: 8px;
+            padding-left: 10px;
+            padding-bottom: 5px;
+            padding-right: 5px;
+            margin-right: 20px;
+            margin-top: -5px;
+        }
+        .destination-search input::placeholder {
+            color: #888888;
+            font-size: 0.85rem;
+        }
+        
+        .destination-search-input {
+            coment font-weight: bolder !important; 
+            font-weight: bold;
+            font-size: 5px;
+            margin-bottom: -16px;   
+        }
+          */
+
+          .destination-search {
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+        
+        .destination-search label {
+            display: inline-block;
+            margin-bottom: 12px;
+        
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .destination-search input {
+            width: 100%;
+            padding: 18px 20px;
+        
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        
+            background: #111;
+            color: #fff;
+        
+            font-size: 1rem;
+            outline: none;
+        
+            transition:
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+       }
+       
+       .destination-search input:focus {
+           border-color: var(--origin-sand);
+       
+           box-shadow:
+               0 0 0 3px rgba(197, 164, 126, 0.12);
+       }
+       
+       .destination-search input::placeholder {
+           color: #777;
+       }
+       
         /* ========================================================
            DESTINATION CARD
         ======================================================== */
@@ -667,10 +758,22 @@
                     EXPLORE
                 </p>
 
-                <h2>
+                <h3>
                     Where Will You Go Next?
-                </h2>
+                </h3>
+                 <div class="destination-search">
 
+                 <label for="destination-search-input">
+                     Search your destination
+                 </label>
+             
+                 <input
+                     type="search"
+                     id="destination-search-input"
+                     placeholder="Search destinations..."
+                     autocomplete="off"
+                 >
+             </div>
             </div>
 
             <div

@@ -106,3 +106,59 @@ async function loadDestinations() {
 
 loadTours();
 loadDestinations();
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEARCH BAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+const searchInput = document.getElementById("destination-search-input");
+const cards = document.querySelectorAll(".international-card");
+
+searchInput.addEventListener("input", function () {
+
+    const searchTerm = searchInput.value.toLowerCase().trim();
+
+    cards.forEach(function (card) {
+
+        const cardText = card.textContent.toLowerCase();
+
+        if (cardText.includes(searchTerm)) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchInput = document.getElementById("destination-search-input");
+    const container = document.getElementById("destinations-container");
+
+    if (!searchInput || !container) {
+        console.log("Search elements not found.");
+        return;
+    }
+
+    const cards = container.children;
+
+    searchInput.addEventListener("input", function () {
+
+        const searchTerm = searchInput.value.toLowerCase().trim();
+
+        for (const card of cards) {
+
+            const cardText = card.textContent.toLowerCase();
+
+            if (cardText.includes(searchTerm)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+
+        }
+
+    });
+
+});
