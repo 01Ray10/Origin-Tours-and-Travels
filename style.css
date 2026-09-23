@@ -386,8 +386,10 @@ a {
     --international-accent: #e74c3c;
     --international-accent-soft: rgba(231, 76, 60, 0.25);
     /* --domestic-accent: #0984e3; */
-    --domestic-accent: #0971c1;
-    --domestic-accent-soft: #0984e340;
+    /* --domestic-accent: #115588c8;
+    --domestic-accent-soft: #0984e340; */
+    --domestic-accent: #0091ff;
+    --domestic-accent-soft: #11558840;
 
         
 }

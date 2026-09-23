@@ -183,3 +183,22 @@ function filterInternationalCards(searchTerm) {
 
     });
 }
+
+function filterDomesticCards(searchTerm) {
+
+    const cards = document.querySelectorAll(".domestic-card");
+
+    searchTerm = searchTerm.toLowerCase().trim();
+
+    cards.forEach(function (card) {
+
+        const cardText = card.textContent.toLowerCase();
+
+        if (cardText.includes(searchTerm)) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+}

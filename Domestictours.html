@@ -8,13 +8,14 @@
     <title>Origin — Domestic Tours</title>
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
 
         /* =========================
            DOMESTIC TOURS HERO
         ========================= */
+
         * {
             -webkit-user-drag: none;
         }
@@ -128,7 +129,7 @@
         /* =========================
            DOMESTIC INTRO
         ========================= */
-        
+
         .domestic-intro {
             display: block;
             grid-template-columns: 1fr 1fr;
@@ -150,7 +151,7 @@
             letter-spacing: -3px;
             text-align: center;
         }
-        
+
         .domestic-intro-content p {
             margin-bottom: 30px;
             color: #ffffff;
@@ -158,7 +159,7 @@
             font-size: 1.05rem;
             padding-top: 25px;
         }
-        
+
         .domestic-text-link {
             display: inline-block;
             color: inherit;
@@ -168,10 +169,60 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-        
+
         .domestic-text-link:hover {
             text-decoration: underline;
         }
+
+        /* ==================================
+            SEARCH BAR
+        =================================== */
+
+        .package-search{
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .package-search label {
+            display: inline-block;
+            margin-bottom: 12px;
+
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .package-search input {
+            width: 100% ;
+            padding: 18px 20px;
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+
+            background: #111;
+            color: #fff;
+
+            font-size: 1rem;
+            outline: none;
+
+            transition:
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .package-search input:focus {
+            border-color: var(--origin-sand);
+
+            box-shadow:
+                0 0 0 3px rgba(197, 164, 126, 0.12); 
+        }
+
+        .package-search input::placeholder {
+            color: #777;
+        }
+
+
+
 
         /* =========================
            DESTINATION GRID (ENHANCED)
@@ -220,14 +271,19 @@
             background: #ffffff;
             color: #070707;
             border: 1px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.12);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
         }
-        
+
         .domestic-card:hover {
             transform: translateY(-8px);
             border-color: var(--domestic-accent);
-            box-shadow: 
+            box-shadow:
                 0 18px 35px rgba(0, 0, 0, 0.12),
                 0 0 15px var(--domestic-accent-soft);
         }
@@ -254,7 +310,11 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(14, 14, 14, 0.7) 0%, transparent 40%);
+            background: linear-gradient(
+                to top,
+                rgba(14, 14, 14, 0.7) 0%,
+                transparent 40%
+            );
             pointer-events: none;
         }
 
@@ -289,7 +349,7 @@
         }
 
         .domestic-card-content p {
-            color: #555555;
+            color: #b0b0b0;
             font-size: 0.92rem;
             line-height: 1.7;
             margin-bottom: 28px;
@@ -537,15 +597,19 @@
         <nav class="nav-links">
 
             <div class="nav-item">
+
                 <a href="index.html" class="nav-link">
                     Home
                 </a>
+
             </div>
 
             <div class="nav-item">
+
                 <a href="Destination.html" class="nav-link">
                     Destination
                 </a>
+
             </div>
 
             <div class="nav-item has-dropdown">
@@ -673,7 +737,10 @@
                     alt="Beautiful Indian travel destination"
                 >
 
-                <div class="hero-image-caption" style="color:var(--domestic-accent);">
+                <div
+                    class="hero-image-caption"
+                    style="color:var(--domestic-accent);"
+                >
                     01 / EXPLORE INDIA
                 </div>
 
@@ -741,16 +808,34 @@
 
             </div>
 
+            <!-- Search bar outside the flex container -->
+            <div class="package-search">
+                <label
+                for="package-search-input">
+                Search your Destination
+            </label>
+
+            <input
+                type="search"
+                id="package-search-input"
+                placeholder="Search destinations..."
+                autocomplete="on"
+                oninput="filterDomesticCards(this.value)"
+            >
+
+            </div>
 
             <div class="domestic-grid">
 
                 <article class="domestic-card">
 
                     <div class="domestic-card-image">
+
                         <img
                             src="New folder/Kashmir.jpg"
                             alt="Kashmir"
                         >
+
                     </div>
 
                     <div class="domestic-card-content">
@@ -759,7 +844,9 @@
                             01 / NORTH
                         </div>
 
-                        <h3>Kashmir</h3>
+                        <h3>
+                            Kashmir
+                        </h3>
 
                         <p>
                             Lakes, mountains, valleys and unforgettable
@@ -781,10 +868,12 @@
                 <article class="domestic-card">
 
                     <div class="domestic-card-image">
+
                         <img
                             src="New folder/Goa.png"
                             alt="Goa"
                         >
+
                     </div>
 
                     <div class="domestic-card-content">
@@ -793,7 +882,9 @@
                             02 / WEST
                         </div>
 
-                        <h3>Goa</h3>
+                        <h3>
+                            Goa
+                        </h3>
 
                         <p>
                             Beaches, laid-back escapes and vibrant
@@ -815,10 +906,12 @@
                 <article class="domestic-card">
 
                     <div class="domestic-card-image">
+
                         <img
                             src="New folder/Kerala.jpg"
                             alt="Kerala"
                         >
+
                     </div>
 
                     <div class="domestic-card-content">
@@ -827,7 +920,9 @@
                             03 / SOUTH
                         </div>
 
-                        <h3>Kerala</h3>
+                        <h3>
+                            Kerala
+                        </h3>
 
                         <p>
                             Backwaters, lush landscapes and peaceful
@@ -849,10 +944,12 @@
                 <article class="domestic-card">
 
                     <div class="domestic-card-image">
+
                         <img
                             src="New folder/Rajasthan.jpg"
                             alt="Rajasthan"
                         >
+
                     </div>
 
                     <div class="domestic-card-content">
@@ -861,7 +958,9 @@
                             04 / NORTH WEST
                         </div>
 
-                        <h3>Rajasthan</h3>
+                        <h3>
+                            Rajasthan
+                        </h3>
 
                         <p>
                             Historic forts, royal cities and rich
@@ -883,10 +982,12 @@
                 <article class="domestic-card">
 
                     <div class="domestic-card-image">
+
                         <img
                             src="New folder/Manali.jpg"
                             alt="Manali"
                         >
+
                     </div>
 
                     <div class="domestic-card-content">
@@ -895,7 +996,9 @@
                             05 / HIMALAYAS
                         </div>
 
-                        <h3>Manali</h3>
+                        <h3>
+                            Manali
+                        </h3>
 
                         <p>
                             Mountain scenery, adventure and refreshing
@@ -917,10 +1020,12 @@
                 <article class="domestic-card">
 
                     <div class="domestic-card-image">
+
                         <img
                             src="New folder/Andaman.jpg"
                             alt="Andaman Islands"
                         >
+
                     </div>
 
                     <div class="domestic-card-content">
@@ -929,7 +1034,9 @@
                             06 / ISLANDS
                         </div>
 
-                        <h3>Andaman</h3>
+                        <h3>
+                            Andaman
+                        </h3>
 
                         <p>
                             Crystal-clear waters, tropical beaches and
@@ -1036,6 +1143,9 @@
         </p>
 
     </footer>
+
+
+    <script src="script.js"></script>
 
 </body>
 </html>
