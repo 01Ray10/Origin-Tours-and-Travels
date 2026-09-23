@@ -228,163 +228,180 @@
 
 
         /* =========================
-           DESTINATION GRID (ENHANCED)
-        ========================= */
-
-        .domestic-packages {
-            background-color: #ffffff;
-            color: #070707;
-            padding: 120px 8%;
-        }
-
-        .domestic-section-heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 60px;
-            gap: 30px;
-        }
-
-        .domestic-section-heading h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            color: #070707;
-            line-height: 1.05;
-            letter-spacing: -1.5px;
-        }
-
-        .domestic-section-heading p {
-            max-width: 340px;
-            color: #555555;
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
-
-        .domestic-section-heading h2 span {
-            color: var(--domestic-accent);
-        }
-
-        .domestic-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .domestic-card {
-            background: #ffffff;
-            color: #070707;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.12);
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .domestic-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--domestic-accent);
-            box-shadow:
-                0 18px 35px rgba(0, 0, 0, 0.12),
-                0 0 15px var(--domestic-accent-soft);
-        }
-
-        .domestic-card-image {
-            position: relative;
-            height: 260px;
-            overflow: hidden;
-        }
-
-        .domestic-card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .domestic-card:hover .domestic-card-image img {
-            transform: scale(1.08);
-        }
-
-        .domestic-card-image::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to top,
-                rgba(14, 14, 14, 0.7) 0%,
-                transparent 40%
-            );
-            pointer-events: none;
-        }
-
-        .domestic-card-content {
-            padding: 32px 28px 28px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .domestic-card-number {
-            display: inline-block;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 2.5px;
-            color: var(--domestic-accent);
-            margin-bottom: 18px;
-            text-transform: uppercase;
-        }
-
-        .domestic-card-content h3 {
-            font-size: 1.85rem;
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.5px;
-            margin-bottom: 12px;
-            color: var(--domestic-accent);
-        }
-
-        .domestic-card-content a {
-            color: var(--domestic-accent);
-        }
-
-        .domestic-card-content p {
-            color: #b0b0b0;
-            font-size: 0.92rem;
-            line-height: 1.7;
-            margin-bottom: 28px;
-            flex-grow: 1;
-        }
-
-        .domestic-card-link {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.3s ease;
-        }
-
-        .domestic-card-link::after {
-            content: "→";
-            font-size: 1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .domestic-card:hover .domestic-card-link {
-            color: var(--domestic-accent);
-        }
-
-        .domestic-card:hover .domestic-card-link::after {
-            transform: translateX(5px);
-        }
+          DESTINATION GRID (ENHANCED)
+       ========================= */
+       
+       .domestic-packages {
+           background-color: #ffffff;
+           color: #070707;
+           padding: 120px 8%;
+       }
+       
+       .domestic-section-heading {
+           display: flex;
+           justify-content: space-between;
+           align-items: flex-end;
+           margin-bottom: 60px;
+           gap: 30px;
+       }
+       
+       .domestic-section-heading h2 {
+           font-size: clamp(2.5rem, 5vw, 4rem);
+           font-weight: 700;
+           color: #070707;
+           line-height: 1.05;
+           letter-spacing: -1.5px;
+       }
+       
+       .domestic-section-heading p {
+           max-width: 340px;
+           color: #555555;
+           line-height: 1.7;
+           font-size: 0.95rem;
+       }
+       
+       .domestic-section-heading h2 span {
+           color: var(--international-accent);
+       }
+       
+       .domestic-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+           gap: 30px;
+       }
+       
+       .domestic-card {
+           background: #ffffff;
+           color: #070707;
+           border: 1px solid rgba(0, 0, 0, 0.08);
+       
+           box-shadow:
+               0 10px 30px rgba(0, 0, 0, 0.12);
+       
+           transition:
+               transform 0.3s ease,
+               box-shadow 0.3s ease;
+       }
+       
+       .domestic-card:hover {
+           transform: translateY(-8px);
+           border-color: var(--international-accent);
+       
+           box-shadow:
+               0 18px 35px rgba(0, 0, 0, 0.12),
+               0 0 15px var(--international-accent-soft);
+       }
+       
+       .domestic-card-image {
+           position: relative;
+           height: 260px;
+           overflow: hidden;
+       }
+       
+       .domestic-card-image img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           display: block;
+       
+           transition:
+               transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+       }
+       
+       .domestic-card:hover .domestic-card-image img {
+           transform: scale(1.08);
+       }
+       
+       .domestic-card-image::after {
+           content: "";
+           position: absolute;
+           inset: 0;
+       
+           background: linear-gradient(
+               to top,
+               rgba(14, 14, 14, 0.7) 0%,
+               transparent 40%
+           );
+       
+           pointer-events: none;
+       }
+       
+       .domestic-card-content {
+           padding: 32px 28px 28px;
+       
+           display: flex;
+           flex-direction: column;
+           flex-grow: 1;
+       }
+       
+       .domestic-card-number {
+           display: inline-block;
+       
+           font-size: 0.72rem;
+           font-weight: 700;
+           letter-spacing: 2.5px;
+       
+           color: var(--international-accent);
+       
+           margin-bottom: 18px;
+           text-transform: uppercase;
+       }
+       
+       .domestic-card-content h3 {
+           font-size: 1.85rem;
+           font-weight: 700;
+           line-height: 1.1;
+           letter-spacing: -0.5px;
+       
+           margin-bottom: 12px;
+       
+           color: var(--international-accent);
+       }
+       
+       .domestic-card-content p {
+           color: #555555;
+       
+           font-size: 0.92rem;
+           line-height: 1.7;
+       
+           margin-bottom: 28px;
+       
+           flex-grow: 1;
+       }
+       
+       .domestic-card-link {
+           color: var(--international-accent);
+       
+           text-decoration: none;
+       
+           font-size: 0.8rem;
+           font-weight: 700;
+           letter-spacing: 1.5px;
+           text-transform: uppercase;
+       
+           display: inline-flex;
+           align-items: center;
+       
+           gap: 8px;
+       
+           transition: color 0.3s ease;
+       }
+       
+       .domestic-card-link::after {
+           content: "→";
+       
+           font-size: 1rem;
+       
+           transition: transform 0.3s ease;
+       }
+       
+       /* .domestic-card:hover .domestic-card-link {
+           color: var(--international-accent);
+       } */
+       
+       .domestic-card:hover .domestic-card-link::after {
+           transform: translateX(5px);
+       }
 
         /* =========================
            FEATURE
@@ -949,7 +966,7 @@
                     <div class="domestic-card-image">
 
                         <img
-                            src="New folder/Rajasthan.png"
+                            src="New folder/Rajasthan-Tour-Package.png"
                             alt="Rajasthan"
                         >
 
