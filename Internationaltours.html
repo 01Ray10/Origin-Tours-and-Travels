@@ -192,11 +192,12 @@
         }
 
         .destination-search input {
-             width: 100%;
+            width: 100%;
             padding: 18px 20px;
         
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 4px;
+            box-sizing: border-box;
         
             background: #111;
             color: #fff;
@@ -210,8 +211,8 @@
        }
        
        .destination-search input:focus {
-           border-color: var(--origin-sand);
-       
+           border-color: var(--origin-search-border);
+           border-width: 2px;
            box-shadow:
                0 0 0 3px rgba(197, 164, 126, 0.12);
        }
