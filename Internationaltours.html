@@ -265,8 +265,14 @@
         }
         .international-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+            grid-template-columns: repeat(3, 1fr); /* Forces max 2 equal columns */
             gap: 30px;
+        }
+
+        /* While Searching: Capped at 2 Columns */
+        .international-grid.is-searching {
+            grid-template-columns: repeat(2, 1fr);
         }
 
         .international-card {
@@ -822,7 +828,7 @@
 
                     <div class="international-card-image">
                         <img
-                            src="New folder/Dubai.jpg"
+                            src="New folder/DubaiFinal.png"
                             alt="Dubai"
                         >
                     </div>
@@ -890,7 +896,7 @@
 
                     <div class="international-card-image">
                         <img
-                            src="New folder/banner_themaldives_01.jpg"
+                            src="New folder/maldives-tour-package.jpg"
                             alt="Maldives"
                         >
                     </div>
@@ -924,7 +930,7 @@
 
                     <div class="international-card-image">
                         <img
-                            src="New folder/switzerland1.png"
+                            src="New folder/Switzerlandd.jpg"
                             alt="Switzerland"
                         >
                     </div>

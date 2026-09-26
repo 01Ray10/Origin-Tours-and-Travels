@@ -1,33 +1,245 @@
-// ~~~~~~~~~~~~~~   CARDS DISPLAY   ~~~~~~~~~~~~~~~~~~ //
+// // ~~~~~~~~~~~~~~   CARDS DISPLAY   ~~~~~~~~~~~~~~~~~~ //
 
-console.log("JavaScript is running");
+// console.log("JavaScript is running");
+
+// async function loadTours() {
+//     console.log("loadTours is running");
+
+//     try {
+//         const response = await fetch("http://127.0.0.1:8000/api/tours");
+
+//         console.log("Response received:", response);
+
+//         if (!response.ok) {
+//             throw new Error(`HTTP error: ${response.status}`);
+//         }
+
+//         const data = await response.json();
+//         console.log("Data received:", data);
+
+//         const container = document.getElementById("tours-container");
+
+//         if (!container) {
+//             console.log("No tours-container found on this page.");
+//             return;
+//         }
+
+//         container.innerHTML = "";
+
+//         data.tours.forEach((tour) => {
+//             const tourElement = document.createElement("div");
+
+//             tourElement.innerHTML = `
+//                 <h3>${tour.name}</h3>
+//                 <p>${tour.duration}</p>
+//                 <p>₹${tour.price}</p>
+//             `;
+
+//             container.appendChild(tourElement);
+//         });
+//     } catch (error) {
+//         console.error("Failed to load tours:", error);
+//     }
+// }
+
+// async function loadDestinations() {
+//     console.log("loadDestinations is running");
+
+//     try {
+//         const response = await fetch(
+//             "http://127.0.0.1:8000/api/destinations"
+//         );
+
+//         console.log("Destination response:", response);
+
+//         if (!response.ok) {
+//             throw new Error(`HTTP error: ${response.status}`);
+//         }
+
+//         const data = await response.json();
+//         console.log("Destination data:", data);
+
+//         const container = document.getElementById("destinations-container");
+
+//         if (!container) {
+//             console.log("No destinations-container found on this page.");
+//             return;
+//         }
+
+//         container.innerHTML = "";
+
+//         data.destinations.forEach((destination, index) => {
+//             const destinationElement = document.createElement("article");
+//             destinationElement.className = "destination-card";
+
+//             destinationElement.innerHTML = `
+//                 <div class="destination-image">
+//                     <img
+//                         src="${destination.image}"
+//                         alt="${destination.name}"
+//                     >
+//                 </div>
+
+//                 <div class="destination-content">
+//                     <span class="destination-number">
+//                         ${String(index + 1).padStart(2, "0")}
+//                     </span>
+
+//                     <h3>${destination.name}</h3>
+//                     <p>${destination.description}</p>
+//                     <p>${destination.country}</p>
+//                     <p>${destination.duration}</p>
+//                     <p>₹${destination.price}</p>
+
+//                     <a href="${destination.link}">
+//                         Explore ${destination.name} &rarr;
+//                     </a>
+//                 </div>
+//             `;
+
+//             container.appendChild(destinationElement);
+//         });
+//     } catch (error) {
+//         console.error("Failed to load destinations:", error);
+//     }
+// }
+
+// loadTours();
+// loadDestinations();
+
+// //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEARCH BAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+// // ========================================================
+// // SEARCH
+// // ========================================================
+
+// // document.addEventListener("DOMContentLoaded", function () {
+
+// //     function setupSearch(inputId, containerSelector) {
+
+// //         const input = document.getElementById(inputId);
+
+// //         if (!input) {
+// //             return;
+// //         }
+
+// //         input.addEventListener("input", function () {
+
+// //             const container = document.querySelector(containerSelector);
+
+// //             if (!container) {
+// //                 return;
+// //             }
+
+// //             const searchTerm = input.value.toLowerCase().trim();
+
+// //             Array.from(container.children).forEach(function (card) {
+
+// //                 const cardText = card.textContent.toLowerCase();
+
+// //                 if (cardText.includes(searchTerm)) {
+// //                     card.style.display = "";
+// //                 } else {
+// //                     card.style.display = "none";
+// //                 }
+
+// //             });
+
+// //         });
+
+// //     }
+
+
+// //     // Destination.html
+// //     setupSearch(
+// //         "destination-search-input",
+// //         "#destinations-container"
+// //     );
+
+
+// //     // Internationaltours.html
+// //     setupSearch(
+// //         "international-search-input",
+// //         ".international-grid"
+// //     );
+
+// // });
+// function filterInternationalCards(searchTerm) {
+
+//     const cards = document.querySelectorAll(".international-card");
+
+//     searchTerm = searchTerm.toLowerCase().trim();
+
+//     cards.forEach(function (card) {
+
+//         const cardText = card.textContent.toLowerCase();
+
+//         if (cardText.includes(searchTerm)) {
+//             card.style.display = "";
+//         } else {
+//             card.style.display = "none";
+//         }
+
+//     });
+// }
+
+// function filterDomesticCards(searchTerm) {
+
+//     const cards = document.querySelectorAll(".domestic-card");
+
+//     searchTerm = searchTerm.toLowerCase().trim();
+
+//     cards.forEach(function (card) {
+
+//         const cardText = card.textContent.toLowerCase();
+
+//         if (cardText.includes(searchTerm)) {
+//             card.style.display = "";
+//         } else {
+//             card.style.display = "none";
+//         }
+
+//     });
+// }
+// const destinationSearch = document.getElementById("destination-search-input");
+// const destinationsContainer = document.getElementById("destinations-container");
+
+// destinationSearch.addEventListener("input", function () {
+//     const searchText = this.value.toLowerCase().trim();
+
+//     const destinationCards =
+//         destinationsContainer.querySelectorAll(".destination-card");
+
+//     destinationCards.forEach(function (card) {
+//         const cardText = card.textContent.toLowerCase();
+
+//         if (cardText.includes(searchText)) {
+//             card.style.display = "";
+//         } else {
+//             card.style.display = "none";
+//         }
+//     });
+// });
+
+// ========================================================
+// API DATA LOADERS
+// ========================================================
 
 async function loadTours() {
-    console.log("loadTours is running");
+    const container = document.getElementById("tours-container");
+    if (!container) return;
 
     try {
         const response = await fetch("http://127.0.0.1:8000/api/tours");
-
-        console.log("Response received:", response);
-
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
 
         const data = await response.json();
-        console.log("Data received:", data);
-
-        const container = document.getElementById("tours-container");
-
-        if (!container) {
-            console.log("No tours-container found on this page.");
-            return;
-        }
-
         container.innerHTML = "";
 
         data.tours.forEach((tour) => {
-            const tourElement = document.createElement("div");
+            const tourElement = document.createElement("article");
+            tourElement.className = "tour-card";
 
             tourElement.innerHTML = `
                 <h3>${tour.name}</h3>
@@ -43,29 +255,14 @@ async function loadTours() {
 }
 
 async function loadDestinations() {
-    console.log("loadDestinations is running");
+    const container = document.getElementById("destinations-container");
+    if (!container) return;
 
     try {
-        const response = await fetch(
-            "http://127.0.0.1:8000/api/destinations"
-        );
-
-        console.log("Destination response:", response);
-
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
-        }
+        const response = await fetch("http://127.0.0.1:8000/api/destinations");
+        if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
 
         const data = await response.json();
-        console.log("Destination data:", data);
-
-        const container = document.getElementById("destinations-container");
-
-        if (!container) {
-            console.log("No destinations-container found on this page.");
-            return;
-        }
-
         container.innerHTML = "";
 
         data.destinations.forEach((destination, index) => {
@@ -74,10 +271,7 @@ async function loadDestinations() {
 
             destinationElement.innerHTML = `
                 <div class="destination-image">
-                    <img
-                        src="${destination.image}"
-                        alt="${destination.name}"
-                    >
+                    <img src="${destination.image}" alt="${destination.name}">
                 </div>
 
                 <div class="destination-content">
@@ -104,101 +298,57 @@ async function loadDestinations() {
     }
 }
 
-loadTours();
-loadDestinations();
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEARCH BAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 // ========================================================
-// SEARCH
+// REUSABLE UNIFORM SEARCH / FILTER (WITH GRID TOGGLE)
 // ========================================================
 
-// document.addEventListener("DOMContentLoaded", function () {
+function setupSearchFilter(inputId, cardSelector) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
 
-//     function setupSearch(inputId, containerSelector) {
-
-//         const input = document.getElementById(inputId);
-
-//         if (!input) {
-//             return;
-//         }
-
-//         input.addEventListener("input", function () {
-
-//             const container = document.querySelector(containerSelector);
-
-//             if (!container) {
-//                 return;
-//             }
-
-//             const searchTerm = input.value.toLowerCase().trim();
-
-//             Array.from(container.children).forEach(function (card) {
-
-//                 const cardText = card.textContent.toLowerCase();
-
-//                 if (cardText.includes(searchTerm)) {
-//                     card.style.display = "";
-//                 } else {
-//                     card.style.display = "none";
-//                 }
-
-//             });
-
-//         });
-
-//     }
-
-
-//     // Destination.html
-//     setupSearch(
-//         "destination-search-input",
-//         "#destinations-container"
-//     );
-
-
-//     // Internationaltours.html
-//     setupSearch(
-//         "international-search-input",
-//         ".international-grid"
-//     );
-
-// });
-function filterInternationalCards(searchTerm) {
-
-    const cards = document.querySelectorAll(".international-card");
-
-    searchTerm = searchTerm.toLowerCase().trim();
-
-    cards.forEach(function (card) {
-
-        const cardText = card.textContent.toLowerCase();
-
-        if (cardText.includes(searchTerm)) {
-            card.style.display = "";
-        } else {
-            card.style.display = "none";
-        }
-
+    input.addEventListener("input", function () {
+        filterCards(this.value, cardSelector);
     });
 }
 
-function filterDomesticCards(searchTerm) {
+function filterCards(searchTerm, cardSelector) {
+    const cards = document.querySelectorAll(cardSelector);
+    const cleanTerm = searchTerm.toLowerCase().trim();
 
-    const cards = document.querySelectorAll(".domestic-card");
-
-    searchTerm = searchTerm.toLowerCase().trim();
-
-    cards.forEach(function (card) {
-
-        const cardText = card.textContent.toLowerCase();
-
-        if (cardText.includes(searchTerm)) {
-            card.style.display = "";
-        } else {
-            card.style.display = "none";
+    // Toggle .is-searching class on parent grid container when typing
+    if (cards.length > 0) {
+        const gridContainer = cards[0].parentElement;
+        if (gridContainer) {
+            gridContainer.classList.toggle("is-searching", cleanTerm.length > 0);
         }
+    }
 
+    cards.forEach((card) => {
+        const cardText = card.textContent.toLowerCase();
+        card.style.display = cardText.includes(cleanTerm) ? "" : "none";
     });
 }
+
+// Global functions for inline oninput="" attributes in HTML
+window.filterInternationalCards = function (value) {
+    filterCards(value, ".international-card");
+};
+
+window.filterDomesticCards = function (value) {
+    filterCards(value, ".domestic-card");
+};
+
+// ========================================================
+// INITIALIZATION
+// ========================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+    // API Card Loaders
+    loadTours();
+    loadDestinations();
+
+    // Search Event Listeners
+    setupSearchFilter("destination-search-input", ".destination-card");
+    setupSearchFilter("international-search-input", ".international-card");
+    setupSearchFilter("domestic-search-input", ".domestic-card");
+});

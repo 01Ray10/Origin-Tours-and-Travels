@@ -395,6 +395,14 @@ a {
         
 }
 
+.international-grid,
+.domestic-grid,
+#destinations-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
+    gap: 30px;
+}
+
 
 /* ========================================================
    3. SHARED SECTION LABEL
